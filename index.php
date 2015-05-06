@@ -1,9 +1,5 @@
-
 <?php
 
-include './Controler/Controler.php';
-
-
-
+    include './controler/controler.php';
 
 ?>
