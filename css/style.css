@@ -1,0 +1,107 @@
+* {
+    
+   margin: 0 0 0 0;
+   padding: 0 0 0 0;
+   display: block;
+    
+}
+
+
+
+
+.wrapper{
+    background-color:black;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.upperMenu{
+    
+    background-color:green;
+    float:left;
+   // padding: 1%;
+    width: 100%;  
+}
+
+.middleWrapper{
+   background-color: red;
+   height:80px;  
+     
+}
+
+.innerMiddleWrapperLeft{
+    float:left;
+    width:70%;
+    background-color: pink; 
+    height:80px;  
+}
+.innerMiddleWrapperRight{
+    float:right;
+    width:30%;
+    background-color: blue;   
+    height:80px;  
+}
+
+
+.footerWrapper{
+    background-color: purple;
+    height:40px;  
+}
+
+.innerFooterWrapperLeft{
+    float:left;
+    height:40px;
+    width:33.333%;
+    margin:auto;
+    background-color: orange;
+       
+}
+
+.innerFooterWrapperMid{
+    float:left;
+    height:40px;
+    width:33.333%;
+    margin:auto;
+    background-color: yellow;
+       
+}
+
+.innerFooterWrapperRight{
+    float:left;
+    height:40px;
+    width:33.333%;
+    margin:auto;
+    background-color: brown;
+       
+}
+
+
+.divMenuButton{
+    float:left;
+    width:40%;
+    background-color:cornflowerblue;
+    
+    
+    
+}
+
+
+
+
+.buttonCategory{
+    float:left;
+    height:60px;
+    background-color: red;
+    width:15%; 
+    margin: 0.7%;
+}
+
+
+.divMenuSearch{
+    float:left;
+    width: 30%;
+    background-color: bisque;
+    height:60px;  
+}
+
+
