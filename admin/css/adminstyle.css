@@ -1,0 +1,79 @@
+/* 
+    Created on : 07-may-2015, 18:01:57
+    Author     : Ismael Caballero Hernandez
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+ font-family: "Calibri";
+}
+
+
+.wrapper{
+    margin-left: 15%;
+    margin-right:15%;
+    width:70%;   
+    //background-color:black;
+    
+}
+
+.header{
+    background-color: yellow;
+    width:100%;
+    text-align: center;
+    // line-height:100%;
+}
+
+.content{
+    margin-top:2%;
+    width:100%;
+    background-color: red;
+}
+
+
+.footer{
+    margin-top:2%;
+    width:100%;
+    background-color: green;
+    
+}
+
+.login{
+border-color:black;
+border-style: solid;
+border-width: 3px;
+border-radius:10px 10px 10px 10px;
+width: 50%;
+margin-left: 25%;
+margin-right: 25%;
+margin-top:5%;
+margin-bottom:5%;
+}
+
+.userlogin{
+    //line-height:100%;
+    text-align: center;
+    width:100%;
+}
+
+.passlogin{
+    text-align: center;
+    width:100%;
+}
+
+
+.loginbutton{
+    text-align: center;
+    width:100%;
+    
+}
+
+.copyright{
+    text-align: center;
+    width:100%;
+    
+}
