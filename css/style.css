@@ -4,17 +4,8 @@
 }
 
 body {
-    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(158,247,133,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(158,247,133,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(158,247,133,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(158,247,133,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(158,247,133,0) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(158,247,133,0) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#009ef785',GradientType=0 ); /* IE6-9 */
-    background-color: green;
     background-repeat: no-repeat;
-    padding-top: 2%;
-    font-family: "sans-serif";
+    background-color: greenyellow;
 }
 
 li {
@@ -22,155 +13,94 @@ li {
 }
 
 .wrapper {
-    background-color:black;
-    margin: 2% 5%;
+    width: 100%;
 }
 
 .upperWrapper {
-    float:left;
-    width: 100%;
-    padding: 1%;
-    margin-bottom: 1%;
+    position: relative;
+    padding: 0% 1%;
+    margin: 1% 5%;
 }
 
 .menuButtonBg {
-    float: left;
-    margin-right: 1%;
-    margin-bottom: 1%;
-}
-
-#navlist {
     
-}
-
-#navlist li {
-    display: inline-block;
-    list-style-type: none;
-}
-
-#navlist li a {
-    text-decoration: none;
-    color: black;
-    padding: 1em;
-    border-radius: 0.3em;
-    background-color: green;
-    border: solid thick black;
-}
-
-#navlist li input {
-    text-decoration: none;
-    color: black;
-    padding: 0.2em;
-    border-radius: 0.3em;
-    background-color: green;
-    border: solid thick black;
-}
-
-.menuSearchBg {
-    float: left;
-    margin-left: 2em;
-}
-
-.innerMenuSearchLeft {
-    margin-right: 1%;
-}
-
-.innerMenuSearchRight {
-    
-}
-
-.innerMenuSearch {
-    float: left;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
 }
 
 .menuUserBg {
-    float: right;
-    padding: 0 1em;
-}
-
-.innerMenuUserLeft {
     
 }
 
-.innerMenuUserRight{
+#navList {
     
 }
-.innerMenuUser {
-    float: left;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    border: solid thick black;
+
+#navList li {
+    display: inline-block;
+    list-style-type: none;
+    margin-top: 1%;
+}
+
+#navList li * {
+    text-decoration: none;
+    padding: 0.7em;
     border-radius: 0.3em;
+    border: solid thin black;
+    background-color: green;
+    color: black;
 }
 
-// MIDDLE //
+#navList li a {
+    display: block;
+}
 
 .middleWrapper {
+    position: relative;
+    clear: both;
+    margin: 2% 5%;
+    display: block;
     background-color: red;
-    float: left;
-}
-
-.innerMiddleWrapperLeft {
-    float: left;
-    width: 68%;
-    padding: 1%;
-    background-color: pink;
-}
-.innerMiddleWrapperRight {
-    float: left;
-    width: 28%;
-    background-color: blue;
-    padding: 1%;
 }
 
 .footerWrapper {
     background-color: purple;
+    position: relative;
+    margin: 2% 5%;
+}
+
+.innerFooter {
     float: left;
-    width: 100%;
+    width: 33.333%;
+    text-align: center;
 }
 
-.innerFooterWrapperLeft {
-    float:left;
-    width:33.333%;
-    background-color: orange;
+#navListFooter {
+    list-style-type: none;
 }
 
-.innerFooterWrapperMid {
-    float:left;
-    width:33.333%;
-    background-color: yellow;
-}
-
-.innerFooterWrapperRight {
-    float:left;
-    width:33.333%;
-    background-color: brown;
-}
-
-// MISC
-
-filmColor {
+#navListFooter li {
     
 }
 
-serieColor {
-    
+#navListFooter li * {
+    text-decoration: none;
+    padding: 0.7em;
+    border-radius: 0.3em;
+    border: solid thin black;
+    background-color: green;
+    color: black;
+    margin-top: 1%;
+    display: inline-block;
+    width: 30%;
 }
 
-gameColor {
-    
-}
-
-recipeColor {
-    
-}
-
-bookColor {
-    
-}
-
-musicColor {
-    
+#navListFooterPoll li * {
+    text-decoration: none;
+    padding: 0.7em;
+    border-radius: 0.3em;
+    border: solid thin black;
+    background-color: green;
+    color: black;
+    margin-top: 1%;
+    display: inline-block;
+    width: 60%;
 }
