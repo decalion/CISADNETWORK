@@ -1,7 +1,5 @@
 <?php
 
-
-    print_r($_POST);
     if(isset($_POST['type']) == 'register') {
         switch ($_POST['state']) {
             case 0:
