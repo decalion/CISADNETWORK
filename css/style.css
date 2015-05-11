@@ -8,8 +8,8 @@ body {
 }
 
 .wrapper {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
     margin-top: 1%;
 }
 
@@ -19,10 +19,6 @@ p {
     border-radius: 0.3em;
     margin-bottom: 0.2em;
     padding: 0.7em;
-}
-
-li *:hover {
-    background-color: #3e8f3e;
 }
 
 // UPPER //
@@ -42,7 +38,7 @@ li *:hover {
     list-style-type: none;
 }
 
-#navList li * {
+#navList li input {
     text-decoration: none;
     padding: 0.7em;
     border-radius: 0.3em;
@@ -101,6 +97,5 @@ li *:hover {
     background-color: green;
     color: black;
     margin-top: 1%;
-    display: inline-block;
-    width: 94%;
+    display: inline-block; 
 }
