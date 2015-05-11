@@ -1,4 +1,4 @@
-<div class="upperWrapper">
+<div class="upperWrapper wrapper">
     <div class="menuButtonBg">
         <ul id="navList">
             <li><a href="#">FILMS</a></li>

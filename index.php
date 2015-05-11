@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     include './views/head.php';
     
     if (isset($_SESSION['userData'])) {

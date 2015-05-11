@@ -1,9 +1,16 @@
 <?php
 
-    
-    for ($i = 0; $i < 20; $i++) {
-        echo '<p>'.$i.'</p>';
+    if(isset($_POST['type']) == 'register') {
+        switch ($_POST['state']) {
+            case 0:
+                include './views/noLogin/registerForm.php';
+                break;
+            case 1:
+                
+                break;
+            default:
+                break;
+        }
     }
     
-
 ?>
