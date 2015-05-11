@@ -1,9 +1,9 @@
 <?php
 
-    if (isset($_SESSION['userData'])) {
-        include './views/indexLogged.php';
-    } else {
-        include './views/indexNoLogged.php';
+    
+    for ($i = 0; $i < 20; $i++) {
+        echo '<p>'.$i.'</p>';
     }
+    
 
 ?>
