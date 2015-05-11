@@ -1,5 +1,5 @@
 </div>
-<div class="footerWrapper">
+<div class="footerWrapper wrapper">
     <div class="footerLeft innerFooter">
         <ul id="navListFooter">
             <li><a href="#">FAQS</a></li>
