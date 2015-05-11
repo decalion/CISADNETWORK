@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,7 +10,6 @@ and open the template in the editor.
         <div class="wrapper">
             <div class="header">
                 <h1> ADMIN PANEL </h1>
-                
             </div>
             <div class="content">
                 <div class="login">
@@ -40,9 +35,9 @@ and open the template in the editor.
                     <label>Adrian Manchado | </label>
                     <label>Cristian Bautista</label>
                 </div>
-                
+
             </div>
-            
+
         </div>
     </body>
 </html>
