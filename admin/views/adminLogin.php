@@ -14,13 +14,14 @@
             <div class="content">
                 <div class="login">
                     <form method="post" action="./index.php">
+                     <div class="errorslogin"><?php if(isset($message)){ echo $message;  }    ?></div>
                         <div class="userlogin">
                             <lablel>User </lablel>
-                            <input type="text" name="user" />
+                            <input type="text" name="user" /><input type="text"  name="ids"  value="100" hidden />
                         </div>
                         <div class="passlogin">
                             <label>Pass </label>
-                            <input type="text" name="pass" />
+                            <input type="password" name="pass" />
                         </div>
                         <div  class="loginbutton">
                             <input type="submit" value="Login">

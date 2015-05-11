@@ -54,6 +54,12 @@ margin-top:5%;
 margin-bottom:5%;
 }
 
+
+.errorslogin{
+    //line-height:100%;
+    text-align: center;
+    width:100%;
+}
 .userlogin{
     //line-height:100%;
     text-align: center;
