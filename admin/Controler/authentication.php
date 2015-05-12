@@ -10,7 +10,7 @@ if(($_POST['user']==NULL) || ($_POST['pass']==NULL) ) {
 }else{
     
     
-    
+    print_r($facade->selectCredencials());
     
     
     

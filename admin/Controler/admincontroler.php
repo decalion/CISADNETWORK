@@ -4,6 +4,7 @@ include_once './Models/Classes/Utils/Uconnection.php';
 include_once './Models/Classes/DB/AbstractDB.php';
 include_once './Models/Classes/DB/impl/AdminMysqlImpl.php';
 include_once './Models/Classes/Facade.php';
+include_once './Models/Classes/DB/DTO/Login.php';
 
 
 $facade=new Facade();

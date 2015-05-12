@@ -11,10 +11,10 @@ class Facade {
         
     }
 
-    public function selectServerFromGenesisDB() {
+    public function selectCredencials() {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
-        $db = new AdminImplMysql($connection);
-        $result = $db->selectServers();
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectCredencials();
         $db->close();
         return $result;
     }

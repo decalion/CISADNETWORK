@@ -35,10 +35,10 @@ class AdminMysqlImpl extends AbstractDB {
          while ($rst = $this->conection->result($query)) {
 
             $temp=null;
-            $user = $rst["nuser"];  
-            $pass = $rst["npass"];
+            $user = $rst["nickname"];  
+            $pass = $rst["pass"];
             $rol= $rst["idrol"];
-            $temp=new Login($user, $pass, $ip);
+            $temp=new Login($user, $pass, $rol);
             
             array_push($result, $temp);
         }
