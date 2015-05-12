@@ -21,21 +21,29 @@ p {
     padding: 0.7em;
 }
 
+img {
+    width: auto;
+    height: auto;
+}
+
 // UPPER //
 
 #upperWrapper {
-    position: relative;
-    top: 0px;
-    left: 0px;
+    
 }
 
 #navList li a {
     display: block;
 }
 
+#navList li form input:hover {
+    background-color: grey;
+}
+
 #navList li {
     display: inline-block;
     list-style-type: none;
+    margin: 0.5% 0;
 }
 
 #navList li input {
@@ -50,17 +58,13 @@ p {
 // MIDDLE //
 
 #middleWrapper {
-    position: relative;
-    top: 0px;
-    left: 0px;
+    
 }
 
 // FOOTER //
 
 #footerWrapper {
-    position: relative;
-    top: 0px;
-    left: 0px;
+    display: block;
 }
 
 #navListFooter {
@@ -68,34 +72,71 @@ p {
 }
 
 .innerFooter {
-    float: left;
-    width: 33.333%;
-    text-align: center;
+    border-radius: 0.3em;
 }
 
-#navListFooter li * {
+.footerLeft {
+    float: left;
+    width: auto;
+}
+
+.footerMid {
+    float: left;
+    max-width: 60%;
+}
+
+.footerRight {
+    float: right;
+    width: auto;
+}
+
+#navListFooter li {
+    margin-bottom: 1%;
+}
+
+#navListFooter li a {
     text-decoration: none;
     padding: 0.7em;
     border-radius: 0.3em;
     border: solid thin black;
     background-color: green;
     color: black;
-    margin-top: 1%;
-    display: inline-block;
-    width: 30%;
+    display: block;
 }
 
 #navListFooterPoll li {
     list-style-type: none;
 }
 
-#navListFooterPoll li * {
+#navListFooterPoll li a {
     text-decoration: none;
     padding: 0.7em;
     border-radius: 0.3em;
     border: solid thin black;
     background-color: green;
     color: black;
-    margin-top: 1%;
-    display: inline-block; 
+    margin: 0.5% 0;
+    display: inline-block;
+}
+
+#navListFooterPoll li a:hover {
+    background-color: grey;
+}
+
+.footerMid p {
+    width: auto;
+}
+
+#navListFooterPoll li a {
+    
+}
+
+// FORMS REGISTER LOGIN //
+
+.formInput {
+    border: solid thin black;
+}
+
+ul {
+    
 }

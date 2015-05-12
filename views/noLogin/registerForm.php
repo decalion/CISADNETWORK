@@ -1,4 +1,4 @@
-<form action="index.php" method="post">
+<form action="index.php" method="post" class="formInput">
     <input hidden type="text" name="type" value="register" />
     <input hidden type="text" name="state" value="1" />
     <label>Name</label>

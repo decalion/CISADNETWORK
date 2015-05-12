@@ -16,13 +16,6 @@
         </li>
         <li>
             <form action="./index.php" method="post">
-                <input hidden type="text" name="type" value="games" />
-                <input hidden type="text" name="state" value="0" />
-                <input type="submit" value="GAMES" />
-            </form>
-        </li>
-        <li>
-            <form action="./index.php" method="post">
                 <input hidden type="text" name="type" value="recipes" />
                 <input hidden type="text" name="state" value="0" />
                 <input type="submit" value="RECIPES" />
