@@ -38,7 +38,7 @@
             <form action="./index.php" method="post">
                 <input hidden type="text" name="type" value="search" />
                 <input hidden type="text" name="state" value="0" />
-                <input type="text" id="userInputSearch" value="search..." />
+                <input type="text" id="userInputSearch" name="userInputSearch" value="search..." />
                 <input type="submit" value="SEARCH" />
             </form>
         </li>
@@ -58,4 +58,4 @@
         </li>
     </ul>
 </div>
-<div class="middleWrapper wrapper">
+<div class="middleWrapper wrapper defaultBorder">

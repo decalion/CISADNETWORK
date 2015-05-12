@@ -1,3 +1,5 @@
-<p>
-    Test
-</p>
+<?php
+
+    loadDefault('faq');
+
+?>

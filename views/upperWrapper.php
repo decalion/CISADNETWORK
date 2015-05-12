@@ -11,3 +11,4 @@
         <li><a href="#">LOGIN</a></li>
     </ul>
 </div>
+<div class="middleWrapper wrapper">

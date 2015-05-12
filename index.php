@@ -4,6 +4,10 @@
 
     include './views/head.php';
     include './models/functions.php';
+    include './models/classes/Connection.php';
+    
+    $infoDb = getInfoDb();
+    $conn = new Connection($infoDb['host'], $infoDb['user'], $infoDb['pass'], $infoDb['db']);
     
     if (isset($_SESSION['userData'])) {
         include './views/upperWrapper.php';

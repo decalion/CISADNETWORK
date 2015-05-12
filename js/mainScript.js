@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    $('#userInputSearch').focus(function () {
+    $('#userInputSearch').focus(function() {
         $(this).val('');
     });
-    $('#userInputSearch').blur(function () {
-        $(this).val('search...');
+    $('#userInputSearch').blur(function() {
+        if ($('#userInputSearch').val() == '') {
+            $(this).val('search...');
+        }
     });
 });

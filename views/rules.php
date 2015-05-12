@@ -1,0 +1,5 @@
+<?php
+
+    loadDefault('rules');
+
+?>

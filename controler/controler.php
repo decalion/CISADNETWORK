@@ -47,12 +47,15 @@
             }
             break;
         case 'search':
-            
+            include './views/search.php';
             break;
         case 'register':
             switch ($_POST['state']) {
                 case 0:
                     include './views/noLogin/registerForm.php';
+                    break;
+                case 1:
+                    include './checkRegister.php';
                     break;
                 default:
                     break;
@@ -71,6 +74,24 @@
             switch ($_POST['state']) {
                 case 0:
                     include './views/faq.php';
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case 'meetUs':
+            switch ($_POST['state']) {
+                case 0:
+                    include './views/meetUs.php';
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case 'rules':
+            switch ($_POST['state']) {
+                case 0:
+                    include './views/rules.php';
                     break;
                 default:
                     break;

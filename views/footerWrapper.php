@@ -4,9 +4,9 @@
         <img src="./images/logoWithLetters.png" />
     </div>
     <div class="footerMid innerFooter">
-        <p>
+        <div class="defaultBorder">
             ¿Qué grupo es el mejor de todos?
-        </p>
+        </div>
         <ul id="navListFooterPoll">
             <li><a href="#">Extremoduro</a></li>
             <li><a href="#">Extremoduro Extremoduro</a></li>
