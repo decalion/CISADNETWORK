@@ -67,6 +67,15 @@
                     break;
             }
             break;
+        case 'faq':
+            switch ($_POST['state']) {
+                case 0:
+                    include './views/faq.php';
+                    break;
+                default:
+                    break;
+            }
+            break;
         default:
             break;
     }

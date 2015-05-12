@@ -26,6 +26,12 @@ img {
     height: auto;
 }
 
+// FORMS //
+
+form {
+    border: solid red;
+}
+
 // UPPER //
 
 #upperWrapper {
@@ -82,7 +88,7 @@ img {
 
 .footerMid {
     float: left;
-    max-width: 60%;
+    max-width: 50%;
 }
 
 .footerRight {
@@ -124,19 +130,9 @@ img {
 }
 
 .footerMid p {
-    width: auto;
-}
-
-#navListFooterPoll li a {
     
 }
 
-// FORMS REGISTER LOGIN //
-
-.formInput {
-    border: solid thin black;
-}
-
-ul {
+#navListFooterPoll li a {
     
 }
