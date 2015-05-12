@@ -1,11 +1,3 @@
-<?php
-    if (isset($_SESSION['log'])) {
-        foreach ($array as $key => $value) {
-            echo $value;
-        }
-        unset($_SESSION['log']);
-    }
-?>
 <script src="./js/checkRegister.js" type="text/javascript"></script>
 <form action="index.php" method="post" class="formInput">
     <input hidden type="text" name="type" value="register" />

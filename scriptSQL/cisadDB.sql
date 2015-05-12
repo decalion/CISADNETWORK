@@ -3,23 +3,23 @@ CREATE DATABASE cisadnetwork;
 USE cisadnetwork;
 
 
-CREATE TABLE rol (
-    idrol INT PRIMARY KEY AUTO_INCREMENT,
-    namerol VARCHAR(20) NOT NULL
+CREATE TABLE role (
+    idrole INT PRIMARY KEY AUTO_INCREMENT,
+    namerole VARCHAR(20) NOT NULL
 )  ENGINE=INNODB;
 
 
 CREATE TABLE user (
     iduser INT PRIMARY KEY AUTO_INCREMENT,
-    nickname VARCHAR(30) UNIQUE NOT NULL,
-	pass VARCHAR(30)  NOT NULL,
-    nameuser VARCHAR(30),
-    surname VARCHAR(30),
+    username VARCHAR(30) UNIQUE NOT NULL,
+    password VARCHAR(30)  NOT NULL,
+    name VARCHAR(30),
+    lastname VARCHAR(30),
     email VARCHAR(30) NOT NULL,
     avatarurl VARCHAR(200),
-    idrol INT NOT NULL,
-    FOREIGN KEY (idrol)
-        REFERENCES rol (idrol)
+    idrole INT NOT NULL,
+    FOREIGN KEY (idrole)
+        REFERENCES role (idrole)
 )  ENGINE=INNODB;
 
 CREATE TABLE state (
@@ -545,6 +545,7 @@ CREATE TABLE votescommentcookrecide (
 
 
 
-INSERT INTO rol (idrol,namerol) VALUES(1,'ADMIN');
-INSERT INTO rol (idrol,namerol) VALUES(2,'USER');
-INSERT INTO user (iduser,nickname,pass,nameuser,surname,email,avatarurl,idrol) VALUES(1,"decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1);
+INSERT INTO role (namerole) VALUES('ADMIN');
+INSERT INTO role (namerole) VALUES('USER');
+INSERT INTO user (username,password,name,lastname,email,avatarurl,idrole) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1);
+INSERT INTO user (username,password,name,lastname,email,avatarurl,idrole) VALUES("adrian","adrian","Adrian","Garcia","adriangarciamanchado@gmail.com","",1);

@@ -2,9 +2,9 @@
     <ul id="navList">
         <li>
             <form action="./index.php" method="post">
-                <input hidden type="text" name="type" value="films" />
+                <input hidden type="text" name="type" value="movies" />
                 <input hidden type="text" name="state" value="0" />
-                <input type="submit" value="FILMS" />
+                <input type="submit" value="MOVIES" />
             </form>
         </li>
         <li>

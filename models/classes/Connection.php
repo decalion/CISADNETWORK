@@ -2,38 +2,42 @@
 
     class Connection {
 
-        private $conection;
+        private $connection;
 
         function __construct($host, $user, $pass, $dataBase) {
             if ($dataBase == null) {
-                $this->conection = new mysqli($host, $user, $pass);
+                $this->connection = new mysqli($host, $user, $pass);
             } else {
-                $this->conection = new mysqli($host, $user, $pass, $dataBase);
+                $this->connection = new mysqli($host, $user, $pass, $dataBase);
             }
-            if ($this->conection->connect_errno) {
-                echo "Failed connection: " . $this->conection->connect_error;
+            if ($this->connection->connect_errno) {
+                echo "Failed connection: " . $this->connection->connect_error;
                 exit();
             }
         }
 
-        function closeConection() {
-            $this->conection->close();
+        function closeConnection() {
+            $this->connection->close();
         }
 
-        function free($consulta) {
-            $consulta->free();
+        function free($query) {
+            $query->free();
         }
 
-        function query($sentenciSql) {
-            return $this->conection->query($sentenciSql);
+        function query($query) {
+            return $this->connection->query($query);
         }
 
-        function result($consulta) {
-            return $consulta->fetch_array(MYSQLI_ASSOC);
+        function result($query) {
+            return $query->fetch_array(MYSQLI_ASSOC);
         }
 
         function getErrorNum() {
-            return $this->conection->errno;
+            return $this->connection->errno;
+        }
+        
+        function getConnection() {
+            return $this->connection;
         }
 
     }
