@@ -3,6 +3,7 @@
     session_start();
 
     include './views/head.php';
+    include './models/functions.php';
     
     if (isset($_SESSION['userData'])) {
         include './views/upperWrapper.php';
