@@ -8,8 +8,8 @@ body {
 }
 
 .wrapper {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
     margin-top: 1%;
 }
 
@@ -21,28 +21,38 @@ p {
     padding: 0.7em;
 }
 
-li *:hover {
-    background-color: #3e8f3e;
+img {
+    width: auto;
+    height: auto;
+}
+
+// FORMS //
+
+form {
+    border: solid red;
 }
 
 // UPPER //
 
 #upperWrapper {
-    position: relative;
-    top: 0px;
-    left: 0px;
+    
 }
 
 #navList li a {
     display: block;
 }
 
+#navList li form input:hover {
+    background-color: grey;
+}
+
 #navList li {
     display: inline-block;
     list-style-type: none;
+    margin: 0.5% 0;
 }
 
-#navList li * {
+#navList li input {
     text-decoration: none;
     padding: 0.7em;
     border-radius: 0.3em;
@@ -54,17 +64,13 @@ li *:hover {
 // MIDDLE //
 
 #middleWrapper {
-    position: relative;
-    top: 0px;
-    left: 0px;
+    
 }
 
 // FOOTER //
 
 #footerWrapper {
-    position: relative;
-    top: 0px;
-    left: 0px;
+    display: block;
 }
 
 #navListFooter {
@@ -72,35 +78,61 @@ li *:hover {
 }
 
 .innerFooter {
-    float: left;
-    width: 33.333%;
-    text-align: center;
+    border-radius: 0.3em;
 }
 
-#navListFooter li * {
+.footerLeft {
+    float: left;
+    width: auto;
+}
+
+.footerMid {
+    float: left;
+    max-width: 50%;
+}
+
+.footerRight {
+    float: right;
+    width: auto;
+}
+
+#navListFooter li {
+    margin-bottom: 1%;
+}
+
+#navListFooter li a {
     text-decoration: none;
     padding: 0.7em;
     border-radius: 0.3em;
     border: solid thin black;
     background-color: green;
     color: black;
-    margin-top: 1%;
-    display: inline-block;
-    width: 30%;
+    display: block;
 }
 
 #navListFooterPoll li {
     list-style-type: none;
 }
 
-#navListFooterPoll li * {
+#navListFooterPoll li a {
     text-decoration: none;
     padding: 0.7em;
     border-radius: 0.3em;
     border: solid thin black;
     background-color: green;
     color: black;
-    margin-top: 1%;
+    margin: 0.5% 0;
     display: inline-block;
-    width: 94%;
+}
+
+#navListFooterPoll li a:hover {
+    background-color: grey;
+}
+
+.footerMid p {
+    
+}
+
+#navListFooterPoll li a {
+    
 }
