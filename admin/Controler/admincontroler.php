@@ -6,6 +6,7 @@ include_once './Models/Classes/DB/impl/AdminMysqlImpl.php';
 include_once './Models/Classes/Facade.php';
 include_once './Models/Classes/DB/DTO/Login.php';
 
+
 if(!isset($_SESSION['test'])){
     session_start();
     $_SESSION['test']="test";
@@ -28,7 +29,20 @@ if(isset($_POST['ids'])){
         
     }
        
-}else{
+}elseif(isset($_GET['ids'])){
+    
+        $id=$_GET['ids'];
+    
+    switch($id){
+        case LOGOUT:
+            include './Controler/Logout.php';
+         break;
+     
+     default : include './views/adminLogin.php'; break;
+    
+}
+}
+else{
     
 include './views/adminLogin.php';
     
