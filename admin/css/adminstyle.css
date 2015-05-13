@@ -10,6 +10,9 @@
 
 body{
  font-family: "Calibri";
+ color:white;
+     
+    // #0B0B61;
 }
 
 
@@ -17,12 +20,18 @@ body{
     margin-left: 15%;
     margin-right:15%;
     width:70%;   
-    //background-color:black;
-    
+    background-color:#819FF7;
+    margin-top:2%;
+    border-color:#5858FA;
+    border-style: solid;
+    border-width: 3px;
+    border-radius:10px 10px 10px 10px;
 }
+    
+
 
 .header{
-    background-color: yellow;
+    //background-color: yellow;
     width:100%;
     text-align: center;
     // line-height:100%;
@@ -31,19 +40,19 @@ body{
 .content{
     margin-top:2%;
     width:100%;
-    background-color: red;
+    //background-color: red;
 }
 
 
 .footer{
     margin-top:2%;
     width:100%;
-    background-color: green;
+    //background-color: green;
     
 }
 
 .login{
-border-color:black;
+border-color:#5858FA;
 border-style: solid;
 border-width: 3px;
 border-radius:10px 10px 10px 10px;
@@ -83,3 +92,4 @@ margin-bottom:5%;
     width:100%;
     
 }
+

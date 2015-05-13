@@ -18,6 +18,8 @@ CREATE TABLE user (
     email VARCHAR(30) NOT NULL,
     avatarurl VARCHAR(200),
     idrole INT NOT NULL,
+	activemail BINARY DEFAULT 0,
+	active BINARY DEFAULT 1,
     FOREIGN KEY (idrole)
         REFERENCES role (idrole)
 )  ENGINE=INNODB;

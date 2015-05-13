@@ -30,14 +30,14 @@ class AdminMysqlImpl extends AbstractDB {
 
     public function SelectCredencials() {
         
-        $query = $this->conection->query("SELECT nickname,pass,idrol FROM user");
+        $query = $this->conection->query("SELECT username,password,idrole FROM user");
         $result = array();
          while ($rst = $this->conection->result($query)) {
 
             $temp=null;
-            $user = $rst["nickname"];  
-            $pass = $rst["pass"];
-            $rol= $rst["idrol"];
+            $user = $rst["username"];  
+            $pass = $rst["password"];
+            $rol= $rst["idrole"];
             $temp=new Login($user, $pass, $rol);
             
             array_push($result, $temp);
