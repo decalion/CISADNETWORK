@@ -57,7 +57,7 @@
                         $toInclude = './views/noLogin/registerForm.php';
                         break;
                     case 1:
-                        $toInclude = './models/checkRegister.php';
+                        $toInclude = './models/addRegister.php';
                         break;
                     default:
                         break;

@@ -12,7 +12,7 @@ CREATE TABLE role (
 CREATE TABLE user (
     iduser INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(30) UNIQUE NOT NULL,
-    password VARCHAR(30)  NOT NULL,
+    password VARCHAR(250)  NOT NULL,
     name VARCHAR(30),
     lastname VARCHAR(30),
     email VARCHAR(30) NOT NULL,
