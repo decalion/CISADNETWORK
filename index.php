@@ -11,6 +11,7 @@
     }
 
     include './views/head.php';
+    include './models/dbConnection.php';
     include './models/functions.php';
     include './models/classes/Connection.php';
     
