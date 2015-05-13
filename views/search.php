@@ -1,5 +1,5 @@
 <?php
 
-    echo '<p>'.$_POST['userInputSearch'].'</p>';
+   $log['msg'] = '<p>'.$_POST['userInputSearch'].'</p>';
 
 ?>

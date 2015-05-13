@@ -1,11 +1,12 @@
 <?php
 
+    $toInclude = './views/default.php';
     if (isset($_POST)) {
         switch ($_POST['type']) {
             case 'movies':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/noLogin/movies.php';
+                        $toInclude = './views/movies.php';
                         break;
                     default:
                         break;
@@ -14,7 +15,7 @@
             case 'series':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/noLogin/series.php';
+                        $toInclude = './views/series.php';
                         break;
                     default:
                         break;
@@ -23,7 +24,7 @@
             case 'recipes':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/noLogin/recipes.php';
+                        $toInclude = './views/recipes.php';
                         break;
                     default:
                         break;
@@ -32,7 +33,7 @@
             case 'books':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/noLogin/books.php';
+                        $toInclude = './views/books.php';
                         break;
                     default:
                         break;
@@ -41,7 +42,7 @@
             case 'music':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/noLogin/music.php';
+                        $toInclude = './views/music.php';
                         break;
                     default:
                         break;
@@ -53,10 +54,10 @@
             case 'register':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/noLogin/registerForm.php';
+                        $toInclude = './views/noLogin/registerForm.php';
                         break;
                     case 1:
-                        include './checkRegister.php';
+                        $toInclude = './checkRegister.php';
                         break;
                     default:
                         break;
@@ -65,7 +66,7 @@
             case 'login':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/noLogin/loginForm.php';
+                        $toInclude = './views/noLogin/loginForm.php';
                         break;
                     case 1:
                         include './controler/checkLogin.php';
@@ -77,7 +78,7 @@
             case 'faq':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/faq.php';
+                        $toInclude = './views/faq.php';
                         break;
                     default:
                         break;
@@ -86,7 +87,7 @@
             case 'meetUs':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/meetUs.php';
+                        $toInclude = './views/meetUs.php';
                         break;
                     default:
                         break;
@@ -95,7 +96,7 @@
             case 'rules':
                 switch ($_POST['state']) {
                     case 0:
-                        include './views/rules.php';
+                        $toInclude = './views/rules.php';
                         break;
                     default:
                         break;
