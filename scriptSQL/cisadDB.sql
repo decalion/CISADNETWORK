@@ -12,7 +12,7 @@ CREATE TABLE role (
 CREATE TABLE user (
     iduser INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(30) UNIQUE NOT NULL,
-    password VARCHAR(30)  NOT NULL,
+    password VARCHAR(250)  NOT NULL,
     name VARCHAR(30),
     lastname VARCHAR(30),
     email VARCHAR(30) NOT NULL,
@@ -104,8 +104,8 @@ CREATE TABLE songs (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE movie (
-    idmovie INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE movies (
+    idmovies INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
     sinopsi VARCHAR(250) NOT NULL,
     imageurl VARCHAR(200),
@@ -190,19 +190,19 @@ CREATE TABLE statemusic (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE statemovie (
+CREATE TABLE statemovies (
     iduser INT NOT NULL,
     idstate INT NOT NULL,
-    idmovie INT NOT NULL,
-    PRIMARY KEY (iduser , idstate , idmovie),
+    idmovies INT NOT NULL,
+    PRIMARY KEY (iduser , idstate , idmovies),
     FOREIGN KEY (iduser)
         REFERENCES user (iduser)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idstate)
         REFERENCES state (idstate)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (idmovie)
-        REFERENCES movie (idmovie)
+    FOREIGN KEY (idmovies)
+        REFERENCES movies (idmovies)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
@@ -309,13 +309,13 @@ CREATE TABLE actorserie (
 )  ENGINE=INNODB;
 
 
-CREATE TABLE actormovie (
-    idmovie INT,
+CREATE TABLE actormovies (
+    idmovies INT,
     idactor INT,
     ifdirector BINARY NOT NULL,
-    PRIMARY KEY (idmovie , idactor),
-    FOREIGN KEY (idmovie)
-        REFERENCES movie (idmovie)
+    PRIMARY KEY (idmovies , idactor),
+    FOREIGN KEY (idmovies)
+        REFERENCES movies (idmovies)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idactor)
         REFERENCES actors (idactor)
@@ -351,15 +351,15 @@ CREATE TABLE genreserie (
 )  ENGINE=INNODB;
 
 
-CREATE TABLE genremovie (
+CREATE TABLE genremovies (
     idgenre INT,
-    idmovie INT,
-    PRIMARY KEY (idgenre , idmovie),
+    idmovies INT,
+    PRIMARY KEY (idgenre , idmovies),
     FOREIGN KEY (idgenre)
         REFERENCES genre (idgenre)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (idmovie)
-        REFERENCES movie (idmovie)
+    FOREIGN KEY (idmovies)
+        REFERENCES movies (idmovies)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
@@ -376,27 +376,27 @@ CREATE TABLE genrebook (
 )  ENGINE=INNODB;
 
 
-CREATE TABLE commentsmovie (
+CREATE TABLE commentsmovies (
     idcomment INT PRIMARY KEY AUTO_INCREMENT,
-    idmovie INT NOT NULL,
+    idmovies INT NOT NULL,
     iduser INT NOT NULL,
     date VARCHAR(30) NOT NULL,
     commentary VARCHAR(255) NOT NULL,
-    FOREIGN KEY (idmovie)
-        REFERENCES movie (idmovie)
+    FOREIGN KEY (idmovies)
+        REFERENCES movies (idmovies)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (iduser)
         REFERENCES user (iduser)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE votescommentmovie (
+CREATE TABLE votescommentmovies (
     idcomment INT NOT NULL,
     iduser INT NOT NULL,
     vote INT NOT NULL,
     PRIMARY KEY (idcomment , iduser),
     FOREIGN KEY (idcomment)
-        REFERENCES commentsmovie (idcomment)
+        REFERENCES commentsmovies (idcomment)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (iduser)
         REFERENCES user (iduser)

@@ -1,7 +1,7 @@
 <?php
 
     $toInclude = './views/default.php';
-    if (isset($_POST)) {
+    if (isset($_POST) && count($_POST) > 0) {
         switch ($_POST['type']) {
             case 'movies':
                 switch ($_POST['state']) {
@@ -49,7 +49,7 @@
                 }
                 break;
             case 'search':
-                include './views/search.php';
+                $toInclude = './views/search.php';
                 break;
             case 'register':
                 switch ($_POST['state']) {
@@ -57,7 +57,7 @@
                         $toInclude = './views/noLogin/registerForm.php';
                         break;
                     case 1:
-                        $toInclude = './checkRegister.php';
+                        $toInclude = './models/addRegister.php';
                         break;
                     default:
                         break;
@@ -69,7 +69,7 @@
                         $toInclude = './views/noLogin/loginForm.php';
                         break;
                     case 1:
-                        include './controler/checkLogin.php';
+                        include './models/checkLogin.php';
                         break;
                     default:
                         break;

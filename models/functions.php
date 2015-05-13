@@ -7,8 +7,8 @@
         $factory->loadDefaultInfo();
     }
     
-    function getInfoDb() {
-        return ['user' => 'root', 'pass' => 'adrian', 'host' => 'localhost', 'db' => 'cisadnetwork'];
+    function encrypt($password) {
+        return crypt($password);
     }
-
+    
 ?>

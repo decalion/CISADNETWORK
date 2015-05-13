@@ -36,6 +36,10 @@
             return $this->connection->errno;
         }
         
+        function getError() {
+            return $this->connection->error;
+        }
+        
         function getConnection() {
             return $this->connection;
         }
