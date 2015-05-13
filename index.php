@@ -4,6 +4,8 @@
     
     if (isset($_POST)) {
         if ($_POST['type'] == 'logout') {
+            session_unset();
+            $_SESSION = array();
             session_destroy();
         }
     }
@@ -16,13 +18,18 @@
     $link = new Connection($infoDb['host'], $infoDb['user'], $infoDb['pass'], $infoDb['db']);
     mysqli_select_db($link->getConnection(), 'cisadnetwork');
     
-    if (isset($_SESSION['userData'])) {
-        include './views/upperWrapper.php';
-    } else {
-        include './views/noLogin/upperWrapper.php';
-    }
-    
     include './controler/controler.php';
+    
+    include './views/upperWrapper.php';
+    
+    include $toInclude;
+    
+    if (isset($log)) {
+        foreach ($log as $msg) {
+            echo '<p>'.$msg.'</p>';
+        }
+        unset($log);
+    }
     
     include './views/footerWrapper.php';
     include './views/bottom.php';

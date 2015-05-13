@@ -37,7 +37,6 @@
         <li>
             <form action="./index.php" method="post">
                 <input hidden type="text" name="type" value="search" />
-                <input hidden type="text" name="state" value="0" />
                 <input type="text" id="userInputSearch" name="userInputSearch" value="search..." />
                 <input type="submit" value="SEARCH" />
             </form>
