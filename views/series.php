@@ -1,5 +1,5 @@
 <?php
 
-    loadDefault('series');
+    loadDefault('series', $link);
 
 ?>

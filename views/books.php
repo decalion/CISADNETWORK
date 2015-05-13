@@ -1,5 +1,5 @@
 <?php
 
-    loadDefault('books');
+    loadDefault('books', $link);
 
 ?>
