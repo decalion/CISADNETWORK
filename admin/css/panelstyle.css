@@ -1,0 +1,54 @@
+/* 
+    Created on : 13-may-2015, 16:35:09
+    Author     : decalion
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+ font-family: "Calibri";
+  color:white;
+}
+
+
+.wrapper{
+    text-align: center;
+    margin-left: 15%;
+    margin-right:15%;
+    margin-top:2%;
+    width:70%; 
+    background-color:#819FF7;
+    //border-color:#5858FA;
+    //border-style: solid;
+    border-width: 3px;
+    border-radius:10px 10px 10px 10px;  
+    
+}
+
+.header{
+    text-align: center;
+    width:100%;
+}
+
+.menubuton{
+    display:inline-block;
+    text-align: center;
+    width:7%;
+    margin-top:2%;
+    margin-left:2%;
+    border-color:#5858FA;
+    border-style: solid;
+    border-width: 3px;
+    border-radius:10px 10px 10px 10px;  
+}
+
+
+.center{
+    margin-top:2%;
+    text-align: center;
+    width:100%;
+}

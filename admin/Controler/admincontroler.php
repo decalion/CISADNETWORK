@@ -6,6 +6,10 @@ include_once './Models/Classes/DB/impl/AdminMysqlImpl.php';
 include_once './Models/Classes/Facade.php';
 include_once './Models/Classes/DB/DTO/Login.php';
 
+if(!isset($_SESSION['test'])){
+    session_start();
+    $_SESSION['test']="test";
+}
 
 $facade=new Facade();
 
