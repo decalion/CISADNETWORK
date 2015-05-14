@@ -56,35 +56,21 @@ CREATE TABLE chapterseries (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE genre (
-    idgenre INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(40) NOT NULL,
-    description VARCHAR(255)
+CREATE TABLE groups (
+    idgroups INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    image VARCHAR(200),
+    average FLOAT DEFAULT 0,
+    totalvotes INT DEFAULT 0
 )  ENGINE=INNODB;
 
 CREATE TABLE singers (
     idsingers INT PRIMARY KEY AUTO_INCREMENT,
-    idgroups INT,
-    name VARCHAR(30) NOT NULL
-)  ENGINE=INNODB;
-
-CREATE TABLE groups (
-    idgroups INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(30) NOT NULL,
-    artist VARCHAR(30) NOT NULL,
-    image VARCHAR(200),
-    average FLOAT DEFAULT 0,
-    totalvotes INT DEFAULT 0,
-    idsingers INT NOT NULL,
-    FOREIGN KEY (idsingers)
-        REFERENCES singers (idsingers)
-        ON DELETE CASCADE ON UPDATE CASCADE
-)  ENGINE=INNODB;
-
-CREATE TABLE style (
-    idstyle INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(40) NOT NULL,
-    description VARCHAR(255)
+    idgroups INT NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    FOREIGN KEY (idgroups)
+            REFERENCES groups (idgroups)
+            ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
 CREATE TABLE songs (
@@ -100,6 +86,7 @@ CREATE TABLE movies (
     idmovies INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
     sinopsi VARCHAR(250) NOT NULL,
+    year INT NOT NULL,
     imageurl VARCHAR(200),
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
@@ -257,18 +244,6 @@ CREATE TABLE songsgroups (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE groupstyle (
-    idgroups INT,
-    idstyle INT,
-    PRIMARY KEY (idgroups , idstyle),
-    FOREIGN KEY (idgroups)
-        REFERENCES groups (idgroups)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (idstyle)
-        REFERENCES style (idstyle)
-        ON DELETE CASCADE ON UPDATE CASCADE
-)  ENGINE=INNODB;
-
 CREATE TABLE recipesingredient (
     idrecipes INT,
     idingredient INT,
@@ -320,12 +295,18 @@ CREATE TABLE authorbooks (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
+CREATE TABLE genres (
+    idgenres INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(40) NOT NULL,
+    description VARCHAR(255)
+) ENGINE=INNODB;
+
 CREATE TABLE genreseries (
-    idgenre INT,
+    idgenres INT,
     idseries INT,
-    PRIMARY KEY (idgenre , idseries),
-    FOREIGN KEY (idgenre)
-        REFERENCES genre (idgenre)
+    PRIMARY KEY (idgenres , idseries),
+    FOREIGN KEY (idgenres)
+        REFERENCES genres (idgenres)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idseries)
         REFERENCES series (idseries)
@@ -333,11 +314,11 @@ CREATE TABLE genreseries (
 )  ENGINE=INNODB;
 
 CREATE TABLE genremovies (
-    idgenre INT,
+    idgenres INT,
     idmovies INT,
-    PRIMARY KEY (idgenre , idmovies),
-    FOREIGN KEY (idgenre)
-        REFERENCES genre (idgenre)
+    PRIMARY KEY (idgenres , idmovies),
+    FOREIGN KEY (idgenres)
+        REFERENCES genres (idgenres)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idmovies)
         REFERENCES movies (idmovies)
@@ -345,14 +326,26 @@ CREATE TABLE genremovies (
 )  ENGINE=INNODB;
 
 CREATE TABLE genrebook (
-    idgenre INT,
+    idgenres INT,
     idbook INT,
-    PRIMARY KEY (idgenre , idbook),
-    FOREIGN KEY (idgenre)
-        REFERENCES genre (idgenre)
+    PRIMARY KEY (idgenres , idbook),
+    FOREIGN KEY (idgenres)
+        REFERENCES genres (idgenres)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idbook)
         REFERENCES books (idbook)
+        ON DELETE CASCADE ON UPDATE CASCADE
+)  ENGINE=INNODB;
+
+CREATE TABLE genregroup (
+    idgenres INT,
+    idgroups INT,
+    PRIMARY KEY (idgenres , idgroups),
+    FOREIGN KEY (idgenres)
+        REFERENCES genres (idgenres)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (idgroups)
+        REFERENCES groups (idgroups)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
@@ -515,3 +508,5 @@ INSERT INTO role (name) VALUES('ADMIN');
 INSERT INTO role (name) VALUES('USER');
 INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKey,activeMail) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1,"", 1);
 INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKey,activeMail) VALUES("adrian","a1b909ec1cc11cce40c28d3640eab600e582f833","Adrian","Garcia","adriangarciamanchado@gmail.com","",1,"a1b909ec1cc11cce40c28d3640eab600e582f833", 1);
+
+INSERT INTO genres (idgenres, name, description) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL);
