@@ -8,7 +8,6 @@ CREATE TABLE role (
     name VARCHAR(20) NOT NULL
 )  ENGINE=INNODB;
 
-
 CREATE TABLE users (
     idusers INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(30) UNIQUE NOT NULL,
@@ -45,8 +44,6 @@ CREATE TABLE chapter (
     numberchapter INT NOT NULL
 )  ENGINE=INNODB;
 
-
-
 CREATE TABLE chapterseries (
     idseries INT NOT NULL,
     idchapter INT NOT NULL,
@@ -59,23 +56,20 @@ CREATE TABLE chapterseries (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-
 CREATE TABLE genre (
     idgenre INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(40) NOT NULL,
     description VARCHAR(255)
 )  ENGINE=INNODB;
 
-
-
-CREATE TABLE singer (
-    idsinger INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE singers (
+    idsingers INT PRIMARY KEY AUTO_INCREMENT,
+    idgroups INT
     name VARCHAR(30) NOT NULL
 )  ENGINE=INNODB;
 
-
-CREATE TABLE music (
-    idmusic INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE groups (
+    idgroups INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
     artist VARCHAR(30) NOT NULL,
     image VARCHAR(200),
@@ -92,8 +86,6 @@ CREATE TABLE style (
     name VARCHAR(40) NOT NULL,
     description VARCHAR(255)
 )  ENGINE=INNODB;
-
-
 
 CREATE TABLE songs (
     idsong INT PRIMARY KEY AUTO_INCREMENT,
@@ -112,8 +104,6 @@ CREATE TABLE movies (
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
 )  ENGINE=INNODB;
-
-
 
 CREATE TABLE author (
     idauthor INT PRIMARY KEY AUTO_INCREMENT,
@@ -147,7 +137,6 @@ CREATE TABLE recipes (
     totalvotes INT DEFAULT 0
 )  ENGINE=INNODB;
 
-
 CREATE TABLE ingredients (
     idingredient INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(40) NOT NULL,
@@ -175,19 +164,19 @@ CREATE TABLE stateseries (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE statemusic (
+CREATE TABLE stategroups (
     idusers INT NOT NULL,
     idstate INT NOT NULL,
-    idmusic INT NOT NULL,
-    PRIMARY KEY (idusers , idstate , idmusic),
+    idgroups INT NOT NULL,
+    PRIMARY KEY (idusers , idstate , idgroups),
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idstate)
         REFERENCES state (idstate)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (idmusic)
-        REFERENCES music (idmusic)
+    FOREIGN KEY (idgroups)
+        REFERENCES groups (idgroups)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
@@ -255,33 +244,30 @@ CREATE TABLE staterecipes (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-
-CREATE TABLE songsmusic (
-    idsongmusic INT AUTO_INCREMENT NOT NULL,
-    idmusic INT NOT NULL,
-    idsong INT NOT NULL,
-    PRIMARY KEY (idsongmusic , idmusic , idsong),
-    FOREIGN KEY (idmusic)
-        REFERENCES music (idmusic)
+CREATE TABLE songsgroups (
+    idsonggroups INT AUTO_INCREMENT NOT NULL,
+    idgroups INT NOT NULL,
+    idsongs INT NOT NULL,
+    PRIMARY KEY (idsongsgroups , idgroups , idsongs),
+    FOREIGN KEY (idgroups)
+        REFERENCES groups (idgroups)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (idsong)
-        REFERENCES songs (idsong)
+    FOREIGN KEY (idsongs)
+        REFERENCES songs (idsongs)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-
-CREATE TABLE musicstyle (
-    idmusic INT,
+CREATE TABLE groupstyle (
+    idgroups INT,
     idstyle INT,
-    PRIMARY KEY (idmusic , idstyle),
-    FOREIGN KEY (idmusic)
-        REFERENCES music (idmusic)
+    PRIMARY KEY (idgroups , idstyle),
+    FOREIGN KEY (idgroups)
+        REFERENCES groups (idgroups)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idstyle)
         REFERENCES style (idstyle)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
-
 
 CREATE TABLE recipesingredient (
     idrecipes INT,
@@ -294,7 +280,6 @@ CREATE TABLE recipesingredient (
         REFERENCES ingredients (idingredient)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
-
 
 CREATE TABLE actorseries (
     idseries INT,
@@ -309,7 +294,6 @@ CREATE TABLE actorseries (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-
 CREATE TABLE actormovies (
     idmovies INT,
     idactor INT,
@@ -322,7 +306,6 @@ CREATE TABLE actormovies (
         REFERENCES actors (idactor)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
-
 
 CREATE TABLE authorbooks (
     idbook INT,
@@ -337,8 +320,6 @@ CREATE TABLE authorbooks (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-
-
 CREATE TABLE genreseries (
     idgenre INT,
     idseries INT,
@@ -350,7 +331,6 @@ CREATE TABLE genreseries (
         REFERENCES series (idseries)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
-
 
 CREATE TABLE genremovies (
     idgenre INT,
@@ -375,7 +355,6 @@ CREATE TABLE genrebook (
         REFERENCES books (idbook)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
-
 
 CREATE TABLE commentsmovies (
     idcomment INT PRIMARY KEY AUTO_INCREMENT,
@@ -429,34 +408,31 @@ CREATE TABLE votescommentseries (
         REFERENCES users (idusers)
 )  ENGINE=INNODB;
 
-
-CREATE TABLE commentmusic (
+CREATE TABLE commentgroups (
     idcomment INT PRIMARY KEY AUTO_INCREMENT,
-    idmusic INT NOT NULL,
+    idgroups INT NOT NULL,
     idusers INT NOT NULL,
     date VARCHAR(30) NOT NULL,
     commentary VARCHAR(255) NOT NULL,
-    FOREIGN KEY (idmusic)
-        REFERENCES music (idmusic)
+    FOREIGN KEY (idgroups)
+        REFERENCES groups (idgroups)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE votescommentmusic (
+CREATE TABLE votescommentgroups (
     idcomment INT NOT NULL,
     idusers INT NOT NULL,
     votes INT NOT NULL,
     PRIMARY KEY (idcomment , idusers),
     FOREIGN KEY (idcomment)
-        REFERENCES commentmusic (idcomment)
+        REFERENCES commentgroups (idcomment)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
 )  ENGINE=INNODB;
-
-
 
 CREATE TABLE commentbook (
     idcomment INT PRIMARY KEY AUTO_INCREMENT,
@@ -472,7 +448,6 @@ CREATE TABLE commentbook (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-
 CREATE TABLE votescommentbook (
     idcomment INT NOT NULL,
     idusers INT NOT NULL,
@@ -484,8 +459,6 @@ CREATE TABLE votescommentbook (
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
 )  ENGINE=INNODB;
-
-
 
 CREATE TABLE commentnews (
     idcomment INT PRIMARY KEY AUTO_INCREMENT,
@@ -501,7 +474,6 @@ CREATE TABLE commentnews (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-
 CREATE TABLE votescommentnews (
     idcomment INT NOT NULL,
     idusers INT NOT NULL,
@@ -513,8 +485,6 @@ CREATE TABLE votescommentnews (
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
 )  ENGINE=INNODB;
-
-
 
 CREATE TABLE commentrecipes (
     idcomment INT PRIMARY KEY AUTO_INCREMENT,
@@ -529,7 +499,6 @@ CREATE TABLE commentrecipes (
         REFERENCES users (idusers)
 )  ENGINE=INNODB;
 
-
 CREATE TABLE votescommentrecipes (
     idcomment INT NOT NULL,
     idusers INT NOT NULL,
@@ -541,12 +510,6 @@ CREATE TABLE votescommentrecipes (
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
 )  ENGINE=INNODB;
-
-
-
-
-
-
 
 INSERT INTO role (name) VALUES('ADMIN');
 INSERT INTO role (name) VALUES('USER');
