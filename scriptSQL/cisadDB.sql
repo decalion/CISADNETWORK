@@ -510,3 +510,5 @@ INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKe
 INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKey,activeMail) VALUES("adrian","a1b909ec1cc11cce40c28d3640eab600e582f833","Adrian","Garcia","adriangarciamanchado@gmail.com","",1,"a1b909ec1cc11cce40c28d3640eab600e582f833", 1);
 
 INSERT INTO genres (idgenres, name, description) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL);
+
+SELECT name FROM genres INNER JOIN genresmovies WHERE genres.idgenres = genresmovies.idgenres GROUP BY genres.idgenres;
