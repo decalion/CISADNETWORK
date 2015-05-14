@@ -19,6 +19,5 @@
     } else {
         $log['msg'] = $link->getError();
     }
-    5
     
 ?>
