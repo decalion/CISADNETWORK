@@ -301,7 +301,7 @@ CREATE TABLE genres (
     description VARCHAR(255)
 ) ENGINE=INNODB;
 
-CREATE TABLE genreseries (
+CREATE TABLE genresseries (
     idgenres INT,
     idseries INT,
     PRIMARY KEY (idgenres , idseries),
@@ -313,7 +313,7 @@ CREATE TABLE genreseries (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE genremovies (
+CREATE TABLE genresmovies (
     idgenres INT,
     idmovies INT,
     PRIMARY KEY (idgenres , idmovies),
@@ -325,7 +325,7 @@ CREATE TABLE genremovies (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE genrebook (
+CREATE TABLE genresbook (
     idgenres INT,
     idbook INT,
     PRIMARY KEY (idgenres , idbook),
@@ -337,7 +337,7 @@ CREATE TABLE genrebook (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
-CREATE TABLE genregroup (
+CREATE TABLE genresgroup (
     idgenres INT,
     idgroups INT,
     PRIMARY KEY (idgenres , idgroups),
