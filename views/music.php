@@ -1,5 +1,5 @@
 <?php
 
-    loadDefault('music', $link);
+    loadDefault('groups', $link);
 
 ?>

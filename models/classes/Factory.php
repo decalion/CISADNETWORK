@@ -42,7 +42,7 @@
         }
         
         public function getTop($type) {
-            $result = $this->link->query('select * from '.$type.' order by average asc limit 10');
+            $result = $this->link->query('select * from '.$type.' order by average desc limit 10');
             while($row = mysqli_fetch_array($result)) {
                 $return[] = $row;
             }
