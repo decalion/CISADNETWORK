@@ -2,7 +2,6 @@ DROP DATABASE IF EXISTS cisadnetwork;
 CREATE DATABASE cisadnetwork;
 USE cisadnetwork;
 
-
 CREATE TABLE role (
     idrole INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(20) NOT NULL
@@ -11,14 +10,15 @@ CREATE TABLE role (
 CREATE TABLE users (
     idusers INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(30) UNIQUE NOT NULL,
-    password VARCHAR(250)  NOT NULL,
+    password VARCHAR(250) NOT NULL,
     name VARCHAR(30),
     lastname VARCHAR(30),
     email VARCHAR(30) NOT NULL,
     avatarurl VARCHAR(200),
     idrole INT NOT NULL,
-	activemail BINARY DEFAULT 0,
-	active BINARY DEFAULT 1,
+    activemail BINARY DEFAULT 0,
+    active BINARY DEFAULT 1,
+    userKey VARCHAR(250) NOT NULL,
     FOREIGN KEY (idrole)
         REFERENCES role (idrole)
 )  ENGINE=INNODB;
@@ -64,7 +64,7 @@ CREATE TABLE genre (
 
 CREATE TABLE singers (
     idsingers INT PRIMARY KEY AUTO_INCREMENT,
-    idgroups INT
+    idgroups INT,
     name VARCHAR(30) NOT NULL
 )  ENGINE=INNODB;
 
@@ -75,9 +75,9 @@ CREATE TABLE groups (
     image VARCHAR(200),
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0,
-    idsinger INT NOT NULL,
-    FOREIGN KEY (idsinger)
-        REFERENCES singer (idsinger)
+    idsingers INT NOT NULL,
+    FOREIGN KEY (idsingers)
+        REFERENCES singers (idsingers)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
@@ -88,11 +88,11 @@ CREATE TABLE style (
 )  ENGINE=INNODB;
 
 CREATE TABLE songs (
-    idsong INT PRIMARY KEY AUTO_INCREMENT,
+    idsongs INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
     idsinger INT NOT NULL,
     FOREIGN KEY (idsinger)
-        REFERENCES singer (idsinger)
+        REFERENCES singers (idsingers)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
@@ -245,7 +245,7 @@ CREATE TABLE staterecipes (
 )  ENGINE=INNODB;
 
 CREATE TABLE songsgroups (
-    idsonggroups INT AUTO_INCREMENT NOT NULL,
+    idsongsgroups INT AUTO_INCREMENT NOT NULL,
     idgroups INT NOT NULL,
     idsongs INT NOT NULL,
     PRIMARY KEY (idsongsgroups , idgroups , idsongs),
@@ -513,5 +513,5 @@ CREATE TABLE votescommentrecipes (
 
 INSERT INTO role (name) VALUES('ADMIN');
 INSERT INTO role (name) VALUES('USER');
-INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1);
-INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole) VALUES("adrian","a1b909ec1cc11cce40c28d3640eab600e582f833","Adrian","Garcia","adriangarciamanchado@gmail.com","",1);
+INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKey,activeMail) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1,"", 1);
+INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKey,activeMail) VALUES("adrian","a1b909ec1cc11cce40c28d3640eab600e582f833","Adrian","Garcia","adriangarciamanchado@gmail.com","",1,"a1b909ec1cc11cce40c28d3640eab600e582f833", 1);
