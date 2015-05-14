@@ -6,15 +6,18 @@
     $password = $_POST['password'];
     $email = $_POST['email'];
 
-    $encrypt = encrypt($password);
+    $password = encrypt($password);
 
-    $query = "INSERT INTO user (username,password,name,lastname,email,avatarurl,idrole) "
-            . "VALUES('" . $username . "','". $encrypt . "','" . $name . "','" . $lastname . "','" . $email . "','',1) ;";
-
+    $query = "INSERT INTO users (username, password, name, lastname, email, avatarurl, idrole, userKey) VALUES('".$username."',' ".$password."',' ".$name."',' ".$lastname."',' ".$email . "', '', 2, '".encrypt($username)."');";
     if ($link->query($query)) {
-        $log['msg'] = "Registered user has successfully registered";
+        $log['msg'] = "Registered user has successfully registered. We have sent an confirmation email.";
+        if (isset($_POST['email']))  {
+            $subject = 'Welcome '.$username.' to Cisadnetwork!';
+            $comment = 'To activate your account, you must active your user visiting http://cisadsystems.esy.es/validate.php?userKey='.encrypt($username).'.';
+            mail($email, "$subject", $comment, "From:" . $email);
+        }
     } else {
-        $log['msg'] = "Error when registering";
+        $log['msg'] = $link->getError();
     }
     
 ?>

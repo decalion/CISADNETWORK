@@ -1,5 +1,5 @@
 <?php
 
-    loadDefault('recipes');
+    loadDefault('recipes', $link);
 
 ?>

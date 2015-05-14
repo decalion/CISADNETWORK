@@ -9,6 +9,7 @@ const DATABASE="cisadnetwork";
 
 
 const AUTHENTICATION=100;
+const LOGOUT=10;
 
 
 

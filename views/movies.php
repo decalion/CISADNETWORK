@@ -1,5 +1,5 @@
 <?php
 
-    loadDefault('movies');
+    loadDefault('movies', $link);
 
 ?>

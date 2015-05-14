@@ -2,13 +2,13 @@
 
     include './models/classes/Factory.php';
 
-    function loadDefault($type) {
-        $factory = new Factory($type);
+    function loadDefault($type, $link) {
+        $factory = new Factory($type, $link);
         $factory->loadDefaultInfo();
     }
     
     function encrypt($password) {
-        return crypt($password);
+        return sha1($password);
     }
     
 ?>

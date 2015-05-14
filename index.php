@@ -9,19 +9,20 @@
             session_destroy();
         }
     }
-
-    include './views/head.php';
-    include './models/dbConnection.php';
-    include './models/functions.php';
+    
     include './models/classes/Connection.php';
+    include './models/dbConnection.php';
     
     $infoDb = getInfoDb();
     $link = new Connection($infoDb['host'], $infoDb['user'], $infoDb['pass'], $infoDb['db']);
     mysqli_select_db($link->getConnection(), 'cisadnetwork');
+
+    include './views/head.php';
+    include './models/functions.php';
     
     include './models/debug.php';
     
-    createDefault($link, 20);
+    // createDefault($link, 20);
     
     include './controler/controler.php';
     
@@ -38,6 +39,8 @@
     
     include './views/footerWrapper.php';
     include './views/bottom.php';
+    
+    $link->closeConnection();
 
 ?>
 <!--

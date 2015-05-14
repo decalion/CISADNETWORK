@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -35,11 +30,14 @@ and open the template in the editor.
                     <label>Books</label>
                 </div>
                 <div class="menubuton">
-                    <label>Logout</label>
+                    <label><a href="./index.php?ids=10">Logout</a></label>
                 </div>
             </div>
             <div class="center">
                 <h2><?php echo "Welcome to Admin Panel ". $_SESSION['user']; ?></h2>
+            </div>
+            <div class="footer">
+                <label>CISADNETWORK  Ismael Caballero | Adrian Garcia | Cristian Bautista </label>
             </div>
         </div>
     </body>

@@ -15,6 +15,16 @@ body{
 }
 
 
+a:link:active, a:visited:active {
+    color: white;
+	text-decoration:none;
+} 
+
+a{
+    color: white;
+	text-decoration:none;
+}
+
 .wrapper{
     text-align: center;
     margin-left: 15%;
@@ -46,9 +56,23 @@ body{
     border-radius:10px 10px 10px 10px;  
 }
 
+.menubuton:hover{
+    background-color:#81BEF7;
+    
+}
+
 
 .center{
-    margin-top:2%;
+    margin-top:4%;
     text-align: center;
     width:100%;
+}
+
+
+.footer{
+    margin-top:4%;
+    width:100%;
+    text-align: center;
+    
+    
 }
