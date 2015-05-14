@@ -5,6 +5,7 @@ include_once './Models/Classes/DB/AbstractDB.php';
 include_once './Models/Classes/DB/impl/AdminMysqlImpl.php';
 include_once './Models/Classes/Facade.php';
 include_once './Models/Classes/DB/DTO/Login.php';
+include_once './Models/Classes/DB/DTO/User.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -37,6 +38,12 @@ if(isset($_POST['ids'])){
         case LOGOUT:
             include './Controler/Logout.php';
          break;
+        case USERPANEL:
+            include './views/userpanel.php';
+            break;
+        case USERMODIFY:
+            include './views/modifiuser.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
     

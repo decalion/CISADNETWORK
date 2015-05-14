@@ -9,7 +9,7 @@
         <div class="wrapper">
             <div class="header">
                 <div class="menubuton">
-                    <label>User</label>
+                    <label><a href="./index.php?ids=101">User</a></label>
                 </div>
                 <div class="menubuton">
                     <label>Movie</label>
@@ -28,6 +28,9 @@
                 </div>
                 <div class="menubuton">
                     <label>Books</label>
+                </div>
+                <div class="menubuton">
+                    <label>Backups</label>
                 </div>
                 <div class="menubuton">
                     <label><a href="./index.php?ids=10">Logout</a></label>
