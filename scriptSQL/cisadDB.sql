@@ -504,6 +504,8 @@ CREATE TABLE votescommentrecipes (
         REFERENCES users (idusers)
 )  ENGINE=INNODB;
 
+
+
 INSERT INTO role (name) VALUES('ADMIN');
 INSERT INTO role (name) VALUES('USER');
 INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKey,activeMail) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1,"", 1);
@@ -511,4 +513,4 @@ INSERT INTO users (username,password,name,lastname,email,avatarurl,idrole,userKe
 
 INSERT INTO genres (idgenres, name, description) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL);
 
-SELECT name FROM genres INNER JOIN genresmovies WHERE genres.idgenres = genresmovies.idgenres GROUP BY genres.idgenres;
+
