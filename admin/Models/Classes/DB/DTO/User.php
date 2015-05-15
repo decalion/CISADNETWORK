@@ -1,6 +1,6 @@
 <?php
 /**
- * DTO Class for TABLE USER.
+ * DTO(Data Transfer Object) Class for TABLE USER.
  *
  * @author Ismael Caballlero
  */
@@ -17,9 +17,16 @@ class User {
     private $activemail;
     private $active;
     
+    
+    /**
+     * Construct
+     */
     function __construct() {
         
     }
+    
+    
+    //GETTERS/SETTERS
     
     
     function getId() {

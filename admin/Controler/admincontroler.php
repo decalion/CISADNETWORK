@@ -35,6 +35,9 @@ if(isset($_POST['ids'])){
         $id=$_GET['ids'];
     
     switch($id){
+        case BACK:
+            include './views/userpanel.php';
+            break;
         case LOGOUT:
             include './Controler/Logout.php';
          break;
