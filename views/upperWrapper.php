@@ -56,6 +56,16 @@
                             <input type="submit" value="LOGOUT" />
                         </form>
                     </li>
+                    <li>
+                        <p class="defaultBorder">Welcome <strong><?php echo $_SESSION['userData']['username']; ?></strong>!</p>
+                    </li>
+                    <li>
+                        <form action="./index.php" method="post">
+                            <input hidden type="text" name="type" value="settings" />
+                            <input hidden type="text" name="state" value="0" />
+                            <input type="submit" value="" class="submitImage" />
+                        </form>
+                    </li>
         <?php
             } else {
         ?>

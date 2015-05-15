@@ -30,6 +30,8 @@
     
     include $toInclude;
     
+    echo '<script>type = '.$type.'</script>';
+    
     if (isset($log)) {
         foreach ($log as $msg) {
             echo '<p>'.$msg.'</p>';
