@@ -150,3 +150,12 @@ form {
 #navListFooterPoll li a {
     
 }
+
+.submitImage {
+    background-image: url(../images/gear.png);
+    background-position:  0px 0px;
+    background-repeat: no-repeat;
+    width: 42px;
+    position: relative;
+    top: 4px;
+}

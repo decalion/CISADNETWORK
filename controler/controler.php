@@ -102,6 +102,15 @@
                         break;
                 }
                 break;
+            case 'settings':
+                switch ($_POST['state']) {
+                    case 0:
+                        $toInclude = './views/settings.php';
+                        break;
+                    default:
+                        break;
+                }
+                break;
             default:
                 break;
         }
