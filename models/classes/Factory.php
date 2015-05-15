@@ -21,6 +21,7 @@
                     echo "<br>";
                 }
             }
+            
             echo '<h1>'.$this->type.'</h1>';
             $array = $this->getAll($this->type);
             if ($array == null) {
@@ -45,6 +46,15 @@
             $result = $this->link->query('select * from '.$type.' order by average desc limit 10');
             while($row = mysqli_fetch_array($result)) {
                 $return[] = $row;
+            }
+            return $return;
+        }
+        
+        public function getGenres(){
+            $result=$this->link->query("SELECT name FROM genres INNER JOIN genresmovies WHERE genres.idgenres = genres".$this->type.".idgenres GROUP BY idgenres ;");
+            while($row=  mysqli_fetch_row($result))
+            {
+                $return[]=$row;
             }
             return $return;
         }

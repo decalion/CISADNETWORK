@@ -45,8 +45,7 @@
     $link->closeConnection();
 
 ?>
-<!--
+
 <div id="rajoy">
     <img src="images/rajoy.png" />
 </div>
--->
