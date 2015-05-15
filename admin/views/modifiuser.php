@@ -18,6 +18,7 @@
                 ?>
                 <form method="post" action="">
                     <div>
+                        <input type="text"  name="iduser"  value="<?php echo $user->getId(); ?>" hidden />
                         <label>Username :</label> <input type="text" name="username" size="35" value="<?php echo $user->getUsername(); ?>"/>
                     </div>
                     <div>
@@ -62,6 +63,7 @@
                         </select>
                     </div>
                     <div>
+                        <input type="text"  name="ids"  value="103" hidden />
                         <input type="submit" value="Modify" />
 
                     </div>

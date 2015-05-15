@@ -25,6 +25,10 @@ if(isset($_POST['ids'])){
             include './Controler/authentication.php';
          break;
      
+        case SAVEMODIFYUSER:
+            include './Controler/ModifyUser.php';
+            break;
+     
      default : include './views/adminLogin.php'; break;
         
         

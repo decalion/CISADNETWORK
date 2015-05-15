@@ -505,5 +505,5 @@ INSERT INTO roles (name) VALUES('ADMIN');
 INSERT INTO roles (name) VALUES('USER');
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1,"", 1);
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("adrian","a1b909ec1cc11cce40c28d3640eab600e582f833","Adrian","Garcia","adriangarciamanchado@gmail.com","",1,"a1b909ec1cc11cce40c28d3640eab600e582f833", 1);
-
+INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("ismael","ismael","Ismael","Caballero","ismae@gmail.com","",2,"", 1);
 INSERT INTO genres (name, description, music) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL), (NULL, 'Rock', NULL), (NULL, 'Pop', NULL), (NULL, 'Heavy Metal', NULL), (NULL, 'Reggae', NULL), (NULL, 'Classic', NULL);
