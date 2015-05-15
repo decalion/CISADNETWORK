@@ -58,9 +58,9 @@ class AdminMysqlImpl extends AbstractDB {
             $temp->setName($rst["name"]);
             $temp->setLastname($rst["lastname"]);
             $temp->setEmail($rst["email"]);
-            $temp->setAvatarurl($rst["avatarurl"]);
-            $temp->setIdrol($rst["idrole"]);
-            $temp->setRolname($this->selectRolName($rst["idrole"]));
+            $temp->setAvatarurl($rst["imageurl"]);
+            $temp->setIdrol($rst["idroles"]);
+            $temp->setRolname($this->selectRolName($rst["idroles"]));
             $temp->setActivemail($rst["activemail"]);
             $temp->setActive($rst["active"]);
 
@@ -72,7 +72,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     private function selectRolName($id) {
-        $query = $this->conection->query("SELECT name FROM role WHERE idrole=$id");
+        $query = $this->conection->query("SELECT name FROM roles WHERE idroles=$id");
 
         $rst = $this->conection->result($query);
 
