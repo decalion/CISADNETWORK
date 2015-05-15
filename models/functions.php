@@ -19,4 +19,8 @@ include './models/classes/Factory.php';
         echo '<object data="./images/does-not-exist.png" type="image/png"><img src="./images/'.$url.'" /></object>';
     }
     
+    function getDataByType($link, $type, $string) {
+        $query = 'select * from '.$type.' like title = '.$string;
+    }
+    
 ?>

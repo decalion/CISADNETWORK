@@ -73,7 +73,7 @@ CREATE TABLE actors (
 
 CREATE TABLE movies (
     idmovies INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     sinopsi VARCHAR(250) NOT NULL,
     year INT NOT NULL,
     imageurl VARCHAR(250),
@@ -168,7 +168,7 @@ CREATE TABLE authorbooks (
 CREATE TABLE news (
     idnews INT PRIMARY KEY AUTO_INCREMENT,
     idusers INT NOT NULL,
-    title VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     imageurl VARCHAR(250) NOT NULL,
     description TEXT NOT NULL,
     average FLOAT DEFAULT 0,
@@ -179,7 +179,7 @@ CREATE TABLE news (
 
 CREATE TABLE recipes (
     idrecipes INT PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     imageurl VARCHAR(250) NOT NULL,
     description TEXT NOT NULL,
     average FLOAT DEFAULT 0,
