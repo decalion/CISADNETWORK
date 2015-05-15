@@ -59,11 +59,6 @@
             return $return;
         }
         
-        public function loadGenreAll() {
-            
-            
-        }
-        
     }
 
 ?>

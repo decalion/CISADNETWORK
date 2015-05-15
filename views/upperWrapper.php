@@ -2,14 +2,14 @@
     <ul id="navList">
         <li>
             <form action="./index.php" method="post">
-                <input type="submit" value="MOVIES" />
+                <input type="submit" value="HOME" />
             </form>
         </li>
         <li>
             <form action="./index.php" method="post">
                 <input hidden type="text" name="type" value="movies" />
                 <input hidden type="text" name="state" value="0" />
-                <input type="submit" value="HOME" />
+                <input type="submit" value="MOVIES" />
             </form>
         </li>
         <li>
