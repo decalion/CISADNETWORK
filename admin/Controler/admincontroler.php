@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Principal Controler 
+ */
+
+
 include_once './Models/Classes/Utils/Constants.php';
 include_once './Models/Classes/Utils/Uconnection.php';
 include_once './Models/Classes/DB/AbstractDB.php';
@@ -28,6 +34,9 @@ if(isset($_POST['ids'])){
         case SAVEMODIFYUSER:
             include './Controler/ModifyUser.php';
             break;
+        case CONFUSERDELETED:
+            include './Controler/DeleteUsers.php';
+         break;
      
      default : include './views/adminLogin.php'; break;
         
@@ -50,6 +59,9 @@ if(isset($_POST['ids'])){
             break;
         case USERMODIFY:
             include './views/modifiuser.php';
+            break;
+        case USERDELETED:
+            include './views/confirmdeleteuser.php';
             break;
      
      default : include './views/adminLogin.php'; break;

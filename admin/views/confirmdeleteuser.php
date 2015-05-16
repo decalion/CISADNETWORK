@@ -19,52 +19,45 @@
                 <form method="post" action="">
                     <div>
                         <input type="text"  name="iduser"  value="<?php echo $user->getId(); ?>" hidden />
-                        <label>Username :</label> <input type="text" name="username" size="35" value="<?php echo $user->getUsername(); ?>" readonly="readonly"/>
+                        <label>Username :</label> <?php echo $user->getUsername(); ?>
                     </div>
                     <div>
-                        <label>Password :</label> <input type="text" name="pass"  size="35" value="<?php echo $user->getPass(); ?>" readonly="readonly"/>
+                        <label>Password :</label><?php echo $user->getPass(); ?>
                     </div>
                     <div>
-                        <label>name :</label> <input type="text" name="name" size="35" value="<?php echo $user->getName(); ?>"/>
+                        <label>name :</label><?php echo $user->getName(); ?>
                     </div>
                     <div>
-                        <label>surname :</label> <input type="text" name="surname" size="35" value="<?php echo $user->getLastname(); ?>"/>
+                        <label>surname :</label><?php echo $user->getLastname(); ?>
                     </div>
                     <div>
-                        <label>email :</label> <input type="text" name="email"  size="35" value="<?php echo $user->getEmail(); ?>"/>
+                        <label>email :</label><?php echo $user->getEmail(); ?>
                     </div>
                     <div>
                         <label>Permision :</label>
-                        <select name="role">
+ 
                             <?php
                             if ($user->getIdrol() == 1) {
-                                echo"<option value='1' selected>Admin</option>";
-                                echo"<option value='2'>User</option>";
+                                echo"Admin";
                             } else {
-                                echo"<option value='1'>Admin</option>";
-                                echo"<option value='2' selected>User</option>";
+                                echo"User";
                             }
                             ?>
-                        </select>
                     </div>
                     <div>
                         <label>Active User :</label> 
-                        <select name="active">
                             <?php
                             if ($user->getActive() == 1) {
-                                echo"<option value='0'>Desactive</option>";
-                                echo"<option value='1' selected>Active</option>";
+                                echo"Active";
                             } else {
-                                echo"<option value='0' selected>Desactive</option>";
-                                echo"<option value='1'>Active</option>";
+                                echo"disable";
                             }
                             ?>
 
-                        </select>
                     </div>
                     <div>
-                        <input type="text"  name="ids"  value="103" hidden />
-                        <input type="submit" value="Modify" />
+                        <input type="text"  name="ids"  value="105" hidden />
+                        <input type="submit" value="Deleted" />
 
                     </div>
                 </form>
