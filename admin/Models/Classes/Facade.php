@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of Facade
+ * Basic Funcion for fast call and unification
  *
  * @author Ismael Caballero
  */
@@ -36,7 +36,11 @@ class Facade {
         return $result;
     }
     
-    
+    /**
+     * Generic Update data
+     * @param type $sql
+     * @return type
+     */
     public function updateData($sql){
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
@@ -46,6 +50,11 @@ class Facade {
         
     }
     
+    /**
+     * Genric Deleted Data
+     * @param type $sql
+     * @return type
+     */
     public function deletedData($sql){
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
