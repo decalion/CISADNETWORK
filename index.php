@@ -22,7 +22,7 @@
     
     include './models/debug.php';
     
-    // createDefault($link, 20);
+    //createDefault($link, 20);
     
     include './controler/controler.php';
     

@@ -37,7 +37,32 @@
                 </div>
             </div>
             <div class="center">
-                <?php echo"MANOLO DONDE ESTA MI COCHE"; ?>
+              <center>
+                    <?php if(isset($msg)){ echo $msg;} ?>
+                    <table border=2>
+                        <tr>
+                            <td>IdMovie</td>
+                            <td>Name</td>
+                        </tr>
+                        <?php
+                       $movies=$facade->selectMoviesData();
+                       
+                       foreach($movies as $i => $movie){
+                           echo"<tr>";
+                           echo"<td>".$movie->getIdmovie() ."</td>";
+                           echo"<td>" .$movie->getName() . "</td>";
+                           echo "<td><a href='index.php?ids=".USERMODIFY."&action=$i'><button>Modify</button></a></td>";
+                           echo "<td><a href='index.php?ids=".USERDELETED."&action=$i'><button>Deleted</button></a></td>";
+                           echo"</tr>";
+                       }
+                        
+                        
+                        
+                        
+                        ?>
+                        
+                    </table>
+              </center>
 
             <div class="footer">
                 <label>CISADNETWORK  Ismael Caballero | Adrian Garcia | Cristian Bautista </label>

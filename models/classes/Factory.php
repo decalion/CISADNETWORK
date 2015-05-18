@@ -31,13 +31,14 @@
         
         public function buildSquare($value) {
             echo '<div class="square">';
-            if ($value['imageurl'] == 'error.png') {
-                echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
-            } else {
-                echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
-            }
-            $n = $value['id'.$this->type];
-            echo '<div class="textFromMainSquare"><a href="index.php?type='.$this->type.'&id='.$value[$n].'>'.$value['name'].'</a></div></div>';
+                if ($value['imageurl'] == 'error.png') {
+                    echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
+                } else {
+                    echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
+                }
+                echo '<div class="textFromMainSquare"><a href="index.php?type='.$this->type.'&id='.$value['id'.$this->type].'">a</a>';
+                echo '</div>';
+            echo '</div>';
         }
         
         public function getTop() {
