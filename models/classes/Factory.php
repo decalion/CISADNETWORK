@@ -36,8 +36,6 @@
                 } else {
                     echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
                 }
-                //print_r($value);
-                // echo '<div class="textFromMainSquare"><a href="index.php?type='.$this->type.'>'.$value['name'].'</a></div>';
                 echo '<div class="textFromMainSquare"><a href="index.php?type='.$this->type.'&id='.$value['id'.$this->type].'">a</a>';
                 echo '</div>';
             echo '</div>';
