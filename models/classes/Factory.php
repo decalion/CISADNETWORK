@@ -13,29 +13,35 @@
         public function loadDefaultInfo() {
             echo '<h1>Top 10</h1>';
             $array = $this->getTop();
-            if ($array == null) {
-                echo 'No '.$this->type.' were found!';
-            } else {
-                foreach ($array as $key => $value) {
-                    print_r($value);
-                    echo "<br>";
-                }
-            }
-            
-            echo '<h1>'.$this->type.'</h1>';
+            $this->testArray($array);
+            echo '<h1 style="text-transform:capitalize;">'.$this->type.'</h1>';
             $array = $this->getAll();
+            $this->testArray($array);
+        }
+        
+        public function testArray($array) {
             if ($array == null) {
                 echo 'No '.$this->type.' were found!';
             } else {
                 foreach ($array as $key => $value) {
-                    print_r($value);
-                    echo "<br>";
+                    $this->buildSquare($value);
                 }
             }
         }
         
-        public function getAll() {
-            $result = $this->link->query('select * from '.$this->type.';');
+        public function buildSquare($value) {
+            echo '<div class="square">';
+            if ($value['imageurl'] == 'error.png') {
+                echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
+            } else {
+                echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
+            }
+            $n = $value['id'.$this->type];
+            echo '<div class="textFromMainSquare"><a href="index.php?type='.$this->type.'&id='.$value[$n].'>'.$value['name'].'</a></div></div>';
+        }
+        
+        public function getTop() {
+            $result = $this->link->query('select * from '.$this->type.' order by average desc limit 10');
             if ($result->num_rows > 0) {
                 while($row = mysqli_fetch_array($result)) {
                     $return[] = $row;
@@ -46,8 +52,8 @@
             }
         }
         
-        public function getTop() {
-            $result = $this->link->query('select * from '.$this->type.' order by average desc limit 10');
+        public function getAll() {
+            $result = $this->link->query('select * from '.$this->type.';');
             if ($result->num_rows > 0) {
                 while($row = mysqli_fetch_array($result)) {
                     $return[] = $row;
