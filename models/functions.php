@@ -1,6 +1,6 @@
 <?php
 
-include './models/classes/Factory.php';
+    include './models/classes/Factory.php';
 
     function loadDefault($type, $link) {
         $factory = new Factory($type, $link);
@@ -9,7 +9,7 @@ include './models/classes/Factory.php';
     
     function loadDetail($type, $link) {
         $factory = new Factory($type, $link);
-        echo $_GET['type']." ".$_GET['id'];
+        return $factory->loadDetail($_GET['id']);
     }
     
     function encrypt($password) {
