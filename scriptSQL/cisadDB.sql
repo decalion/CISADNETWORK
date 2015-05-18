@@ -501,9 +501,40 @@ CREATE TABLE votescommentsrecipes (
 
 
 
+
 INSERT INTO roles (name) VALUES('ADMIN');
 INSERT INTO roles (name) VALUES('USER');
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1,"", 1);
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("adrian","a1b909ec1cc11cce40c28d3640eab600e582f833","Adrian","Garcia","adriangarciamanchado@gmail.com","",1,"a1b909ec1cc11cce40c28d3640eab600e582f833", 1);
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("ismael","ismael","Ismael","Caballero","ismae@gmail.com","",2,"", 1);
-INSERT INTO genres (name, description, music) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL), (NULL, 'Rock', NULL), (NULL, 'Pop', NULL), (NULL, 'Heavy Metal', NULL), (NULL, 'Reggae', NULL), (NULL, 'Classic', NULL);
+
+INSERT INTO genres (description,name , music) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL), (NULL, 'Rock', NULL), (NULL, 'Pop', NULL), (NULL, 'Heavy Metal', NULL), (NULL, 'Reggae', NULL), (NULL, 'Classic', NULL);
+
+INSERT INTO actors(name,imageurl) VALUES ('Robert Downey Jr',null);
+INSERT INTO actors(name,imageurl) VALUES ('Chris Evans',null);
+INSERT INTO actors(name,imageurl) VALUES ('Mark Ruffalo',null);
+INSERT INTO actors(name,imageurl) VALUES ('Chris Hemsworth',null);
+INSERT INTO actors(name,imageurl) VALUES ('Scarlett Johansson',null);
+INSERT INTO actors(name,imageurl) VALUES ('Jeremy Renner',null);
+
+
+INSERT INTO movies(name,sinopsi,year,imageurl)VALUES('Los Vengadores','Era ser una vez',2012,null);
+
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,1,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,2,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,3,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,4,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,5,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,6,0);
+
+
+INSERT INTO actors(name,imageurl) VALUES ('Arnold Schwarzenegger',null);
+INSERT INTO actors(name,imageurl) VALUES ('Michael Biehn',null);
+INSERT INTO actors(name,imageurl) VALUES ('Linda Hamilton',null);
+INSERT INTO actors(name,imageurl) VALUES ('Paul Winfield',null);
+INSERT INTO actors(name,imageurl) VALUES ('Lance Henriksen',null);
+INSERT INTO movies(name,sinopsi,year,imageurl)VALUES('The Terminator','El primo de pep',1984,null);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,7,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,8,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,9,0);
+INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,10,0);
