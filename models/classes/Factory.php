@@ -35,7 +35,7 @@
         }
         
         public function getAll() {
-            $result = $this->link->query('select * from '.$type.';');
+            $result = $this->link->query('select * from '.$this->type.';');
             if ($result->num_rows > 0) {
                 while($row = mysqli_fetch_array($result)) {
                     $return[] = $row;
@@ -47,7 +47,7 @@
         }
         
         public function getTop() {
-            $result = $this->link->query('select * from '.$type.' order by average desc limit 10');
+            $result = $this->link->query('select * from '.$this->type.' order by average desc limit 10');
             if ($result->num_rows > 0) {
                 while($row = mysqli_fetch_array($result)) {
                     $return[] = $row;
