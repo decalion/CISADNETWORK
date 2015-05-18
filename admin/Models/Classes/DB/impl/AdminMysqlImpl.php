@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of AdminMysqlImpl
+ * Mysql implement of BD cisadnetwork
  *
  * @author Ismael Caballero
  */
@@ -11,34 +11,56 @@ class AdminMysqlImpl extends AbstractDB {
         
     }
 
+    /**
+     * Funcion for close conection
+     */
     public function close() {
         $this->conection->closeConection();
     }
 
+    /**
+     * Funcion for delete
+     * @param type $sql query
+     * @return boolean true o false
+     */
     public function deleted($sql) {
-        
+        $query = $this->conection->query($sql);
+        if ($this->conection->getErrorNum() == 0) {
+            return true;
+        }
+        return false;
     }
 
     public function modify($sql) {
-        
+        $query = $this->conection->query($sql);
+        if ($this->conection->getErrorNum() == 0) {
+            return true;
+        }
+        return false;
     }
 
+    /**
+     * GenericSelect
+     */
     public function select() {
         
     }
 
+    /**
+     * Funcion for get the credencial list
+     * @return array with username,password and rol
+     */
     public function SelectCredencials() {
 
-        $query = $this->conection->query("SELECT username,password,idrole FROM users");
+        $query = $this->conection->query("SELECT username,password,idroles FROM users");
         $result = array();
         while ($rst = $this->conection->result($query)) {
 
             $temp = null;
             $user = $rst["username"];
             $pass = $rst["password"];
-            $rol = $rst["idrole"];
+            $rol = $rst["idroles"];
             $temp = new Login($user, $pass, $rol);
-
             array_push($result, $temp);
         }
 
@@ -46,6 +68,10 @@ class AdminMysqlImpl extends AbstractDB {
         return $result;
     }
 
+    /**
+     * Funcion for get all user data
+     * @return array User DTO
+     */
     public function selectUserData() {
         $query = $this->conection->query("SELECT * FROM users");
         $result = array();
@@ -71,6 +97,11 @@ class AdminMysqlImpl extends AbstractDB {
         return $result;
     }
 
+    /**
+     * Private function for get role name
+     * @param type $id of the role
+     * @return type string
+     */
     private function selectRolName($id) {
         $query = $this->conection->query("SELECT name FROM roles WHERE idroles=$id");
 

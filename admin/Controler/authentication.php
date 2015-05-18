@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Controler for control login 
+ */
+
+
 $check = false;
 if (($_POST['user'] == NULL) || ($_POST['pass'] == NULL)) {
 

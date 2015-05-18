@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of Login
+ * DTO(Data Transfer Object) of User Table for Credential.
  *
  * @author Ismael Caballero
  */

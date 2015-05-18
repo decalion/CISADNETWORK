@@ -38,6 +38,7 @@
             </div>
             <div class="center">
                 <center>
+                    <?php if(isset($msg)){ echo $msg;} ?>
                     <table border=2>
                         <tr>
                             <td>id</td>
@@ -51,6 +52,7 @@
                             <td>activemail</td>
                             <td>active</td>
                             <td>Modify</td>
+                            <td>Deleted</td>
                         </tr>
                         <?php
                         $data = $facade->selectUserData();
@@ -67,17 +69,13 @@
                             echo"<td>" . $user->getActivemail() . "</td>";
                             echo"<td>" . $user->getActive() . "</td>";
                             echo "<td><a href='index.php?ids=".USERMODIFY."&action=$i'><button>Modify</button></a></td>";
-
+                            echo "<td><a href='index.php?ids=".USERDELETED."&action=$i'><button>Deleted</button></a></td>";
                             echo"</tr>";
                         }
                         ?>
-
-
                     </table>
                 </center>
-
 <?php //print_r($facade->selectUserData());   ?>
-
             </div>
             <div class="footer">
                 <label>CISADNETWORK  Ismael Caballero | Adrian Garcia | Cristian Bautista </label>
