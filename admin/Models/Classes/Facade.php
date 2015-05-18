@@ -63,4 +63,18 @@ class Facade {
         return $result;
         
     }
+    
+    
+    /**
+     * Function to get all Movies Data
+     * @return type
+     */
+    public function selectMoviesData(){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectMoviesData();
+        $db->close();
+        return $result;
+        
+    }
 }

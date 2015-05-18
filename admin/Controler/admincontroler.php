@@ -13,6 +13,7 @@ include_once './Models/Classes/Facade.php';
 include_once './Models/Classes/DB/DTO/Login.php';
 include_once './Models/Classes/DB/DTO/User.php';
 include_once './Models/Classes/DB/DTO/Movie.php';
+include_once './Models/Classes/DB/DTO/Actors.php';
 
 
 if(!isset($_SESSION['test'])){

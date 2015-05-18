@@ -113,6 +113,10 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
 
+    /**
+     * Select all movie data
+     * @return array
+     */
     public function selectMoviesData(){
         $query = $this->conection->query("SELECT * FROM  movies");
         $result = array();
@@ -125,17 +129,52 @@ class AdminMysqlImpl extends AbstractDB {
             $temp->setImage($rst['imageurl']);
             $temp->setAverage($rst['average']);
             $temp->setTotalvotes($rst['totalvotes']);
+            $temp->setActors($this->selectMoviesActors($rst['idmovies']));
+            
+            array_push($result, $temp);
             
         }
         return $result;  
     }
     
     
+    /**
+     * Select the actors from the movie
+     * @param type $id movie
+     * @return array
+     */
     private function selectMoviesActors($id){
+        $query = $this->conection->query("SELECT idactors FROM  actorsmovies WHERE idmovies=$id");
+         $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=$this->selectActors($rst['idactors']);
+            array_push($result, $temp);
+            
+        }
         
-        
+        return $result;
         
     }
+    
+    
+    /**
+     * Select all from actor
+     * @param type $id actors
+     * @return \Actors´
+     */
+    private function selectActors($id){
+        $query = $this->conection->query("SELECT idactors,name,imageurl FROM  actors WHERE idactors=$id");
+        $rst = $this->conection->result($query);
+        
+        $temp=new Actors();
+        $temp->setIdactors($rst['idactors']);
+        $temp->setName($rst['name']);
+        $temp->setImage($rst['imageurl']);
+        
+        return $temp;
+    }
+    
+    
     
     
 }
