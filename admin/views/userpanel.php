@@ -12,7 +12,7 @@
                     <label><a href="./index.php?ids=101">User</a></label>
                 </div>
                 <div class="menubuton">
-                    <label>Movie</label>
+                    <label><a href="./index.php?ids=106">Movies</a></label>
                 </div>
                 <div class="menubuton">
                     <label>Series</label>

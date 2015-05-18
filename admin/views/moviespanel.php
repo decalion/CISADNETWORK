@@ -37,8 +37,8 @@
                 </div>
             </div>
             <div class="center">
-                <h2><?php echo "Welcome to Admin Panel ". $_SESSION['user']; ?></h2>
-            </div>
+                <?php echo"MANOLO DONDE ESTA MI COCHE"; ?>
+
             <div class="footer">
                 <label>CISADNETWORK  Ismael Caballero | Adrian Garcia | Cristian Bautista </label>
             </div>

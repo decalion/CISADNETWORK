@@ -112,4 +112,30 @@ class AdminMysqlImpl extends AbstractDB {
         return $rst['name'];
     }
 
+
+    public function selectMoviesData(){
+        $query = $this->conection->query("SELECT * FROM  movies");
+        $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=new Movie();
+            $temp->setIdmovie($rst['idmovies']);
+            $temp->setName($rst['name']);
+            $temp->setSinopsi($rst['sinopsi']);
+            $temp->setYear($rst['year']);
+            $temp->setImage($rst['imageurl']);
+            $temp->setAverage($rst['average']);
+            $temp->setTotalvotes($rst['totalvotes']);
+            
+        }
+        return $result;  
+    }
+    
+    
+    private function selectMoviesActors($id){
+        
+        
+        
+    }
+    
+    
 }
