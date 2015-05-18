@@ -26,6 +26,7 @@ const CONFUSERDELETED=105;
 
 //Movies
 const MOVIESPANEL=106;
+const MOVIESMODIFY=107;
 
 
 

@@ -67,6 +67,9 @@ if(isset($_POST['ids'])){
         case MOVIESPANEL:
             include './views/moviespanel.php';
             break;
+        case MOVIESMODIFY:
+            include './views/modifimovies.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
     

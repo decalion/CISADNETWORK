@@ -16,7 +16,7 @@
                 //print_r($data);
                 $user = $data[$_GET['action']];
                 ?>
-                <form method="post" action="">
+                <form method="post" action="index.php">
                     <div>
                         <input type="text"  name="iduser"  value="<?php echo $user->getId(); ?>" hidden />
                         <label>Username :</label> <input type="text" name="username" size="35" value="<?php echo $user->getUsername(); ?>" readonly="readonly"/>

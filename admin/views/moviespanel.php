@@ -43,6 +43,8 @@
                         <tr>
                             <td>IdMovie</td>
                             <td>Name</td>
+                            <td>Modify</td>
+                            <td>Deleted</td>
                         </tr>
                         <?php
                        $movies=$facade->selectMoviesData();
@@ -51,7 +53,7 @@
                            echo"<tr>";
                            echo"<td>".$movie->getIdmovie() ."</td>";
                            echo"<td>" .$movie->getName() . "</td>";
-                           echo "<td><a href='index.php?ids=".USERMODIFY."&action=$i'><button>Modify</button></a></td>";
+                           echo "<td><a href='index.php?ids=".MOVIESMODIFY."&action=$i'><button>Modify</button></a></td>";
                            echo "<td><a href='index.php?ids=".USERDELETED."&action=$i'><button>Deleted</button></a></td>";
                            echo"</tr>";
                        }
