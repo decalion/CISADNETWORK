@@ -1,0 +1,5 @@
+<?php
+
+    loadDetail('groups', $link);
+    
+?>

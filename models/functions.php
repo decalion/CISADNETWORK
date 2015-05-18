@@ -7,12 +7,13 @@ include './models/classes/Factory.php';
         $factory->loadDefaultInfo();
     }
     
-    function encrypt($password) {
-        return sha1($password);
+    function loadDetail($type, $link) {
+        $factory = new Factory($type, $link);
+        echo $_GET['type']." ".$_GET['id'];
     }
     
-    function createImg($url) {
-        echo '<object data="./images/does-not-exist.png" type="image/png"><img src="./images/'.$url.'" /></object>';
+    function encrypt($password) {
+        return sha1($password);
     }
     
     function getDataByType($link, $type, $string) {

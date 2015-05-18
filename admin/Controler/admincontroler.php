@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Principal Controler 
+ * Controler 
  */
 
 
@@ -12,6 +12,7 @@ include_once './Models/Classes/DB/impl/AdminMysqlImpl.php';
 include_once './Models/Classes/Facade.php';
 include_once './Models/Classes/DB/DTO/Login.php';
 include_once './Models/Classes/DB/DTO/User.php';
+include_once './Models/Classes/DB/DTO/Movie.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -20,7 +21,6 @@ if(!isset($_SESSION['test'])){
 }
 
 $facade=new Facade();
-
 
 
 if(isset($_POST['ids'])){
@@ -62,6 +62,9 @@ if(isset($_POST['ids'])){
             break;
         case USERDELETED:
             include './views/confirmdeleteuser.php';
+            break;
+        case MOVIESPANEL:
+            include './views/moviespanel.php';
             break;
      
      default : include './views/adminLogin.php'; break;
