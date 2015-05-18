@@ -31,7 +31,7 @@ CREATE TABLE states (
 CREATE TABLE groups (
     idgroups INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    imageurl VARCHAR(250),
+    imageurl VARCHAR(250) DEFAULT "error.png",
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
 )  ENGINE=INNODB;
@@ -49,7 +49,7 @@ CREATE TABLE cds (
     idcds INT PRIMARY KEY AUTO_INCREMENT,
     idgroups INT NOT NULL,
     name VARCHAR(30) NOT NULL,
-    imageurl VARCHAR(250),
+    imageurl VARCHAR(250) DEFAULT "error.png",
     FOREIGN KEY (idgroups)
         REFERENCES groups (idgroups)
 )  ENGINE=INNODB;
@@ -68,7 +68,7 @@ CREATE TABLE songs (
 CREATE TABLE actors (
     idactors INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    imageurl VARCHAR(250)
+    imageurl VARCHAR(250) DEFAULT "error.png"
 )  ENGINE=INNODB;
 
 CREATE TABLE movies (
@@ -76,7 +76,7 @@ CREATE TABLE movies (
     name VARCHAR(100) NOT NULL,
     sinopsi VARCHAR(250) NOT NULL,
     year INT NOT NULL,
-    imageurl VARCHAR(250),
+    imageurl VARCHAR(250) DEFAULT "error.png",
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
 )  ENGINE=INNODB;
@@ -84,7 +84,7 @@ CREATE TABLE movies (
 CREATE TABLE series (
     idseries INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    imageurl VARCHAR(250),
+    imageurl VARCHAR(250) DEFAULT "error.png",
     season INT NOT NULL DEFAULT 0,
     totalchapters INT NOT NULL DEFAULT 0,
     average FLOAT DEFAULT 0,
@@ -140,14 +140,14 @@ CREATE TABLE actorseries (
 CREATE TABLE authors (
     idauthors INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    imageurl VARCHAR(250)
+    imageurl VARCHAR(250) DEFAULT "error.png"
 )  ENGINE=INNODB;
 
 CREATE TABLE books (
     idbooks INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     sinopsi VARCHAR(250) NOT NULL,
-    imageurl VARCHAR(250),
+    imageurl VARCHAR(250) DEFAULT "error.png",
     isbn VARCHAR(20) UNIQUE,
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
@@ -169,7 +169,7 @@ CREATE TABLE news (
     idnews INT PRIMARY KEY AUTO_INCREMENT,
     idusers INT NOT NULL,
     name VARCHAR(100) NOT NULL,
-    imageurl VARCHAR(250) NOT NULL,
+    imageurl VARCHAR(250) NOT NULL DEFAULT "error.png",
     description TEXT NOT NULL,
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0,
@@ -180,7 +180,7 @@ CREATE TABLE news (
 CREATE TABLE recipes (
     idrecipes INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    imageurl VARCHAR(250) NOT NULL,
+    imageurl VARCHAR(250) NOT NULL DEFAULT "error.png",
     description TEXT NOT NULL,
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
@@ -506,4 +506,4 @@ INSERT INTO roles (name) VALUES('USER');
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("decalion","cisad","ismael","caballero","icaballerohernandez@gmail.com","",1,"", 1);
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("adrian","a1b909ec1cc11cce40c28d3640eab600e582f833","Adrian","Garcia","adriangarciamanchado@gmail.com","",1,"a1b909ec1cc11cce40c28d3640eab600e582f833", 1);
 INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey, activeMail) VALUES("ismael","ismael","Ismael","Caballero","ismae@gmail.com","",2,"", 1);
-INSERT INTO genres (name, description, music) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL), (NULL, 'Rock', NULL), (NULL, 'Pop', NULL), (NULL, 'Heavy Metal', NULL), (NULL, 'Reggae', NULL), (NULL, 'Classic', NULL);
+INSERT INTO genres (description, name, music) VALUES (NULL, 'Scice Fiction', NULL), (NULL, 'Comedy', NULL), (NULL, 'Action', NULL), (NULL, 'Terror', NULL), (NULL, 'Adventure', NULL), (NULL, 'Biographical', NULL), (NULL, 'Erotic', NULL), (NULL, 'Musical', NULL), (NULL, 'Rock', NULL), (NULL, 'Pop', NULL), (NULL, 'Heavy Metal', NULL), (NULL, 'Reggae', NULL), (NULL, 'Classic', NULL);
