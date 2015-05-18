@@ -12,7 +12,7 @@
         
         public function loadDefaultInfo() {
             echo '<h1>Top 10</h1>';
-            $array = $this->getTop($this->type);
+            $array = $this->getTop();
             if ($array == null) {
                 echo 'No '.$this->type.' were found!';
             } else {
@@ -23,7 +23,7 @@
             }
             
             echo '<h1>'.$this->type.'</h1>';
-            $array = $this->getAll($this->type);
+            $array = $this->getAll();
             if ($array == null) {
                 echo 'No '.$this->type.' were found!';
             } else {
@@ -34,26 +34,33 @@
             }
         }
         
-        public function getAll($type) {
+        public function getAll() {
             $result = $this->link->query('select * from '.$type.';');
-            while($row = mysqli_fetch_array($result)) {
-                $return[] = $row;
+            if ($result->num_rows > 0) {
+                while($row = mysqli_fetch_array($result)) {
+                    $return[] = $row;
+                }
+                return $return;
+            } else {
+                return null;
             }
-            return $return;
         }
         
-        public function getTop($type) {
+        public function getTop() {
             $result = $this->link->query('select * from '.$type.' order by average desc limit 10');
-            while($row = mysqli_fetch_array($result)) {
-                $return[] = $row;
+            if ($result->num_rows > 0) {
+                while($row = mysqli_fetch_array($result)) {
+                    $return[] = $row;
+                }
+                return $return;
+            } else {
+                return null;
             }
-            return $return;
         }
         
         public function getGenres(){
-            $result=$this->link->query("SELECT name FROM genres INNER JOIN genresmovies WHERE genres.idgenres = genres".$this->type.".idgenres GROUP BY idgenres ;");
-            while($row=  mysqli_fetch_row($result))
-            {
+            $result=$this->link->query("SELECT name FROM genres INNER JOIN genres".$this->type." WHERE genres.idgenres = genres".$this->type.".idgenres GROUP BY idgenres;");
+            while($row=  mysqli_fetch_row($result)) {
                 $return[]=$row;
             }
             return $return;

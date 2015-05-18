@@ -4,11 +4,7 @@ include './models/classes/Factory.php';
 
     function loadDefault($type, $link) {
         $factory = new Factory($type, $link);
-        if ($type = 'recipes') {
-            $factory->loadDefaultInfoRecipes();
-        } else {
-            $factory->loadDefaultInfo();
-        }
+        $factory->loadDefaultInfo();
     }
     
     function encrypt($password) {
