@@ -21,6 +21,9 @@
             case 'users':
                 $toInclude = './views/details/users.php';
                 break;
+            case 'cds':
+                $toInclude = './views/details/cds.php';
+                break;
             default:
                 break;
         }

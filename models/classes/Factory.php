@@ -36,7 +36,7 @@
                 } else {
                     echo '<img class="imgMainSquare" src="./images/'.$value['imageurl'].'" />';
                 }
-                echo '<div class="textFromMainSquare"><a href="index.php?type='.$this->type.'&id='.$value['id'.$this->type].'">a</a>';
+                echo '<div class="textFromMainSquare"><a href="index.php?type='.$this->type.'&id='.$value['id'.$this->type].'">'.$value['name'].'</a>';
                 echo '</div>';
             echo '</div>';
         }

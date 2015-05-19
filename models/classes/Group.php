@@ -1,25 +1,19 @@
 <?php
 
-    class Serie {
+    class Group {
         
-        private $idseries;
+        private $idgroups;
         private $name;
-        private $sinopsi;
         private $year;
         private $imageurl;
-        private $seasons;
-        private $totalchapters;
         private $average;
         private $totalvotes;
         
-        function __construct($idseries, $name, $sinopsi, $year, $imageurl, $seasons, $totalchapters, $average, $totalvotes) {
-            $this->idseries = $idseries;
+        function __construct($idgroups, $name, $year, $imageurl, $average, $totalvotes) {
+            $this->idgroups = $idgroups;
             $this->name = $name;
-            $this->sinopsi = $sinopsi;
             $this->year = $year;
             $this->imageurl = $imageurl;
-            $this->seasons = $seasons;
-            $this->totalchapters = $totalchapters;
             $this->average = $average;
             $this->totalvotes = $totalvotes;
         }
@@ -27,32 +21,25 @@
         public function show() {
             echo '<h1>'.$this->name.'</h1>';
             echo '<h1>'.$this->year.'</h1>';
-            echo '<h1>'.$this->sinopsi.'</h1>';
-            echo '<h1>'.$this->seasons.'</h1>';
-            echo '<h1>'.$this->totalchapters.'</h1>';
             echo '<h1>'.$this->average.'</h1>';
             echo '<h1>'.$this->totalvotes.'</h1>';
             echo '<img src="./images/'.$this->imageurl.'" />';
         }
-                
-        function getIdseries() {
-            return $this->idseries;
+
+        function getIdgroups() {
+            return $this->idgroups;
         }
 
         function getName() {
             return $this->name;
         }
 
+        function getYear() {
+            return $this->year;
+        }
+
         function getImageurl() {
             return $this->imageurl;
-        }
-
-        function getSeason() {
-            return $this->season;
-        }
-
-        function getTotalChapters() {
-            return $this->totalchapters;
         }
 
         function getAverage() {
@@ -63,24 +50,20 @@
             return $this->totalvotes;
         }
 
-        function setIdseries($idseries) {
-            $this->idseries = $idseries;
+        function setIdgroups($idgroups) {
+            $this->idgroups = $idgroups;
         }
 
         function setName($name) {
             $this->name = $name;
         }
 
+        function setYear($year) {
+            $this->year = $year;
+        }
+
         function setImageurl($imageurl) {
             $this->imageurl = $imageurl;
-        }
-
-        function setSeason($season) {
-            $this->season = $season;
-        }
-
-        function setTotalChapters($totalChapters) {
-            $this->totalchapters = $totalChapters;
         }
 
         function setAverage($average) {

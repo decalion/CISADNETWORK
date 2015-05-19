@@ -1,58 +1,59 @@
 <?php
 
-    class Serie {
+    class Book {
         
-        private $idseries;
+        private $idbooks;
         private $name;
         private $sinopsi;
         private $year;
         private $imageurl;
-        private $seasons;
-        private $totalchapters;
+        private $isbn;
         private $average;
         private $totalvotes;
         
-        function __construct($idseries, $name, $sinopsi, $year, $imageurl, $seasons, $totalchapters, $average, $totalvotes) {
-            $this->idseries = $idseries;
+        function __construct($idbooks, $name, $sinopsi, $year, $imageurl, $isbn, $average, $totalvotes) {
+            $this->idbooks = $idbooks;
             $this->name = $name;
             $this->sinopsi = $sinopsi;
             $this->year = $year;
             $this->imageurl = $imageurl;
-            $this->seasons = $seasons;
-            $this->totalchapters = $totalchapters;
+            $this->isbn = $isbn;
             $this->average = $average;
             $this->totalvotes = $totalvotes;
         }
         
         public function show() {
             echo '<h1>'.$this->name.'</h1>';
-            echo '<h1>'.$this->year.'</h1>';
             echo '<h1>'.$this->sinopsi.'</h1>';
-            echo '<h1>'.$this->seasons.'</h1>';
-            echo '<h1>'.$this->totalchapters.'</h1>';
+            echo '<h1>'.$this->year.'</h1>';
+            echo '<h1>'.$this->isbn.'</h1>';
             echo '<h1>'.$this->average.'</h1>';
             echo '<h1>'.$this->totalvotes.'</h1>';
             echo '<img src="./images/'.$this->imageurl.'" />';
         }
-                
-        function getIdseries() {
-            return $this->idseries;
+
+        function getIdbooks() {
+            return $this->idbooks;
         }
 
         function getName() {
             return $this->name;
         }
 
+        function getSinopsi() {
+            return $this->sinopsi;
+        }
+
+        function getYear() {
+            return $this->year;
+        }
+
         function getImageurl() {
             return $this->imageurl;
         }
 
-        function getSeason() {
-            return $this->season;
-        }
-
-        function getTotalChapters() {
-            return $this->totalchapters;
+        function getIsbn() {
+            return $this->isbn;
         }
 
         function getAverage() {
@@ -63,24 +64,28 @@
             return $this->totalvotes;
         }
 
-        function setIdseries($idseries) {
-            $this->idseries = $idseries;
+        function setIdbooks($idbooks) {
+            $this->idbooks = $idbooks;
         }
 
         function setName($name) {
             $this->name = $name;
         }
 
+        function setSinopsi($sinopsi) {
+            $this->sinopsi = $sinopsi;
+        }
+
+        function setYear($year) {
+            $this->year = $year;
+        }
+
         function setImageurl($imageurl) {
             $this->imageurl = $imageurl;
         }
 
-        function setSeason($season) {
-            $this->season = $season;
-        }
-
-        function setTotalChapters($totalChapters) {
-            $this->totalchapters = $totalChapters;
+        function setIsbn($isbn) {
+            $this->isbn = $isbn;
         }
 
         function setAverage($average) {
@@ -90,6 +95,8 @@
         function setTotalvotes($totalvotes) {
             $this->totalvotes = $totalvotes;
         }
+
+
         
     }
 
