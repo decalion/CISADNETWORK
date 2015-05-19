@@ -96,11 +96,3 @@
     }
 
 ?>
-
-    idseries INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    imageurl VARCHAR(250) DEFAULT "error.png",
-    season INT NOT NULL DEFAULT 0,
-    totalchapters INT NOT NULL DEFAULT 0,
-    average FLOAT DEFAULT 0,
-    totalvotes INT DEFAULT 0
