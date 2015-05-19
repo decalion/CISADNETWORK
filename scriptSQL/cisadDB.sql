@@ -31,6 +31,7 @@ CREATE TABLE states (
 CREATE TABLE groups (
     idgroups INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
+    year INT NOT NULL,
     imageurl VARCHAR(250) DEFAULT "error.png",
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
@@ -84,8 +85,10 @@ CREATE TABLE movies (
 CREATE TABLE series (
     idseries INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
+    sinopsi VARCHAR(250) NOT NULL,
+    year INT NOT NULL,
     imageurl VARCHAR(250) DEFAULT "error.png",
-    season INT NOT NULL DEFAULT 0,
+    seasons INT NOT NULL DEFAULT 0,
     totalchapters INT NOT NULL DEFAULT 0,
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0
@@ -147,6 +150,7 @@ CREATE TABLE books (
     idbooks INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     sinopsi VARCHAR(250) NOT NULL,
+    year INT NOT NULL,
     imageurl VARCHAR(250) DEFAULT "error.png",
     isbn VARCHAR(20) UNIQUE,
     average FLOAT DEFAULT 0,
@@ -171,6 +175,7 @@ CREATE TABLE news (
     name VARCHAR(100) NOT NULL,
     imageurl VARCHAR(250) NOT NULL DEFAULT "error.png",
     description TEXT NOT NULL,
+    date VARCHAR(10) NOT NULL,
     average FLOAT DEFAULT 0,
     totalvotes INT DEFAULT 0,
     FOREIGN KEY (idusers)

@@ -44,7 +44,7 @@
         public function getTop() {
             $result = $this->link->query('select * from '.$this->type.' order by average desc limit 10');
             if ($result->num_rows > 0) {
-                while($row = mysqli_fetch_array($result)) {
+                while ($row = mysqli_fetch_array($result)) {
                     $return[] = $row;
                 }
                 return $return;
@@ -56,7 +56,7 @@
         public function getAll() {
             $result = $this->link->query('select * from '.$this->type.';');
             if ($result->num_rows > 0) {
-                while($row = mysqli_fetch_array($result)) {
+                while ($row = mysqli_fetch_array($result)) {
                     $return[] = $row;
                 }
                 return $return;
@@ -65,12 +65,22 @@
             }
         }
         
-        public function getGenres(){
-            $result=$this->link->query("SELECT name FROM genres INNER JOIN genres".$this->type." WHERE genres.idgenres = genres".$this->type.".idgenres GROUP BY idgenres;");
-            while($row=  mysqli_fetch_row($result)) {
-                $return[]=$row;
+        public function getById($id) {
+            $result = $this->link->query('select * from '.$this->type.' where id'.$this->type.' = '.$id.';');
+            if ($result->num_rows > 0) {
+                return mysqli_fetch_array($result);
+            } else {
+                return null;
             }
-            return $return;
+        }
+        
+        public function getGenres(){
+            $result = $this->link->query("SELECT name FROM genres INNER JOIN genres".$this->type." WHERE genres.idgenres = genres".$this->type.".idgenres GROUP BY idgenres;");
+            return mysqli_fetch_array($result);
+        }
+        
+        public function loadDetail($id) {
+            return $this->getById($id);
         }
         
     }

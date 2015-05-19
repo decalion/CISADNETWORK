@@ -18,6 +18,9 @@
             case 'recipes':
                 $toInclude = './views/details/recipes.php';
                 break;
+            case 'users':
+                $toInclude = './views/details/users.php';
+                break;
             default:
                 break;
         }
