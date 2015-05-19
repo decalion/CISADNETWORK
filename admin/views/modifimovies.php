@@ -20,8 +20,30 @@
           
             <form method="post" action="index.php">
                 <div>
-                    <input type="text"  name="idmovie"  value="<?php echo $movie->getIdmovie(); ?>" hidden />
+                    <input type="text"  name="idmovie"  value="<?php  echo $movie->getIdmovie(); ?>" hidden />
                     <label>Name :</label> <input type="text" name="username" size="35" value="<?php echo $movie->getName();?>"/>
+                </div>
+                <div>
+                    <label>Year :</label> <input type="text" name="year" size="35" value="<?php echo $movie->getYear();?>"/>
+                </div>
+                <div>
+                    <label>Sinopsi :</label><br> <textarea rows="4" cols="50" name="sinopsi" ><?php echo $movie->getSinopsi();?> </textarea>
+                </div>
+                <div>
+                    <label>Actors List : </label><select name="actors">
+                        <?php
+                            $actors=$movie->getActors();
+                            foreach($actors as $i => $actor){
+                                
+                                echo"<option value='$i' selected>".$actor->getName()."</option>";
+                                
+                            }
+                        
+                        
+                        ?>
+                        
+                    </select>
+                    <?php echo "<a href='index.php?ids=" . ACTORSMOVIE . "'><button>Modifi Actors </button></a>"; ?>
                 </div>
  
             </form>
