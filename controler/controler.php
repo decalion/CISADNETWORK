@@ -24,6 +24,15 @@
             case 'cds':
                 $toInclude = './views/details/cds.php';
                 break;
+            case 'actors':
+                $toInclude = './views/details/actors.php';
+                break;
+            case 'authors':
+                $toInclude = './views/details/actors.php';
+                break;
+            case 'news':
+                $toInclude = './views/details/news.php';
+                break;
             default:
                 break;
         }
