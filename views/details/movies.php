@@ -6,7 +6,7 @@
     if ($object == null) {
         echo 'Movie not found!';
     } else {
-        $movie =  new Movie($object['idmovies'], 
+        $movie = new Movie($object['idmovies'], 
                             $object['name'], 
                             $object['sinopsi'], 
                             $object['year'], 

@@ -6,7 +6,7 @@
     if ($object == null) {
         echo 'CD not found!';
     } else {
-        $cd =  new Book($object['idcds'], 
+        $cd = new Book($object['idcds'], 
                             $object['idgroups'], 
                             $object['name'], 
                             $object['imageurl']);

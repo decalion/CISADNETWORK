@@ -6,7 +6,7 @@
     if ($object == null) {
         echo 'Serie not found!';
     } else {
-        $serie =  new Serie($object['idseries'], 
+        $serie = new Serie($object['idseries'], 
                             $object['name'], 
                             $object['sinopsi'], 
                             $object['year'], 

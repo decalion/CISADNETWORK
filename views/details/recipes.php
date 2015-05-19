@@ -6,7 +6,7 @@
     if ($object == null) {
         echo 'Recipe not found!';
     } else {
-        $recipe =  new Recipe($object['idrecipes'], 
+        $recipe = new Recipe($object['idrecipes'], 
                             $object['name'], 
                             $object['imageurl'], 
                             $object['description'], 

@@ -6,7 +6,7 @@
     if ($object == null) {
         echo 'Group not found!';
     } else {
-        $group =  new Group($object['idgroups'], 
+        $group = new Group($object['idgroups'], 
                             $object['name'], 
                             $object['year'], 
                             $object['imageurl'],
