@@ -50,6 +50,7 @@ CREATE TABLE cds (
     idcds INT PRIMARY KEY AUTO_INCREMENT,
     idgroups INT NOT NULL,
     name VARCHAR(30) NOT NULL,
+    year INT NOT NULL,
     imageurl VARCHAR(250) DEFAULT "error.png",
     FOREIGN KEY (idgroups)
         REFERENCES groups (idgroups)
