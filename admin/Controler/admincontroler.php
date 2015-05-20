@@ -77,6 +77,9 @@ if(isset($_POST['ids'])){
         case DELMOVIEACTOR:
             include './Controler/DelMovieActors.php';
             break;
+        case ADDACTORMOVIE:
+            include './Controler/AddActorMovie.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
     

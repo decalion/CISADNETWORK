@@ -175,6 +175,18 @@ class AdminMysqlImpl extends AbstractDB {
     }
     
     
+    public function selectActorsAdd($sql){
+        $query = $this->conection->query($sql);
+        $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=new Actors();
+            $temp->setIdactors($rst['idactors']);
+            $temp->setName($rst['name']);
+            array_push($result, $temp);
+        }
+        
+        return $result;
+    }
     
     
 }

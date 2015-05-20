@@ -1,20 +1,74 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link href="./css/panelstyle.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <?php
-         $data = $facade->selectMoviesData();
-                
-         $movie = $data[$_GET['action']];
-         print_r($movie);
-        ?>
+        <div class="wrapper">
+            <div class="header">
+                <h2>Actor List</h2>
+            </div>
+            <div class="center">
+                <?php
+                $data = $facade->selectMoviesData();
+
+                $movie = $data[$_GET['action']];
+                //print_r($movie);
+
+
+                $actormovie = $movie->getActors();
+
+                $sql = "SELECT idactors,name FROM actors WHERE idactors NOT IN (";
+                $totalactors = count($actormovie);
+
+                //echo $totalactors;
+
+                foreach ($actormovie as $i => $actor) {
+
+                    if ($i == $totalactors - 1) {
+
+                        $sql.="" . $actor->getIdactors() . ")";
+                    } else {
+
+                        $sql.="" . $actor->getIdactors() . ",";
+                    }
+                }
+
+                //echo $sql;
+
+                $list = $facade->selectActorsAdd($sql);
+
+                //print_r($list);
+                ?>
+                <center>
+                    <table border="2">
+                        <tr>
+                            <td>Name</td>
+                            <td>Add</td>
+                        </tr>
+                        <?php
+                            foreach ($list as $person){
+                                echo"<tr>";
+                                echo"<td>".$person->getName()."</td>";
+                                echo "<td><a href='index.php?ids=".ADDACTORMOVIE."&action=".$movie->getIdmovie()."&ad=".$person->getIdactors()."'><button>Add</button></a></td>";
+                                echo"</tr>";
+
+                            }
+                        
+                        ?>
+                        
+                        
+                        
+                    </table>
+                    
+                    
+                </center>
+            </div>
+            <div class="footer">
+                <label>CISADNETWORK  Ismael Caballero | Adrian Garcia | Cristian Bautista </label>
+            </div>
+        </div>
     </body>
 </html>

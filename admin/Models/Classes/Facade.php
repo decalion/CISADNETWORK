@@ -77,4 +77,17 @@ class Facade {
         return $result;
         
     }
+    
+    
+        public function selectActorsAdd($sql){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectActorsAdd($sql);
+        $db->close();
+        return $result;
+        
+    }
+    
+    
+    
 }
