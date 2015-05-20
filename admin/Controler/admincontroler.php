@@ -70,6 +70,13 @@ if(isset($_POST['ids'])){
         case MOVIESMODIFY:
             include './views/modifimovies.php';
             break;
+        case ACTORSMOVIE:
+            include './views/addmovieactor.php';
+            break;
+        
+        case DELMOVIEACTOR:
+            include './Controler/DelMovieActors.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
     
