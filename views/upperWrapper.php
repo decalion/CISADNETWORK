@@ -72,6 +72,7 @@
                         <form action="./index.php" method="post">
                             <input hidden type="text" name="type" value="messages" />
                             <input hidden type="text" name="state" value="0" />
+                            <input hidden type="text" name="showAll" value="0" />
                             <input type="submit" value="<?php echo getNumMessages($link); ?>" />
                         </form>
                     </li>

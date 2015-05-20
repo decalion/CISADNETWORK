@@ -32,4 +32,28 @@
         return $result->num_rows;
     }
     
+    function getUsernameById($link, $id) {
+        $query = 'select username from users where idusers = "'.$id.'";';
+        $result = $link->query($query);
+        if (!$result) {
+            return null;
+        } else {
+            foreach ($result as $username) {
+                return $username['username'];
+            }
+        }
+    }
+    
+    function getIdByUsername($link, $username) {
+        $query = 'select idusers from users where username = "'.$username.'";';
+        $result = $link->query($query);
+        if (!$result) {
+            return null;
+        } else {
+            foreach ($result as $id) {
+                return $id['idusers'];
+            }
+        }
+    }
+    
 ?>

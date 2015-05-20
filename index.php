@@ -18,6 +18,7 @@
     mysqli_select_db($link->getConnection(), 'cisadnetwork');
 
     include './views/head.php';
+    
     include './models/functions.php';
     
     include './models/debug.php';
@@ -29,13 +30,6 @@
     include './views/upperWrapper.php';
     
     include $toInclude;
-    
-    if (isset($log)) {
-        foreach ($log as $msg) {
-            echo '<p>'.$msg.'</p>';
-        }
-        unset($log);
-    }
     
     include './views/footerWrapper.php';
     include './views/bottom.php';
