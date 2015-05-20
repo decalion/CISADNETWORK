@@ -26,4 +26,10 @@
         return $rows;
     }
     
+    function getNumMessages($link) {
+        $query = 'select * from messages where receiver = "'.$_SESSION['userData']['idusers'].'" and readed = "0";';
+        $result = $link->query($query);
+        return $result->num_rows;
+    }
+    
 ?>
