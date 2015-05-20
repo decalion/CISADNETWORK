@@ -8,7 +8,11 @@
 class AdminMysqlImpl extends AbstractDB {
 
     public function add($sql) {
-        
+        $query = $this->conection->query($sql);
+        if ($this->conection->getErrorNum() == 0) {
+            return true;
+        }
+        return false;
     }
 
     /**
