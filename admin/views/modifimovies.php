@@ -57,6 +57,18 @@
                             <?php echo "<a href='index.php?ids=" . ACTORSMOVIE . "&action=$id'><button>Add New Actor </button></a>"; ?>
                     </div>
                 <div>
+                    <center>
+                        <table border="2">
+                            <tr>
+                                <td>Name</td>
+                            </tr>
+                            
+                            
+                            
+                        </table>
+                    </center>
+                </div>
+                <div>
                     <?php echo "<a href='index.php?ids=" . BACK . "'><button>Back</button></a>"; ?>
                 </div>
             </div>
