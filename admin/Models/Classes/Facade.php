@@ -50,6 +50,15 @@ class Facade {
         
     }
     
+     public function addData($sql){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->add($sql);
+        $db->close();
+        return $result;
+        
+    }
+    
     /**
      * Genric Deleted Data
      * @param type $sql
