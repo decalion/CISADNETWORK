@@ -50,6 +50,11 @@ class Facade {
         
     }
     
+    /**
+     * Add data generic
+     * @param type $sql
+     * @return type
+     */
      public function addData($sql){
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
@@ -87,7 +92,11 @@ class Facade {
         
     }
     
-    
+    /**
+     * Generic Select Data Actors 
+     * @param type $sql
+     * @return type
+     */
         public function selectActorsAdd($sql){
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);

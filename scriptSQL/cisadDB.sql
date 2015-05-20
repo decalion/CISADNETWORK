@@ -96,6 +96,13 @@ CREATE TABLE actors (
     imageurl VARCHAR(250) DEFAULT "error.png"
 )  ENGINE=INNODB;
 
+CREATE TABLE directors (
+    iddirector INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    imageurl VARCHAR(250) DEFAULT "error.png"
+)  ENGINE=INNODB;
+
+
 CREATE TABLE movies (
     idmovies INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -151,11 +158,23 @@ CREATE TABLE actorsmovies (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
 
+CREATE TABLE directorsmovies (
+    idmovies INT,
+    iddirector INT,
+    PRIMARY KEY (idmovies , iddirector),
+    FOREIGN KEY (idmovies)
+        REFERENCES movies (idmovies)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (iddirector)
+        REFERENCES directors (iddirector)
+        ON DELETE CASCADE ON UPDATE CASCADE
+)  ENGINE=INNODB;
+
 CREATE TABLE actorseries (
     idseries INT,
     idactors INT,
     ifdirector BINARY,
-    PRIMARY KEY (idseries , idactors, ifdirector),
+    PRIMARY KEY (idseries , idactors),
     FOREIGN KEY (idseries)
         REFERENCES series (idseries)
         ON DELETE CASCADE ON UPDATE CASCADE,
@@ -163,6 +182,19 @@ CREATE TABLE actorseries (
         REFERENCES actors (idactors)
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB;
+
+CREATE TABLE directorseries (
+    idseries INT,
+    iddirector INT,
+    PRIMARY KEY (idseries , iddirector),
+    FOREIGN KEY (idseries)
+        REFERENCES series (idseries)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (iddirector)
+        REFERENCES directors (iddirector)
+        ON DELETE CASCADE ON UPDATE CASCADE
+)  ENGINE=INNODB;
+
 
 CREATE TABLE authors (
     idauthors INT PRIMARY KEY AUTO_INCREMENT,
@@ -549,12 +581,12 @@ INSERT INTO actors(name) VALUES ('Jeremy Renner');
 
 INSERT INTO movies(name,sinopsi,year)VALUES('Los Vengadores','Era ser una vez',2012);
 
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,1,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,2,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,3,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,4,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,5,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(1,6,0);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(1,1);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(1,2);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(1,3);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(1,4);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(1,5);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(1,6);
 
 
 INSERT INTO actors(name) VALUES ('Arnold Schwarzenegger');
@@ -563,9 +595,9 @@ INSERT INTO actors(name) VALUES ('Linda Hamilton');
 INSERT INTO actors(name) VALUES ('Paul Winfield');
 INSERT INTO actors(name) VALUES ('Lance Henriksen');
 INSERT INTO movies(name,sinopsi,year)VALUES('The Terminator','El primo de pep',1984);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,7,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,8,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,9,0);
-INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,10,0);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,7);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,8);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,9);
+INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,10);
 
 

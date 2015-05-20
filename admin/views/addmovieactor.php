@@ -13,17 +13,13 @@
             <div class="center">
                 <?php
                 $data = $facade->selectMoviesData();
-
                 $movie = $data[$_GET['action']];
                 //print_r($movie);
-
-
                 $actormovie = $movie->getActors();
 
                 $sql = "SELECT idactors,name FROM actors WHERE idactors NOT IN (";
                 $totalactors = count($actormovie);
 
-                //echo $totalactors;
 
                 foreach ($actormovie as $i => $actor) {
 
@@ -36,11 +32,8 @@
                     }
                 }
 
-                //echo $sql;
-
                 $list = $facade->selectActorsAdd($sql);
 
-                //print_r($list);
                 ?>
                 <center>
                     <table border="2">
@@ -56,14 +49,8 @@
                                 echo"</tr>";
 
                             }
-                        
                         ?>
-                        
-                        
-                        
                     </table>
-                    
-                    
                 </center>
             </div>
             <div class="footer">
