@@ -68,6 +68,13 @@
                             <input type="submit" value="" class="submitImage" />
                         </form>
                     </li>
+                    <li>
+                        <form action="./index.php" method="post">
+                            <input hidden type="text" name="type" value="messages" />
+                            <input hidden type="text" name="state" value="0" />
+                            <input type="submit" value="<?php echo getNumMessages($link); ?>" />
+                        </form>
+                    </li>
         <?php
             } else {
         ?>

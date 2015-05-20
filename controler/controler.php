@@ -152,6 +152,15 @@
                             break;
                     }
                     break;
+                case 'messages':
+                    switch ($_POST['state']) {
+                        case 0:
+                            $toInclude = './views/messages.php';
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }
