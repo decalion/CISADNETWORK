@@ -157,6 +157,12 @@
                         case 0:
                             $toInclude = './views/messages.php';
                             break;
+                        case 1:
+                            $toInclude = './views/newMessage.php';
+                            break;
+                        case 2:
+                            $toInclude = './models/sendMessage.php';
+                            break;
                         default:
                             break;
                     }
