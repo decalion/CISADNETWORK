@@ -19,9 +19,32 @@ CREATE TABLE users (
     activemail BINARY DEFAULT 0,
     active BINARY DEFAULT 1,
     userKey VARCHAR(250) NOT NULL,
+    privacity VARCHAR(30) DEFAULT "private",
     FOREIGN KEY (idroles)
         REFERENCES roles (idroles)
 )  ENGINE=INNODB;
+
+CREATE TABLE friends (
+    idusers INT,
+    idusersfriend INT,
+    FOREIGN KEY (idusers)
+            REFERENCES users (idusers),
+    FOREIGN KEY (idusersfriend)
+            REFERENCES users (idusers),
+    PRIMARY KEY (idusers, idusersfriend)
+) ENGINE=INNODB;
+
+CREATE TABLE messages (
+    idmessages INT PRIMARY KEY AUTO_INCREMENT,
+    sender INT,
+    receiver INT,
+    readed BINARY DEFAULT 0,
+    message VARCHAR(250) NOT NULL,
+    FOREIGN KEY (sender)
+            REFERENCES users (idusers),
+    FOREIGN KEY (receiver)
+            REFERENCES users (idusers)
+) ENGINE=INNODB;
 
 CREATE TABLE states (
     idstates INT PRIMARY KEY AUTO_INCREMENT,
@@ -544,3 +567,5 @@ INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,7,0);
 INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,8,0);
 INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,9,0);
 INSERT INTO actorsmovies(idmovies,idactors,ifdirector)VALUES(2,10,0);
+
+
