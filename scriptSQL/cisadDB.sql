@@ -173,7 +173,6 @@ CREATE TABLE directorsmovies (
 CREATE TABLE actorseries (
     idseries INT,
     idactors INT,
-    ifdirector BINARY,
     PRIMARY KEY (idseries , idactors),
     FOREIGN KEY (idseries)
         REFERENCES series (idseries)
@@ -599,5 +598,12 @@ INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,7);
 INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,8);
 INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,9);
 INSERT INTO actorsmovies(idmovies,idactors)VALUES(2,10);
+
+
+INSERT INTO directors (name) VALUES ('Joss Whedon');
+INSERT INTO directorsmovies(idmovies,iddirector) VALUES(1,1);
+INSERT INTO directors (name) VALUES ('James Cameron');
+INSERT INTO directorsmovies(idmovies,iddirector) VALUES(2,2);
+
 
 
