@@ -14,6 +14,7 @@ include_once './Models/Classes/DB/DTO/Login.php';
 include_once './Models/Classes/DB/DTO/User.php';
 include_once './Models/Classes/DB/DTO/Movie.php';
 include_once './Models/Classes/DB/DTO/Actors.php';
+include_once './Models/Classes/DB/DTO/Directors.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -73,12 +74,20 @@ if(isset($_POST['ids'])){
         case ACTORSMOVIE:
             include './views/addmovieactor.php';
             break;
-        
         case DELMOVIEACTOR:
             include './Controler/DelMovieActors.php';
             break;
         case ADDACTORMOVIE:
             include './Controler/AddActorMovie.php';
+            break;
+        case DIRECTORSMOVIES:
+            
+            break;
+        case ADDDIRECTORMOVIES:
+            
+            break;
+        case DELDIRECTORMOVIES:
+            
             break;
      
      default : include './views/adminLogin.php'; break;

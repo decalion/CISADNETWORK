@@ -56,17 +56,25 @@
                             </center>
                             <?php echo "<a href='index.php?ids=" . ACTORSMOVIE . "&action=$id'><button>Add New Actor </button></a>"; ?>
                     </div>
+                
                 <div>
                     <center>
                         <table border="2">
                             <tr>
                                 <td>Name</td>
                             </tr>
-                            
-                            
-                            
+                            <?php
+                                $directors=$movie->getDirectors();
+                                foreach ($directors as $director){
+                                    echo"<tr>";
+                                    echo"<td>".$director->getName()."</td>";
+                                    echo"</tr>";
+                                }
+
+                            ?>
                         </table>
                     </center>
+                    <?php echo "<a href='index.php?ids=" . DIRECTORSMOVIES . "&action=$id'><button>Add New Director </button></a>"; ?>
                 </div>
                 <div>
                     <?php echo "<a href='index.php?ids=" . BACK . "'><button>Back</button></a>"; ?>

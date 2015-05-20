@@ -134,12 +134,41 @@ class AdminMysqlImpl extends AbstractDB {
             $temp->setAverage($rst['average']);
             $temp->setTotalvotes($rst['totalvotes']);
             $temp->setActors($this->selectMoviesActors($rst['idmovies']));
+            $temp->setDirectors($this->selectDirectorsMovies($rst['idmovies']));
             
             array_push($result, $temp);
             
         }
         return $result;  
     }
+    
+    
+    private  function selectDirectorsMovies($id){
+         $query = $this->conection->query("SELECT iddirector FROM  directorsmovies WHERE idmovies=$id");
+         $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=$this->selectDirectors($rst['iddirector']);
+            array_push($result, $temp);
+            
+        }
+        
+        return $result;
+        
+    }
+    
+    
+    private function selectDirectors($id){
+       $query = $this->conection->query("SELECT iddirector,name,imageurl FROM  directors WHERE iddirector=$id");
+        $rst = $this->conection->result($query);
+        
+        $temp=new Directors();
+        $temp->getIddirector($rst['iddirector']);
+        $temp->setName($rst['name']);
+        $temp->setImageurl($rst['imageurl']);
+        
+        return $temp;
+    }
+    
     
     
     /**
