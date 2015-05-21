@@ -106,6 +106,17 @@ class Facade {
         
     }
     
+        public function selectDirectorsAdd($sql){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectDirectorsAdd($sql);
+        $db->close();
+        return $result;
+        
+    }
+    
+    
+    
     
     
 }

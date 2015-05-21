@@ -162,7 +162,7 @@ class AdminMysqlImpl extends AbstractDB {
         $rst = $this->conection->result($query);
         
         $temp=new Directors();
-        $temp->getIddirector($rst['iddirector']);
+        $temp->setIddirector($rst['iddirector']);
         $temp->setName($rst['name']);
         $temp->setImageurl($rst['imageurl']);
         
@@ -220,6 +220,21 @@ class AdminMysqlImpl extends AbstractDB {
         
         return $result;
     }
+    
+    
+        public function selectDirectorsAdd($sql){
+            $query = $this->conection->query($sql);
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new Directors();
+                $temp->setIddirector($rst['iddirector']);
+                $temp->setName($rst['name']);
+                array_push($result, $temp);
+            }
+        
+            return $result;
+    }
+    
     
     
 }

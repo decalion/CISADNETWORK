@@ -19,6 +19,7 @@ class Directors {
     }
     
     function getIddirector() {
+        
         return $this->iddirector;
     }
 
