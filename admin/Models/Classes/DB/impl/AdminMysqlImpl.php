@@ -246,4 +246,50 @@ class AdminMysqlImpl extends AbstractDB {
     
     
     
+    public function  selectSeriesData(){
+            $query = $this->conection->query("SELECT * FROM series");
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new Series();
+                $temp->setIdserie($rst['idseries']);
+                $temp->setName($rst['name']);
+                $temp->setSinopsi($rst['sinopsi']);
+                $temp->setYear($rst['year']);
+                $temp->setImageurl($rst['imageurl']);
+                $temp->setSeasons($rst['seasons']);
+                $temp->setTotalchapters($rst['totalchapters']);
+                $temp->setAverage($rst['average']);
+                $temp->setTotalvotes($rst['totalvotes']);
+                $temp->setChapters($rst['idseries']);
+                $temp->setActors($rst['idseries']);
+                        
+
+                array_push($result, $temp);
+            }
+        
+            return $result;
+    }
+    
+    
+    
+    private function selectChaptersSeries($id){
+        
+        
+        
+        
+    }
+    
+    
+        private function selectSeriesActors($id){
+            $query = $this->conection->query("SELECT idactors FROM  actorsseries WHERE idseries=$id");
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=$this->selectActors($rst['idactors']);
+                array_push($result, $temp);
+            
+            }
+        
+            return $result;  
+    }
+    
 }

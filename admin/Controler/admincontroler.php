@@ -94,6 +94,9 @@ if(isset($_POST['ids'])){
         case DELDIRECTORMOVIES:
             include './Controler/DelDirectorMovie.php';
             break;
+        case SERIESPANEL:
+            include './views/seriespanel.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
     
