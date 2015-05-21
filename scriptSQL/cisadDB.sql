@@ -83,7 +83,7 @@ CREATE TABLE songs (
     idsongs INT PRIMARY KEY AUTO_INCREMENT,
     idgroups INT NOT NULL,
     idcds INT NOT NULL,
-    name VARCHAR(30) NOT NULL,
+    name VARCHAR(100) NOT NULL,
     FOREIGN KEY (idgroups)
         REFERENCES groups (idgroups),
     FOREIGN KEY (idcds)
@@ -616,6 +616,3 @@ INSERT INTO songs (idgroups, idcds, name) VALUES (1, 1, 'La cancion mas bonita d
 INSERT INTO authors (name) VALUES ('Jose Ignario Rancio'), ('Manuel el del bombo');
 
 INSERT INTO authorsbooks VALUES (1, 1), (2, 2);
-
-
-
