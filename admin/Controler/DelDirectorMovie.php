@@ -5,7 +5,7 @@ $actid = $_GET['del'];
 
 //echo "Test " . $movid . " :::: " . $actid;
 
-$sql = "DELETE FROM directorsmovies WHERE idmovies=$movid AND iddirector=$actid";
+$sql = "DELETE FROM directorsmovies WHERE idmovies=$movid AND iddirectors=$actid";
 
 $result = $facade->deletedData($sql);
 

@@ -4,7 +4,7 @@ $movie=$_GET['action'];
 $director=$_GET['ad'];
 
 
-$sql="INSERT INTO directorsmovies (idmovies,iddirector) VALUES ($movie,$director)";
+$sql="INSERT INTO directorsmovies (idmovies,iddirectors) VALUES ($movie,$director)";
 
 $result=$facade->addData($sql);
 

@@ -144,10 +144,10 @@ class AdminMysqlImpl extends AbstractDB {
     
     
     private  function selectDirectorsMovies($id){
-         $query = $this->conection->query("SELECT iddirector FROM  directorsmovies WHERE idmovies=$id");
+         $query = $this->conection->query("SELECT iddirectors FROM  directorsmovies WHERE idmovies=$id");
          $result = array();
         while ($rst = $this->conection->result($query)) {
-            $temp=$this->selectDirectors($rst['iddirector']);
+            $temp=$this->selectDirectors($rst['iddirectors']);
             array_push($result, $temp);
             
         }
@@ -158,11 +158,11 @@ class AdminMysqlImpl extends AbstractDB {
     
     
     private function selectDirectors($id){
-       $query = $this->conection->query("SELECT iddirector,name,imageurl FROM  directors WHERE iddirector=$id");
+       $query = $this->conection->query("SELECT iddirectors,name,imageurl FROM  directors WHERE iddirectors=$id");
         $rst = $this->conection->result($query);
         
         $temp=new Directors();
-        $temp->setIddirector($rst['iddirector']);
+        $temp->setIddirector($rst['iddirectors']);
         $temp->setName($rst['name']);
         $temp->setImageurl($rst['imageurl']);
         
@@ -207,7 +207,11 @@ class AdminMysqlImpl extends AbstractDB {
         return $temp;
     }
     
-    
+    /**
+     * 
+     * @param type $sql
+     * @return array
+     */
     public function selectActorsAdd($sql){
         $query = $this->conection->query($sql);
         $result = array();
@@ -222,12 +226,17 @@ class AdminMysqlImpl extends AbstractDB {
     }
     
     
+    /**
+     * 
+     * @param type $sql
+     * @return array
+     */
         public function selectDirectorsAdd($sql){
             $query = $this->conection->query($sql);
             $result = array();
             while ($rst = $this->conection->result($query)) {
                 $temp=new Directors();
-                $temp->setIddirector($rst['iddirector']);
+                $temp->setIddirector($rst['iddirectors']);
                 $temp->setName($rst['name']);
                 array_push($result, $temp);
             }

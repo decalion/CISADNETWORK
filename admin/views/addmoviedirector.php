@@ -17,7 +17,7 @@
                 
                 $directormovie = $movie->getDirectors();
 
-                $sql = "SELECT iddirector,name FROM directors WHERE iddirector NOT IN (";
+                $sql = "SELECT iddirectors,name FROM directors WHERE iddirectors NOT IN (";
                 $totalactors = count($directormovie);
                
 
@@ -52,6 +52,9 @@
                         ?>
                     </table>
                 </center>
+            </div>
+            <div>
+                <?php echo "<a href='index.php?ids=" . BACKMOVIES . "'><button>Back</button></a>"; ?>
             </div>
             <div class="footer">
                 <label>CISADNETWORK  Ismael Caballero | Adrian Garcia | Cristian Bautista </label>
