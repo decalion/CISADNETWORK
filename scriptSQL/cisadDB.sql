@@ -129,19 +129,11 @@ CREATE TABLE chapters (
     name VARCHAR(100) NOT NULL,
     numberchapter INT NOT NULL,
     seasonnumber INT NOT NULL,
-    PRIMARY KEY (idchapters, numberchapter, seasonnumber)
-) ENGINE=INNODB;
-
-CREATE TABLE chaptersseries (
     idseries INT NOT NULL,
-    idchapters INT NOT NULL,
-    PRIMARY KEY (idseries, idchapters),
     FOREIGN KEY (idseries)
-        REFERENCES series (idseries)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (idchapters)
-        REFERENCES chapters (idchapters)
-        ON DELETE CASCADE ON UPDATE CASCADE
+            REFERENCES series (idseries)
+            ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (idchapters, numberchapter, seasonnumber, idseries)
 ) ENGINE=INNODB;
 
 CREATE TABLE actorsmovies (
@@ -609,6 +601,8 @@ INSERT INTO actorsseries VALUES (1, 2), (2, 3), (2, 4);
 
 INSERT INTO directorsseries VALUES (1, 1), (2, 2);
 
+INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 1', 1, 1, 1), ('Capitulo 2', 2, 1, 1), ('Capitulo 1', 1, 1, 2);
+
 INSERT INTO recipes (name, description) VALUES ('Bocadillo de ladrillos', 'Es un bocadillo de ladrillos'), ('Sopa de tornillos', 'Es una sopa de tornillos'), ('Pastel de mierda', 'Pastel hecho con mierda');
 
 INSERT INTO books (name, sinopsi, year, isbn) VALUES ('Las 3 mellizas', 'Son 3 niñas que toman drogas', '1995', '1000-5555-4447*84758'), ('La mujer del carro', 'Es una mujer que mata zombies con un carro de la compra', '2015', '8547-6666-4120*89658');
@@ -622,7 +616,6 @@ INSERT INTO songs (idgroups, idcds, name) VALUES (1, 1, 'La cancion mas bonita d
 INSERT INTO authors (name) VALUES ('Jose Ignario Rancio'), ('Manuel el del bombo');
 
 INSERT INTO authorsbooks VALUES (1, 1), (2, 2);
-
 
 
 
