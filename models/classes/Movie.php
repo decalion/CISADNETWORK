@@ -85,8 +85,6 @@
             $this->totalvotes = $totalvotes;
         }
 
-
-
     }
 
 ?>
