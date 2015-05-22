@@ -52,7 +52,7 @@
       }
       foreach ($lastFinds as $value) {
 
-      echo "<li><a href='index.php?type=movies&id=1>".$value."</a></li>";
+      echo '<li><a href="index.php?type=movies&id=1"/>'.$value.'</a></li>';
       }
       }
      
