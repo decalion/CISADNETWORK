@@ -7,6 +7,7 @@
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <script src="js/jquery.min.js"></script>
         <script src="js/mainScript.js"></script>
+        <script src="js/jquery-ui.js"></script>
         <title></title>
     </head>
     <body>

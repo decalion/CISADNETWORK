@@ -1,7 +1,6 @@
 <?php
 
-   $log['msg'] = '<p>'.$_POST['userInputSearch'].'</p>';
-   
-   
+
+echo $_POST['userInputSearch'];
 
 ?>
