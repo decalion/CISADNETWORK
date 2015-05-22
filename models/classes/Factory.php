@@ -65,22 +65,18 @@
             }
         }
         
-        public function getById($id) {
-            $result = $this->link->query('select * from '.$this->type.' where id'.$this->type.' = '.$id.';');
-            if ($result->num_rows > 0) {
-                return mysqli_fetch_array($result);
-            } else {
-                return null;
-            }
-        }
-        
         public function getGenres(){
             $result = $this->link->query("SELECT name FROM genres INNER JOIN genres".$this->type." WHERE genres.idgenres = genres".$this->type.".idgenres GROUP BY idgenres;");
             return mysqli_fetch_array($result);
         }
         
         public function loadDetail($id) {
-            return $this->getById($id);
+            $result = $this->link->query('select * from '.$this->type.' where id'.$this->type.' = '.$id.';');
+            if ($result->num_rows > 0) {
+                return mysqli_fetch_array($result);
+            } else {
+                return null;
+            }
         }
         
     }

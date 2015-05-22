@@ -6,7 +6,7 @@
     if ($object == null) {
         echo 'Book not found!';
     } else {
-        $book =  new Book($object['idbooks'], 
+        $book = new Book($object['idbooks'], 
                             $object['name'], 
                             $object['sinopsi'], 
                             $object['year'], 

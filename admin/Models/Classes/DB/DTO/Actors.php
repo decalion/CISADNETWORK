@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DTO (Data Transfer Object) Class of Genres Table
+ * DTO (Data Transfer Object) Class of Actors Table
  *
  * @author Ismael Caballero
  */

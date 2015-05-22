@@ -15,6 +15,7 @@ class Movie {
     private $average;
     private $totalvotes;
     private $actors = array();
+    private $directors=array();
     private $genres = array();
 
     /**
@@ -28,8 +29,15 @@ class Movie {
     /**
      * GETTERS/SETTERS
      */
-    
-    function getAverage() {
+    function getDirectors() {
+        return $this->directors;
+    }
+
+    function setDirectors($directors) {
+        $this->directors = $directors;
+    }
+
+        function getAverage() {
         return $this->average;
     }
 

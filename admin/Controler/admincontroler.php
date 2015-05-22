@@ -14,6 +14,7 @@ include_once './Models/Classes/DB/DTO/Login.php';
 include_once './Models/Classes/DB/DTO/User.php';
 include_once './Models/Classes/DB/DTO/Movie.php';
 include_once './Models/Classes/DB/DTO/Actors.php';
+include_once './Models/Classes/DB/DTO/Directors.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -31,13 +32,15 @@ if(isset($_POST['ids'])){
         case AUTHENTICATION:
             include './Controler/authentication.php';
          break;
-     
         case SAVEMODIFYUSER:
             include './Controler/ModifyUser.php';
             break;
         case CONFUSERDELETED:
             include './Controler/DeleteUsers.php';
          break;
+        case SAVEMODIFYMOVIE:
+            include './Controler/ModifyMovie.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
         
@@ -51,6 +54,9 @@ if(isset($_POST['ids'])){
     switch($id){
         case BACK:
             include './views/userpanel.php';
+            break;
+        case BACKMOVIES:
+            include './views/moviespanel.php';
             break;
         case LOGOUT:
             include './Controler/Logout.php';
@@ -69,6 +75,27 @@ if(isset($_POST['ids'])){
             break;
         case MOVIESMODIFY:
             include './views/modifimovies.php';
+            break;
+        case ACTORSMOVIE:
+            include './views/addmovieactor.php';
+            break;
+        case DELMOVIEACTOR:
+            include './Controler/DelMovieActors.php';
+            break;
+        case ADDACTORMOVIE:
+            include './Controler/AddActorMovie.php';
+            break;
+        case DIRECTORSMOVIES:
+            include './views/addmoviedirector.php';
+            break;
+        case ADDDIRECTORMOVIES:
+            include './Controler/AddDirectorMovie.php';
+            break;
+        case DELDIRECTORMOVIES:
+            include './Controler/DelDirectorMovie.php';
+            break;
+        case SERIESPANEL:
+            include './views/seriespanel.php';
             break;
      
      default : include './views/adminLogin.php'; break;

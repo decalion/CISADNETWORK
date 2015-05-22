@@ -33,7 +33,7 @@
 
                 <div class="copyright">
                     <label>Ismael Caballero |</label>
-                    <label>Adrian Manchado | </label>
+                    <label>Adrian Garcia | </label>
                     <label>Cristian Bautista</label>
                 </div>
 

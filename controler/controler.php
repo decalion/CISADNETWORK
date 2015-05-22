@@ -24,6 +24,18 @@
             case 'cds':
                 $toInclude = './views/details/cds.php';
                 break;
+            case 'actors':
+                $toInclude = './views/details/actors.php';
+                break;
+            case 'directors':
+                $toInclude = './views/details/directors.php';
+                break;
+            case 'authors':
+                $toInclude = './views/details/actors.php';
+                break;
+            case 'news':
+                $toInclude = './views/details/news.php';
+                break;
             default:
                 break;
         }
@@ -134,6 +146,21 @@
                     switch ($_POST['state']) {
                         case 0:
                             $toInclude = './views/settings.php';
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 'messages':
+                    switch ($_POST['state']) {
+                        case 0:
+                            $toInclude = './views/messages.php';
+                            break;
+                        case 1:
+                            $toInclude = './views/newMessage.php';
+                            break;
+                        case 2:
+                            $toInclude = './models/sendMessage.php';
                             break;
                         default:
                             break;

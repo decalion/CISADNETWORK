@@ -54,6 +54,52 @@
 
         </li>
         <?php
+            if (isset($_SESSION['userData'])) {
+        ?>
+                    <li>
+                        <form action="./index.php" method="post">
+                            <input hidden type="text" name="type" value="logout" />
+                            <input hidden type="text" name="state" value="0" />
+                            <input type="submit" value="LOGOUT" />
+                        </form>
+                    </li>
+                    <li>
+                        <p class="defaultBorder">Welcome <strong><?php echo $_SESSION['userData']['username']; ?></strong>!</p>
+                    </li>
+                    <li>
+                        <form action="./index.php" method="post">
+                            <input hidden type="text" name="type" value="settings" />
+                            <input hidden type="text" name="state" value="0" />
+                            <input type="submit" value="" class="submitImage" />
+                        </form>
+                    </li>
+                    <li>
+                        <form action="./index.php" method="post">
+                            <input hidden type="text" name="type" value="messages" />
+                            <input hidden type="text" name="state" value="0" />
+                            <input hidden type="text" name="showAll" value="0" />
+                            <input type="submit" value="<?php echo getNumMessages($link); ?>" />
+                        </form>
+                    </li>
+        <?php
+            } else {
+        ?>
+                <li>
+                    <form action="./index.php" method="post">
+                        <input hidden type="text" name="type" value="register" />
+                        <input hidden type="text" name="state" value="0" />
+                        <input type="submit" value="REGISTER" />
+                    </form>
+                </li>
+                <li>
+                    <form action="./index.php" method="post">
+                        <input hidden type="text" name="type" value="login" />
+                        <input hidden type="text" name="state" value="0" />
+                        <input type="submit" value="LOGIN" />
+                    </form>
+                </li>
+        <?php
+            }
         if (isset($_SESSION['userData'])) {
             ?>
             <li>

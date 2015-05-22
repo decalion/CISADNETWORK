@@ -8,7 +8,11 @@
 class AdminMysqlImpl extends AbstractDB {
 
     public function add($sql) {
-        
+        $query = $this->conection->query($sql);
+        if ($this->conection->getErrorNum() == 0) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -130,12 +134,41 @@ class AdminMysqlImpl extends AbstractDB {
             $temp->setAverage($rst['average']);
             $temp->setTotalvotes($rst['totalvotes']);
             $temp->setActors($this->selectMoviesActors($rst['idmovies']));
+            $temp->setDirectors($this->selectDirectorsMovies($rst['idmovies']));
             
             array_push($result, $temp);
             
         }
         return $result;  
     }
+    
+    
+    private  function selectDirectorsMovies($id){
+         $query = $this->conection->query("SELECT iddirectors FROM  directorsmovies WHERE idmovies=$id");
+         $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=$this->selectDirectors($rst['iddirectors']);
+            array_push($result, $temp);
+            
+        }
+        
+        return $result;
+        
+    }
+    
+    
+    private function selectDirectors($id){
+       $query = $this->conection->query("SELECT iddirectors,name,imageurl FROM  directors WHERE iddirectors=$id");
+        $rst = $this->conection->result($query);
+        
+        $temp=new Directors();
+        $temp->setIddirector($rst['iddirectors']);
+        $temp->setName($rst['name']);
+        $temp->setImageurl($rst['imageurl']);
+        
+        return $temp;
+    }
+    
     
     
     /**
@@ -174,7 +207,89 @@ class AdminMysqlImpl extends AbstractDB {
         return $temp;
     }
     
+    /**
+     * 
+     * @param type $sql
+     * @return array
+     */
+    public function selectActorsAdd($sql){
+        $query = $this->conection->query($sql);
+        $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=new Actors();
+            $temp->setIdactors($rst['idactors']);
+            $temp->setName($rst['name']);
+            array_push($result, $temp);
+        }
+        
+        return $result;
+    }
     
     
+    /**
+     * 
+     * @param type $sql
+     * @return array
+     */
+        public function selectDirectorsAdd($sql){
+            $query = $this->conection->query($sql);
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new Directors();
+                $temp->setIddirector($rst['iddirectors']);
+                $temp->setName($rst['name']);
+                array_push($result, $temp);
+            }
+        
+            return $result;
+    }
+    
+    
+    
+    public function  selectSeriesData(){
+            $query = $this->conection->query("SELECT * FROM series");
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new Series();
+                $temp->setIdserie($rst['idseries']);
+                $temp->setName($rst['name']);
+                $temp->setSinopsi($rst['sinopsi']);
+                $temp->setYear($rst['year']);
+                $temp->setImageurl($rst['imageurl']);
+                $temp->setSeasons($rst['seasons']);
+                $temp->setTotalchapters($rst['totalchapters']);
+                $temp->setAverage($rst['average']);
+                $temp->setTotalvotes($rst['totalvotes']);
+                $temp->setChapters($rst['idseries']);
+                $temp->setActors($rst['idseries']);
+                        
+
+                array_push($result, $temp);
+            }
+        
+            return $result;
+    }
+    
+    
+    
+    private function selectChaptersSeries($id){
+        
+        
+        
+        
+    }
+    
+    
+        private function selectSeriesActors($id){
+            $query = $this->conection->query("SELECT idactors FROM  actorsseries WHERE idseries=$id");
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=$this->selectActors($rst['idactors']);
+                array_push($result, $temp);
+            
+            }
+        
+            return $result;  
+    }
     
 }

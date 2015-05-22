@@ -4,4 +4,4 @@
 
 ?>
 
-<h1>default</h1>
+<h1>Default</h1>

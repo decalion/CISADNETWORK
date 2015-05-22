@@ -15,7 +15,7 @@
                     <label><a href="./index.php?ids=106">Movies</a></label>
                 </div>
                 <div class="menubuton">
-                    <label>Series</label>
+                    <label><a href="./index.php?ids=115">Series</a></label>
                 </div>
                 <div class="menubuton">
                     <label>Music</label>

@@ -2,16 +2,19 @@
 
     class Movie {
         
-        private $idmovie;
+        private $idmovies;
         private $name;
         private $sinopsi;
         private $year;
         private $imageurl;
         private $average;
         private $totalvotes;
+        
+        private $director;
+        private $actors;
 
-        function __construct($idmovie, $name, $sinopsi, $year, $imageurl, $average, $totalvotes) {
-            $this->idmovie = $idmovie;
+        function __construct($idmovies, $name, $sinopsi, $year, $imageurl, $average, $totalvotes) {
+            $this->idmovies = $idmovies;
             $this->name = $name;
             $this->sinopsi = $sinopsi;
             $this->year = $year;
@@ -29,11 +32,11 @@
             echo '<img src="./images/'.$this->imageurl.'" />';
         }
         
-        function getIdmovie() {
-            return $this->idmovie;
+        function getIdmovies() {
+            return $this->idmovies;
         }
 
-        function getName() {
+        public function getName() {
             return $this->name;
         }
 
@@ -55,6 +58,14 @@
 
         function getTotalvotes() {
             return $this->totalvotes;
+        }
+        
+        function getDirector($field) {
+            return $this->director[$field];
+        }
+        
+        function getActors() {
+            return $this->actors;
         }
 
         function setIdmovie($idmovie) {
@@ -84,8 +95,35 @@
         function setTotalvotes($totalvotes) {
             $this->totalvotes = $totalvotes;
         }
-
-
+        
+        function loadInfo($link) {
+            $this->setDirector($link);
+            $this->setActors($link);
+        }
+        
+        function setDirector($link) {
+            $query = 'select directorsmovies.iddirectors, name from directorsmovies inner join directors where directorsmovies.iddirectors = directors.iddirectors and directorsmovies.idmovies = "'.$this->idmovies.'";';
+            $result = $link->query($query);
+            if (!$result) {
+                    $this->director = "None.";
+            } else {
+                foreach ($result as $director) {
+                    $this->director = array('iddirectors' => $director['iddirectors'], 'name' => $director['name']);
+                }
+            }
+        }
+        
+        function setActors($link) {
+            $query = 'select actorsmovies.idactors, name from actorsmovies inner join actors where actorsmovies.idactors = actors.idactors and actorsmovies.idmovies = "'.$this->idmovies.'";';
+            $result = $link->query($query);
+            if (!$result) {
+                    $this->actors = "None.";
+            } else {
+                foreach ($result as $actor) {
+                    $this->actors[] = array('idactors' => $actor['idactors'], 'name' => $actor['name']);
+                }
+            }
+        }
 
     }
 

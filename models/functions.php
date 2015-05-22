@@ -30,6 +30,19 @@ function getDataByType($link, $type) {
         $field = "name";
     }
     
+    function loadDetail($type, $link) {
+        $factory = new Factory($type, $link);
+        return $factory->loadDetail($_GET['id']);
+    }
+    
+    function encrypt($password) {
+        return sha1($password);
+    }
+    
+    function getDataByType($link, $type) {
+        $rows = array();
+        $query = 'select name from ' . $type ;
+        $result = $link->query($query);
      $query = 'select '.$field.' from ' . $type . " limit 5;";
 
     $result = $link->query($query);
