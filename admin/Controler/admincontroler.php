@@ -15,6 +15,8 @@ include_once './Models/Classes/DB/DTO/User.php';
 include_once './Models/Classes/DB/DTO/Movie.php';
 include_once './Models/Classes/DB/DTO/Actors.php';
 include_once './Models/Classes/DB/DTO/Directors.php';
+include_once './Models/Classes/DB/DTO/Series.php';
+include_once './Models/Classes/DB/DTO/Chapters.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -58,6 +60,9 @@ if(isset($_POST['ids'])){
         case BACKMOVIES:
             include './views/moviespanel.php';
             break;
+        case BACKSERIES:
+            include './views/seriespanel.php';
+            break;
         case LOGOUT:
             include './Controler/Logout.php';
          break;
@@ -97,7 +102,31 @@ if(isset($_POST['ids'])){
         case SERIESPANEL:
             include './views/seriespanel.php';
             break;
-     
+        case DELMOVIES:
+            
+            break;
+        case CONFDELETEMOVIES:
+            
+            break;
+        case MODIFYSERIES:
+            include './views/modifyseries.php';
+            
+            break;
+        case CONFDELETESERIES:
+            
+            break;
+        case DELETESERIE:
+            
+            break;
+        case ACTORSERIES:
+            include './views/addserieactor.php';
+            break;
+        case ADDACTORSERIE:
+            include './Controler/AddActorSerie.php';
+            break;
+        case DELSERIEACTOR:
+            include './Controler/DeleteSeriesActor.php';
+            break;
      default : include './views/adminLogin.php'; break;
     
 }

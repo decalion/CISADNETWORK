@@ -12,8 +12,8 @@
             </div>
             <div class="center">
                 <?php
-                $data = $facade->selectMoviesData();
-                $movie = $data[$_GET['action']];
+                $data = $facade->selectSeriesData();
+                $serie = $data[$_GET['action']];
                 //print_r($movie);
                 $actormovie = $serie->getActors();
 
@@ -45,7 +45,7 @@
                             foreach ($list as $person){
                                 echo"<tr>";
                                 echo"<td>".$person->getName()."</td>";
-                                echo "<td><a href='index.php?ids=".ADDACTORMOVIE."&action=".$movie->getIdmovie()."&ad=".$person->getIdactors()."'><button>Add</button></a></td>";
+                                echo "<td><a href='index.php?ids=".ADDACTORSERIE."&action=".$serie->getIdserie()."&ad=".$person->getIdactors()."'><button>Add</button></a></td>";
                                 echo"</tr>";
 
                             }
@@ -54,7 +54,7 @@
                 </center>
             </div>
             <div>
-                <?php echo "<a href='index.php?ids=" . BACKMOVIES . "'><button>Back</button></a>"; ?>
+                <?php echo "<a href='index.php?ids=" . BACKSERIES . "'><button>Back</button></a>"; ?>
             </div>
             <div class="footer">
                 <label>CISADNETWORK  Ismael Caballero | Adrian Garcia | Cristian Bautista </label>

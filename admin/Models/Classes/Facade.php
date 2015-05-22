@@ -92,6 +92,17 @@ class Facade {
         
     }
     
+    
+    
+    public function selectSeriesData(){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectSeriesData();
+        $db->close();
+        return $result;
+        
+    }
+    
     /**
      * Generic Select Data Actors 
      * @param type $sql

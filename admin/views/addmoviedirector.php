@@ -45,7 +45,7 @@
                             foreach ($list as $person){
                                 echo"<tr>";
                                 echo"<td>".$person->getName()."</td>";
-                                echo "<td><a href='index.php?ids=".ADDDIRECTORMOVIES."&action=".$movie->getIdmovie()."&ad=".$person->getIddirector()."'><button>Add</button></a></td>";
+                                echo "<td><a href='index.php?ids=".ADDDIRECTORMOVIES."&action=".$movie>getIdmovie()."&ad=".$person->getIddirector()."'><button>Add</button></a></td>";
                                 echo"</tr>";
 
                             }

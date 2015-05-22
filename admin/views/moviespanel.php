@@ -49,12 +49,12 @@
                         <?php
                        $movies=$facade->selectMoviesData();
                        
-                       foreach($movies as $i => $movie){
+                       foreach($movies as $i => $serie){
                            echo"<tr>";
-                           echo"<td>".$movie->getIdmovie() ."</td>";
-                           echo"<td>" .$movie->getName() . "</td>";
+                           echo"<td>".$serie->getIdmovie() ."</td>";
+                           echo"<td>" .$serie->getName() . "</td>";
                            echo "<td><a href='index.php?ids=".MOVIESMODIFY."&action=$i'><button>Modify</button></a></td>";
-                           echo "<td><a href='index.php?ids=".USERDELETED."&action=$i'><button>Deleted</button></a></td>";
+                           echo "<td><a href='index.php?ids=".CONFDELETEMOVIES."&action=$i'><button>Deleted</button></a></td>";
                            echo"</tr>";
                        }
                         

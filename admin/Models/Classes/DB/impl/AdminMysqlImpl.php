@@ -260,10 +260,10 @@ class AdminMysqlImpl extends AbstractDB {
                 $temp->setTotalchapters($rst['totalchapters']);
                 $temp->setAverage($rst['average']);
                 $temp->setTotalvotes($rst['totalvotes']);
-                $temp->setChapters($rst['idseries']);
-                $temp->setActors($rst['idseries']);
+                $temp->setChapters($this->selectChaptersSeries($rst['idseries']));
+                $temp->setActors($this->selectSeriesActors($rst['idseries']));
+                $temp->setDirectors($this->selectSeriesDirectors($rst['idseries']));
                         
-
                 array_push($result, $temp);
             }
         
@@ -273,8 +273,19 @@ class AdminMysqlImpl extends AbstractDB {
     
     
     private function selectChaptersSeries($id){
+        $query = $this->conection->query("SELECT * FROM chapters WHERE idseries=$id ORDER BY seasonnumber,numberchapter");
+        $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=new Chapters();
+            $temp->setIdchapter($rst['idchapters']);
+            $temp->setName($rst['name']);
+            $temp->setNumberchapter($rst['numberchapter']);
+            $temp->setSeasonnumber($rst['seasonnumber']);
+            $temp->setIdserie($rst['idseries']);
+            array_push($result, $temp);
+        }
         
-        
+        return $result;
         
         
     }
@@ -290,6 +301,21 @@ class AdminMysqlImpl extends AbstractDB {
             }
         
             return $result;  
+    }
+    
+    
+    private function selectSeriesDirectors($id){
+         $query = $this->conection->query("SELECT iddirectors FROM  directorsseries WHERE idseries=$id");
+         $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=$this->selectDirectors($rst['iddirectors']);
+            array_push($result, $temp);
+            
+        }
+        
+        return $result;
+        
+        
     }
     
 }

@@ -7,7 +7,6 @@
  */
 class Series {
     
-    
     private $idserie;
     private $name;
     private $sinopsi;

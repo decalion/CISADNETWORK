@@ -12,7 +12,7 @@
             </div>
             <div class="center">
                 <?php
-                $data = $facade->selectMoviesData();
+                $data = $facade->selectSeriesData();
                 $id=$_GET['action'];
                 //print_r($data);
                 $serie = $data[$_GET['action']];
@@ -20,7 +20,7 @@
 
                 <form method="post" action="index.php">
                     <div class="mtop">
-                        <input type="text"  name="idmovie"  value="<?php echo $serie->getIdmovie(); ?>" hidden />
+                        <input type="text"  name="idmovie"  value="<?php echo $serie->getIdserie(); ?>" hidden />
                         <label>Name :</label> <input type="text" name="moviename" size="35" value="<?php echo $serie->getName(); ?>"/>
                     </div>
                     <div class="mtop">
@@ -30,7 +30,7 @@
                         <label>Sinopsi :</label><br> <textarea rows="4" cols="50" name="sinopsi" ><?php echo $serie->getSinopsi(); ?> </textarea>
                     </div>
                     <div class="mtop">
-                        <input type="text"  name="ids"  value="114" hidden />
+                        <input type="text"  name="ids"  value="121" hidden />
                         <input type="submit" value="Modify" />
                     </div>
                 </form>
@@ -48,7 +48,7 @@
                                 foreach ($actors as $i => $actor) {
                                     echo"<tr>";
                                     echo"<td>" . $actor->getName() . "</td>";
-                                    echo "<td><a href='index.php?ids=".DELMOVIEACTOR."&action=".$serie->getIdmovie()."&del=".$actor->getIdactors()."'><button>Deleted</button></a></td>";
+                                    echo "<td><a href='index.php?ids=".DELSERIEACTOR."&action=".$serie->getIdserie()."&del=".$actor->getIdactors()."'><button>Deleted</button></a></td>";
                                     echo"</tr>";
                                     //echo"<option value='$i' selected>".$actor->getName()."</option>";
                                 }
@@ -56,7 +56,7 @@
                             </tr>
                         </table>
                             </center>
-                            <?php echo "<a href='index.php?ids=" . ACTORSMOVIE . "&action=$id'><button>Add New Actor </button></a>"; ?>
+                            <?php echo "<a href='index.php?ids=" . ACTORSERIES. "&action=$id'><button>Add New Actor </button></a>"; ?>
                     </div>
                 
                 <div class="mtop">
@@ -70,7 +70,7 @@
                                 foreach ($directors as $director){
                                     echo"<tr>";
                                     echo"<td>".$director->getName()."</td>";
-                                    echo "<td><a href='index.php?ids=".DELDIRECTORMOVIES."&action=".$serie->getIdmovie()."&del=".$director->getIddirector()."'><button>Deleted</button></a></td>";
+                                    echo "<td><a href='index.php?ids=".DELDIRECTORMOVIES."&action=".$serie->getIdserie()."&del=".$director->getIddirector()."'><button>Deleted</button></a></td>";
                                     echo"</tr>";
                                 }
                             ?>
@@ -79,7 +79,7 @@
                     <?php echo "<a href='index.php?ids=" . DIRECTORSMOVIES . "&action=$id'><button>Add New Director </button></a>"; ?>
                 </div>
                 <div class="mtop">
-                    <?php echo "<a href='index.php?ids=" . BACKMOVIES . "'><button>Back</button></a>"; ?>
+                    <?php echo "<a href='index.php?ids=" . BACKSERIES . "'><button>Back</button></a>"; ?>
                 </div>
             </div>
             <div class="footer">
