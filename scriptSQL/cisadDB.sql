@@ -90,6 +90,14 @@ CREATE TABLE songs (
         REFERENCES cds (idcds)
 ) ENGINE=INNODB;
 
+CREATE TABLE singers (
+    idsingers INT PRIMARY KEY AUTO_INCREMENT,
+    idgroups INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    FOREIGN KEY (idgroups)
+        REFERENCES groups (idgroups)
+) ENGINE=INNODB;
+
 CREATE TABLE actors (
     idactors INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -612,6 +620,8 @@ INSERT INTO groups (name, year) VALUES ('Cantos luterianos', '1258'), ('Unga Ung
 INSERT INTO cds (idgroups, name, year) VALUES (1, 'Un verano en la playa', '2006'), (2, 'Desde el cielo', 2001), (2, 'Bajo tus pies', 2004);
 
 INSERT INTO songs (idgroups, idcds, name) VALUES (1, 1, 'La cancion mas bonita del mundo'), (2, 2, 'Dulce, bella durmiente'), (2, 3, 'Anochecer en el desierto');
+
+INSERT INTO singers (idgroups, name) VALUES (1, 'David Bisbal'), (2, 'Paquirrin'), (2, 'Ramoncin');
 
 INSERT INTO authors (name) VALUES ('Jose Ignario Rancio'), ('Manuel el del bombo');
 
