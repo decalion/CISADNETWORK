@@ -5,7 +5,7 @@
     } else {
         include './models/classes/Factory.php';
     }
-
+    
     function loadDefault($type, $link) {
         $factory = new Factory($type, $link);
         $factory->loadDefaultInfo();
