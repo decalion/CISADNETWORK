@@ -43,6 +43,9 @@ if(isset($_POST['ids'])){
         case SAVEMODIFYMOVIE:
             include './Controler/ModifyMovie.php';
             break;
+        case DELMOVIES:
+            include './Controler/DeleteMovies.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
         
@@ -102,10 +105,9 @@ if(isset($_POST['ids'])){
         case SERIESPANEL:
             include './views/seriespanel.php';
             break;
-        case DELMOVIES:
-            
-            break;
+
         case CONFDELETEMOVIES:
+            include './views/confdelmovies.php';
             
             break;
         case MODIFYSERIES:
@@ -126,6 +128,15 @@ if(isset($_POST['ids'])){
             break;
         case DELSERIEACTOR:
             include './Controler/DeleteSeriesActor.php';
+            break;
+        case DIRECTORSERIES:
+            include './views/addseriedirector.php';
+            break;
+        case ADDDIRECTORSERIES:
+            include './Controler/AddDirectorSerie.php';
+            break;
+        case DELDIRECTORSERIE:
+            include './Controler/DelDirectorSerie.php';
             break;
      default : include './views/adminLogin.php'; break;
     

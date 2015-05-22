@@ -12,7 +12,7 @@
             </div>
             <div class="center">
                 <?php
-                $data = $facade->selectSeriesData();
+                $data = $facade->selectMoviesData();
                 $id=$_GET['action'];
                 //print_r($data);
                 $serie = $data[$_GET['action']];
@@ -20,27 +20,22 @@
 
                 <form method="post" action="index.php">
                     <div class="mtop">
-                        <input type="text"  name="idmovie"  value="<?php echo $serie->getIdserie(); ?>" hidden />
-                        <label>Name :</label> <input type="text" name="moviename" size="35" value="<?php echo $serie->getName(); ?>"/>
+                        <input type="text"  name="idmovie"  value="<?php echo $serie->getIdmovie(); ?>" hidden />
+                        <label>Name :</label> <?php echo $serie->getName(); ?>
                     </div>
                     <div class="mtop">
-                        <label>Year :</label> <input type="text" name="year" size="35" value="<?php echo $serie->getYear(); ?>"/>
+                        <label>Year :<?php echo $serie->getYear(); ?>
                     </div>
                     <div class="mtop">
-                        <label>Sinopsi :</label><br> <textarea rows="4" cols="50" name="sinopsi" ><?php echo $serie->getSinopsi(); ?> </textarea>
+                        <label>Sinopsi :</label><?php echo $serie->getSinopsi(); ?>
                     </div>
-                    <div class="mtop">
-                        <input type="text"  name="ids"  value="121" hidden />
-                        <input type="submit" value="Modify" />
-                    </div>
-                </form>
+      
                  <div class="mtop">
                         <label>Actors List : </label>
                         <center>
                         <table border="2">
                             <tr>
                                 <td>Name</td>
-                                <td>Delete</td>
                             </tr>
                             <tr>
                                 <?php
@@ -48,7 +43,6 @@
                                 foreach ($actors as $i => $actor) {
                                     echo"<tr>";
                                     echo"<td>" . $actor->getName() . "</td>";
-                                    echo "<td><a href='index.php?ids=".DELSERIEACTOR."&action=".$serie->getIdserie()."&del=".$actor->getIdactors()."'><button>Deleted</button></a></td>";
                                     echo"</tr>";
                                     //echo"<option value='$i' selected>".$actor->getName()."</option>";
                                 }
@@ -56,7 +50,6 @@
                             </tr>
                         </table>
                             </center>
-                            <?php echo "<a href='index.php?ids=" . ACTORSERIES. "&action=$id'><button>Add New Actor </button></a>"; ?>
                     </div>
                 
                 <div class="mtop">
@@ -70,16 +63,19 @@
                                 foreach ($directors as $director){
                                     echo"<tr>";
                                     echo"<td>".$director->getName()."</td>";
-                                    echo "<td><a href='index.php?ids=".DELDIRECTORSERIE."&action=".$serie->getIdserie()."&del=".$director->getIddirector()."'><button>Deleted</button></a></td>";
                                     echo"</tr>";
                                 }
                             ?>
                         </table>
                     </center>
-                    <?php echo "<a href='index.php?ids=" . DIRECTORSERIES . "&action=$id'><button>Add New Director </button></a>"; ?>
                 </div>
+                    <div class="mtop">
+                        <input type="text"  name="ids"  value="116" hidden />
+                        <input type="submit" value="Delete" />
+                    </div>
+                </form>
                 <div class="mtop">
-                    <?php echo "<a href='index.php?ids=" . BACKSERIES . "'><button>Back</button></a>"; ?>
+                    <?php echo "<a href='index.php?ids=" . BACKMOVIES . "'><button>Back</button></a>"; ?>
                 </div>
             </div>
             <div class="footer">
