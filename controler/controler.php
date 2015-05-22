@@ -27,6 +27,9 @@
             case 'actors':
                 $toInclude = './views/details/actors.php';
                 break;
+            case 'directors':
+                $toInclude = './views/details/directors.php';
+                break;
             case 'authors':
                 $toInclude = './views/details/actors.php';
                 break;
@@ -38,9 +41,9 @@
         }
     } else {
         if (isset($_POST) && count($_POST) > 0) {
+            echo '<script src="js/searchScript.js"></script>';
             switch ($_POST['type']) {
                 case 'movies':
-                    echo '<script src="js/movies/script.js"></script>';
                     switch ($_POST['state']) {
                         case 0:
                             $toInclude = './views/movies.php';
@@ -50,7 +53,6 @@
                     }
                     break;
                 case 'series':
-                    echo '<script src="js/series/script.js"></script>';
                     switch ($_POST['state']) {
                         case 0:
                             $toInclude = './views/series.php';
@@ -60,7 +62,6 @@
                     }
                     break;
                 case 'recipes':
-                    echo '<script src="js/recipes/script.js"></script>';
                     switch ($_POST['state']) {
                         case 0:
                             $toInclude = './views/recipes.php';
@@ -70,7 +71,6 @@
                     }
                     break;
                 case 'books':
-                    echo '<script src="js/books/script.js"></script>';
                     switch ($_POST['state']) {
                         case 0:
                             $toInclude = './views/books.php';
@@ -80,7 +80,6 @@
                     }
                     break;
                 case 'groups':
-                    echo '<script src="js/groups/script.js"></script>';
                     switch ($_POST['state']) {
                         case 0:
                             $toInclude = './views/groups.php';

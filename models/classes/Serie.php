@@ -12,6 +12,9 @@
         private $average;
         private $totalvotes;
         
+        private $director;
+        private $actors;
+        
         function __construct($idseries, $name, $sinopsi, $year, $imageurl, $seasons, $totalchapters, $average, $totalvotes) {
             $this->idseries = $idseries;
             $this->name = $name;
@@ -42,7 +45,11 @@
         function getName() {
             return $this->name;
         }
-
+        
+        function getSinopsi() {
+            return $this->sinopsi;
+        }
+        
         function getImageurl() {
             return $this->imageurl;
         }
@@ -61,6 +68,14 @@
 
         function getTotalvotes() {
             return $this->totalvotes;
+        }
+        
+        function getDirector($field) {
+            return $this->director[$field];
+        }
+        
+        function getActors() {
+            return $this->actors;
         }
 
         function setIdseries($idseries) {
@@ -89,6 +104,35 @@
 
         function setTotalvotes($totalvotes) {
             $this->totalvotes = $totalvotes;
+        }
+        
+        function loadInfo($link) {
+            $this->setDirector($link);
+            $this->setActors($link);
+        }
+        
+        function setDirector($link) {
+            $query = 'select directorsseries.iddirectors, name from directorsseries inner join directors where directorsseries.iddirectors = directors.iddirectors and directorsseries.idseries = "'.$this->idseries.'";';
+            $result = $link->query($query);
+            if (!$result) {
+                    $this->director = "None.";
+            } else {
+                foreach ($result as $director) {
+                    $this->director = array('iddirectors' => $director['iddirectors'], 'name' => $director['name']);
+                }
+            }
+        }
+        
+        function setActors($link) {
+            $query = 'select actorsseries.idactors, name from actorsseries inner join actors where actorsseries.idactors = actors.idactors and actorsseries.idseries = "'.$this->idseries.'";';
+            $result = $link->query($query);
+            if (!$result) {
+                    $this->actors = "None.";
+            } else {
+                foreach ($result as $actor) {
+                    $this->actors[] = array('idactors' => $actor['idactors'], 'name' => $actor['name']);
+                }
+            }
         }
         
     }

@@ -42,11 +42,16 @@
         <li>
             <form action="./index.php" method="post">
                 <input hidden type="text" name="type" value="search" />
-                <input type="text" id="userInputSearch" name="userInputSearch" value="search..." />
+                <input type="text" id="userInputSearch" name="userInputSearch" value="search..." onkeyup="showHint(this)"/>
+                <div>
+                    <ul id="lista">
+                        
+                    </ul>
+                </div>
+                
                 <input type="submit" value="SEARCH" />
-                <div id="suggesstion-box"></div>
             </form>
-           
+
         </li>
         <?php
             if (isset($_SESSION['userData'])) {
