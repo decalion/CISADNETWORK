@@ -6,7 +6,7 @@
     if ($object == null) {
         echo 'Actor not found!';
     } else {
-        $actor = new Book($object['idactors'], 
+        $actor = new Actor($object['idactors'], 
                             $object['name'], 
                             $object['imageurl']);
         $actor->show();

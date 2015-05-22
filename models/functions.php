@@ -18,7 +18,7 @@
     
     function getDataByType($link, $type) {
         $rows = array();
-        $query = 'select name from ' . $type ;// ' where name like "' . $string . '";';
+        $query = 'select name from ' . $type ;
         $result = $link->query($query);
         while ($row = mysqli_fetch_array($result)) {
             array_push($rows, $row);

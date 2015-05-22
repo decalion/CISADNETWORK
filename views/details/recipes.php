@@ -12,7 +12,23 @@
                             $object['description'], 
                             $object['average'], 
                             $object['totalvotes']);
-        $recipe->show();
+?>
+<div class='infoDiv'>
+    <div class='infoHeaders'>
+        <h1><?php echo $recipe->getName(); ?></h1>
+        <h4>Reputation: <?php echo $recipe->getAverage(); ?></h4>
+        <h4>Total votes: <?php echo $recipe->getTotalvotes(); ?></h4>
+    </div>
+    <div class='detailImage'>
+        <img src="images/<?php echo $recipe->getImageurl(); ?>" />
+    </div>
+    <div>
+        <h2>Sinopsi</h2>
+        <p>
+            <?php echo $recipe->getDescription(); ?>
+        </p>
+    </div>
+</div>
+<?php
     }
-
 ?>

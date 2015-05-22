@@ -27,6 +27,9 @@
             case 'actors':
                 $toInclude = './views/details/actors.php';
                 break;
+            case 'directors':
+                $toInclude = './views/details/directors.php';
+                break;
             case 'authors':
                 $toInclude = './views/details/actors.php';
                 break;
