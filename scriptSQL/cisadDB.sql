@@ -621,7 +621,7 @@ INSERT INTO cds (idgroups, name, year) VALUES (1, 'Un verano en la playa', '2006
 
 INSERT INTO songs (idgroups, idcds, name) VALUES (1, 1, 'La cancion mas bonita del mundo'), (2, 2, 'Dulce, bella durmiente'), (2, 3, 'Anochecer en el desierto');
 
-INSERT INTO singers (idgroups, name) VALUES (1, 'David Bisbal'), (2, 'Paquirrin'), (2, 'Ramoncin');
+INSERT INTO singers (idgroups, name) VALUES (1, 'David Bisbal'), (2, 'Paquirrin'), (2, 'Ramoncin'), (3, 'Mierdendri');
 
 INSERT INTO authors (name) VALUES ('Jose Ignario Rancio'), ('Manuel el del bombo');
 
