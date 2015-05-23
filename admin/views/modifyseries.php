@@ -78,6 +78,33 @@
                     </center>
                     <?php echo "<a href='index.php?ids=" . DIRECTORSERIES . "&action=$id'><button>Add New Director </button></a>"; ?>
                 </div>
+                     <div class="mtop">
+                    <center>
+                        <table border="2">
+                            <tr>
+                                <td>Name</td>
+                                <td>Session</td>
+                                <td>Number</td>
+                            </tr>
+                            <?php
+                                $chapters=$serie->getChapters();
+                                foreach ($chapters as $chapter){
+                                    echo"<tr>";
+                                    echo"<td>".$chapter->getName()."</td>";
+                                    echo"<td>".$chapter->getSeasonnumber()."</td>";
+                                    echo"<td>".$chapter->getNumberchapter()."</td>";
+                                    echo "<td><a href='index.php?ids=".DELCHAPTERSERIE."&action=".$serie->getIdserie()."&del=".$chapter->getIdchapter()."'><button>Deleted</button></a></td>";
+                                    echo"</tr>";
+                                }
+                            ?>
+                        </table>
+                    </center>
+                    <?php echo "<a href='index.php?ids=" . ADDNEWCHAPTER . "&action=$id'><button>Add New Chapter </button></a>"; ?>
+                </div>
+                
+                
+                
+                
                 <div class="mtop">
                     <?php echo "<a href='index.php?ids=" . BACKSERIES . "'><button>Back</button></a>"; ?>
                 </div>

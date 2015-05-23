@@ -46,6 +46,9 @@ if(isset($_POST['ids'])){
         case DELMOVIES:
             include './Controler/DeleteMovies.php';
             break;
+        case CONFNEWCHAPTER:
+            include './Controler/AddChapterSerie.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
         
@@ -137,6 +140,13 @@ if(isset($_POST['ids'])){
             break;
         case DELDIRECTORSERIE:
             include './Controler/DelDirectorSerie.php';
+            break;
+        
+        case DELCHAPTERSERIE:
+            include './Controler/DelChapterSerie.php';
+            break;
+        case ADDNEWCHAPTER:
+            include './views/confnewchapter.php';
             break;
      default : include './views/adminLogin.php'; break;
     

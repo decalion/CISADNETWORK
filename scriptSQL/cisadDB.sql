@@ -626,3 +626,7 @@ INSERT INTO singers (idgroups, name) VALUES (1, 'David Bisbal'), (2, 'Paquirrin'
 INSERT INTO authors (name) VALUES ('Jose Ignario Rancio'), ('Manuel el del bombo');
 
 INSERT INTO authorsbooks VALUES (1, 1), (2, 2);
+
+INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 1', 1, 2, 1);
+INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 2', 2, 2, 1);
+INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 3', 3, 1, 1);
