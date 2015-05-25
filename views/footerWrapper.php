@@ -4,14 +4,9 @@
         <img src="./images/logoWithLetters.png" />
     </div>
     <div class="footerMid innerFooter">
-        <div class="defaultBorder">
-            ¿Qué grupo es el mejor de todos?
-        </div>
-        <ul id="navListFooterPoll">
-            <li><a href="#">Extremoduro</a></li>
-            <li><a href="#">Extremoduro Extremoduro</a></li>
-            <li><a href="#">Extremoduro Extremoduro ExtremodurExtremoduroExtremoduro Extremoduro ExtremodurExtremoduroExtremoduro Extremoduro ExtremodurExtremoduro Extremoduro ExtremodurExtremoduro Extremoduro Extremoduro Extremoduro</a></li>
-        </ul>
+        <?php
+            buildLastPoll($link);
+        ?>
     </div>
     <div class="footerRight innerFooter">
         <ul id="navList">

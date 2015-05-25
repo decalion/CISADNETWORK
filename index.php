@@ -21,9 +21,9 @@
     
     include './models/functions.php';
     
-    include './models/debug.php';
+    // include './models/debug.php';
     
-    //createDefault($link, 20);
+    // createDefault($link, 20);
     
     include './controler/controler.php';
     
@@ -37,7 +37,8 @@
     $link->closeConnection();
 
 ?>
-
+<!--
 <div id="rajoy">
     <img src="images/rajoy.png" />
 </div>
+-->

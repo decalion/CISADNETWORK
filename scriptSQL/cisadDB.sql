@@ -548,6 +548,46 @@ CREATE TABLE votescommentsrecipes (
         ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB;
 
+CREATE TABLE polls (
+    idpolls INT PRIMARY KEY AUTO_INCREMENT,
+    question VARCHAR(250) NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE lastpolls (
+    idpolls INT PRIMARY KEY AUTO_INCREMENT,
+    FOREIGN KEY (idpolls)
+        REFERENCES polls (idpolls)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=INNODB;
+
+CREATE TABLE answers (
+    idanswers INT PRIMARY KEY AUTO_INCREMENT,
+    idpolls INT NOT NULL,
+    answer VARCHAR(250) NOT NULL,
+    totalvotes INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (idpolls)
+        REFERENCES polls (idpolls)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=INNODB;
+
+CREATE TABLE usersvotes (
+    idpolls INT,
+    idusers INT,
+    PRIMARY KEY (idanswers, idpolls),
+    FOREIGN KEY (idpolls)
+        REFERENCES polls (idpolls)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (idusers)
+        REFERENCES users (idusers)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINER=INNODB;
+
+INSERT INTO polls (question) VALUES ('Best group band ever?'), ('Do you like the website?'), ('Your favourite movie?');
+
+INSERT INTO answers (idpolls, answer) VALUES ('1', 'Extremoduro'), ('1', 'Iron Maiden'), ('1', 'Marea'), ('2', 'Yes'), ('2', 'No'), ('3', 'Snow White and the seven dwarfs'), ('3', 'Frozen'), ('3', 'Cinderella');
+
+INSERT INTO lastpolls (idpolls) VALUES (1);
+
 INSERT INTO roles (name) VALUES ('ADMIN');
 INSERT INTO roles (name) VALUES ('USER');
 
