@@ -49,6 +49,12 @@ if(isset($_POST['ids'])){
         case CONFNEWCHAPTER:
             include './Controler/AddChapterSerie.php';
             break;
+        case SAVEMODIFYSERIE:
+            include './Controler/ModifySerie.php';
+            break;
+        case DELETESERIE:
+            include './Controler/DeleleteSeries.php';
+            break;
      
      default : include './views/adminLogin.php'; break;
         
@@ -118,7 +124,7 @@ if(isset($_POST['ids'])){
             
             break;
         case CONFDELETESERIES:
-            
+            include './views/confdelserie.php';
             break;
         case DELETESERIE:
             

@@ -54,7 +54,7 @@
                            echo"<td>".$serie->getIdserie() ."</td>";
                            echo"<td>" .$serie->getName() . "</td>";
                            echo "<td><a href='index.php?ids=".MODIFYSERIES."&action=$i'><button>Modify</button></a></td>";
-                           echo "<td><a href='index.php?ids=".CONFUSERDELETED."&action=$i'><button>Deleted</button></a></td>";
+                           echo "<td><a href='index.php?ids=".CONFDELETESERIES."&action=$i'><button>Deleted</button></a></td>";
                            echo"</tr>";
                        }
                         ?>

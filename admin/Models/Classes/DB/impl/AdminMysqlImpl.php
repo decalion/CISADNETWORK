@@ -277,7 +277,6 @@ class AdminMysqlImpl extends AbstractDB {
         $result = array();
         while ($rst = $this->conection->result($query)) {
             $temp=new Chapters();
-            $temp->setIdchapter($rst['idchapters']);
             $temp->setName($rst['name']);
             $temp->setNumberchapter($rst['numberchapter']);
             $temp->setSeasonnumber($rst['seasonnumber']);

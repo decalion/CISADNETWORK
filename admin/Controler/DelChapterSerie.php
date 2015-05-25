@@ -1,11 +1,12 @@
 <?php
 
 $serieid = $_GET['action'];
-$actid = $_GET['del'];
+$chapter = $_GET['deln'];
+$season = $_GET['dels'];
 
 //echo "Test " . $movid . " :::: " . $actid;
 
-$sql = "DELETE FROM chapters WHERE idseries=$serieid AND idchapters=$actid";
+$sql = "DELETE FROM chapters WHERE idseries=$serieid AND numberchapter=$chapter AND  seasonnumber=$season";
 
 $result = $facade->deletedData($sql);
 

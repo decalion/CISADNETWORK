@@ -6,7 +6,6 @@
  */
 class Chapters {
     
-    private $idchapter;
     private $name;
     private $numberchapter;
     private $seasonnumber;
@@ -20,9 +19,6 @@ class Chapters {
     
     
     
-    function getIdchapter() {
-        return $this->idchapter;
-    }
 
     function getName() {
         return $this->name;
@@ -38,10 +34,6 @@ class Chapters {
 
     function getIdserie() {
         return $this->idserie;
-    }
-
-    function setIdchapter($idchapter) {
-        $this->idchapter = $idchapter;
     }
 
     function setName($name) {
