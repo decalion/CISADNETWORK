@@ -11,6 +11,8 @@
         private $average;
         private $totalvotes;
         
+        private $authors;
+        
         function __construct($idbooks, $name, $sinopsi, $year, $imageurl, $isbn, $average, $totalvotes) {
             $this->idbooks = $idbooks;
             $this->name = $name;
@@ -62,6 +64,10 @@
 
         function getTotalvotes() {
             return $this->totalvotes;
+        }
+        
+        function getAuthors($field) {
+            return $this->authors[$field];
         }
 
         function setIdbooks($idbooks) {

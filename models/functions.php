@@ -70,4 +70,29 @@
         }
     }
     
+    function buildLastPoll($link) {
+        echo '<div class="defaultBorder">';
+        $query = 'select question from polls inner join lastpolls where polls.idpolls = lastpolls.idpolls';
+        $result = $link->query($query);
+        if (!$result) {
+            return null;
+        } else {
+            foreach ($result as $question) {
+                echo $question['question'];
+            }
+        }
+        echo '</div>';
+        echo '<ul id="navListFooterPoll">';
+        $query = 'select polls.idpolls, answer from answers inner join polls on answers.idpolls = polls.idpolls inner join lastpolls on polls.idpolls = lastpolls.idpolls';
+        $result = $link->query($query);
+        if (!$result) {
+            return null;
+        } else {
+            foreach ($result as $answer) {
+                echo '<li><a href="">'.$answer['answer'].'</a></li>';
+            }
+        }
+        echo '</ul>';
+    }
+    
 ?>
