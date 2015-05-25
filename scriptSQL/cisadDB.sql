@@ -90,14 +90,6 @@ CREATE TABLE songs (
         REFERENCES cds (idcds)
 ) ENGINE=INNODB;
 
-CREATE TABLE singers (
-    idsingers INT PRIMARY KEY AUTO_INCREMENT,
-    idgroups INT NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    FOREIGN KEY (idgroups)
-        REFERENCES groups (idgroups)
-) ENGINE=INNODB;
-
 CREATE TABLE actors (
     idactors INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -133,7 +125,6 @@ CREATE TABLE series (
 ) ENGINE=INNODB;
 
 CREATE TABLE chapters (
-    idchapters INT AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     numberchapter INT NOT NULL,
     seasonnumber INT NOT NULL,
@@ -141,7 +132,7 @@ CREATE TABLE chapters (
     FOREIGN KEY (idseries)
             REFERENCES series (idseries)
             ON DELETE CASCADE ON UPDATE CASCADE,
-    PRIMARY KEY (idchapters, numberchapter, seasonnumber, idseries)
+    PRIMARY KEY (numberchapter, seasonnumber, idseries)
 ) ENGINE=INNODB;
 
 CREATE TABLE actorsmovies (
@@ -621,8 +612,6 @@ INSERT INTO cds (idgroups, name, year) VALUES (1, 'Un verano en la playa', '2006
 
 INSERT INTO songs (idgroups, idcds, name) VALUES (1, 1, 'La cancion mas bonita del mundo'), (2, 2, 'Dulce, bella durmiente'), (2, 3, 'Anochecer en el desierto');
 
-INSERT INTO singers (idgroups, name) VALUES (1, 'David Bisbal'), (2, 'Paquirrin'), (2, 'Ramoncin'), (3, 'Mierdendri');
-
 INSERT INTO authors (name) VALUES ('Jose Ignario Rancio'), ('Manuel el del bombo');
 
 INSERT INTO authorsbooks VALUES (1, 1), (2, 2);
@@ -630,3 +619,7 @@ INSERT INTO authorsbooks VALUES (1, 1), (2, 2);
 INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 1', 1, 2, 1);
 INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 2', 2, 2, 1);
 INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 3', 3, 1, 1);
+
+
+
+
