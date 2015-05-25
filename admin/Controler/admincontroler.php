@@ -17,6 +17,7 @@ include_once './Models/Classes/DB/DTO/Actors.php';
 include_once './Models/Classes/DB/DTO/Directors.php';
 include_once './Models/Classes/DB/DTO/Series.php';
 include_once './Models/Classes/DB/DTO/Chapters.php';
+include_once './Models/Classes/DB/DTO/Recipes.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -55,7 +56,6 @@ if(isset($_POST['ids'])){
         case DELETESERIE:
             include './Controler/DeleleteSeries.php';
             break;
-     
      default : include './views/adminLogin.php'; break;
         
         
@@ -114,20 +114,16 @@ if(isset($_POST['ids'])){
         case SERIESPANEL:
             include './views/seriespanel.php';
             break;
-
         case CONFDELETEMOVIES:
-            include './views/confdelmovies.php';
-            
+            include './views/confdelmovies.php';            
             break;
         case MODIFYSERIES:
-            include './views/modifyseries.php';
-            
+            include './views/modifyseries.php';            
             break;
         case CONFDELETESERIES:
             include './views/confdelserie.php';
             break;
-        case DELETESERIE:
-            
+        case DELETESERIE:            
             break;
         case ACTORSERIES:
             include './views/addserieactor.php';
@@ -147,12 +143,17 @@ if(isset($_POST['ids'])){
         case DELDIRECTORSERIE:
             include './Controler/DelDirectorSerie.php';
             break;
-        
         case DELCHAPTERSERIE:
             include './Controler/DelChapterSerie.php';
             break;
         case ADDNEWCHAPTER:
             include './views/confnewchapter.php';
+            break;
+        case COOKSPANEL:
+            include './views/cookspanel.php';
+            break;
+        case MODIFYCOOKS:
+            include './views/modifycooks.php';
             break;
      default : include './views/adminLogin.php'; break;
     
