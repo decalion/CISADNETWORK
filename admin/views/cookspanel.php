@@ -24,7 +24,7 @@
                     <label>News</label>
                 </div>
                 <div class="menubuton">
-                   <label><a href="./index.php?ids=131">cookrecide</a></label>
+                   <label><a href="./index.php?ids=131">cookRecipes</a></label>
                 </div>
                 <div class="menubuton">
                     <label>Books</label>
@@ -54,7 +54,7 @@
                            echo"<td>".$recipe->getIdrecipes() ."</td>";
                            echo"<td>" .$recipe->getName() . "</td>";
                            echo "<td><a href='index.php?ids=".MODIFYCOOKS."&action=$i'><button>Modify</button></a></td>";
-                           echo "<td><a href='index.php?ids=".CONFDELETESERIES."&action=$i'><button>Deleted</button></a></td>";
+                           echo "<td><a href='index.php?ids=".CONFDELETECOOKS."&action=$i'><button>Deleted</button></a></td>";
                            echo"</tr>";
                        }
                         ?>
