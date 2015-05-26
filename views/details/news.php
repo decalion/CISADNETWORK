@@ -20,14 +20,14 @@
     }
     
 ?>
-<div class='infoDiv'>
+<div class='newDiv'>
     <div class='infoHeaders'>
         <h1><?php echo $new->getName(); ?></h1>
         <h4>Reputation: <?php echo $new->getAverage(); ?></h4>
         <h4>Total votes: <?php echo $new->getTotalvotes(); ?></h4>
         <h4>User: <a href="<?php echo 'index.php?type=users&id='.$new->getIdusers(); ?>"><?php echo $new->getUsersName($link); ?></a></h4>
     </div>
-    <div class='detailImage'>
+    <div class='newImage'>
         <img src="images/<?php echo $new->getImageurl(); ?>" />
     </div>
     <div>

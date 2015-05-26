@@ -23,9 +23,13 @@
         echo 'We have currently no news to show!';
     }
     foreach ($news as $new) {
-        echo '<a href="index.php?type=news&id='.$new->getIdnews().'">'.$new->getName().'</a>';
-        echo '<br>';
-        echo $new->getDate();
-        echo '<hr>';
+?>
+        <div class='newRow'>
+            <img src="images/<?php echo $new->getImageurl(); ?>"/>
+            <a href="index.php?type=news&id=<?php echo $new->getIdnews() ?>"><?php echo $new->getName(); ?></a>
+            <p><?php echo $new->getDate(); ?></p>
+            <p class='limitP'><?php echo $new->getDescription(); ?></p>
+        </div>
+<?php
     }
 ?>
