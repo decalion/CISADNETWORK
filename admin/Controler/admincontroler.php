@@ -18,6 +18,8 @@ include_once './Models/Classes/DB/DTO/Directors.php';
 include_once './Models/Classes/DB/DTO/Series.php';
 include_once './Models/Classes/DB/DTO/Chapters.php';
 include_once './Models/Classes/DB/DTO/Recipes.php';
+include_once './Models/Classes/DB/DTO/Books.php';
+include_once './Models/Classes/DB/DTO/Author.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -83,6 +85,9 @@ if(isset($_POST['ids'])){
             break;
         case BACKCOOKRECIDE:
             include './views/cookspanel.php';
+            break;
+        case BACKBOOKS:
+            include './views/modifybooks.php';
             break;
         case LOGOUT:
             include './Controler/Logout.php';
@@ -166,6 +171,12 @@ if(isset($_POST['ids'])){
             break;
         case CONFDELETECOOKS:
             include './views/confdelcooks.php';
+            break;
+        case BOOKSPANEL:
+            include './views/bookspanel.php';
+            break;
+        case MODIFYBOOKS:
+            include './views/modifybooks.php';
             break;
      default : include './views/adminLogin.php'; break;
     

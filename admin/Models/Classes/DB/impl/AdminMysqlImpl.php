@@ -343,4 +343,54 @@ class AdminMysqlImpl extends AbstractDB {
         
     }
     
+    
+    
+    public function selectBooksData(){
+        $query = $this->conection->query("SELECT * FROM books");
+        $result=array();
+         while ($rst = $this->conection->result($query)) {
+            $temp=new Books();
+            $temp->setIdbooks($rst['idbooks']);
+            $temp->setName($rst['name']);
+            $temp->setSinopsi($rst['sinopsi']);
+            $temp->setYear($rst['year']);
+            $temp->setImageurk($rst['imageurl']);
+            $temp->setIsbn($rst['isbn']);
+            $temp->setAverage($rst['average']);
+            $temp->setTotalvotes($rst['totalvotes']);
+            $temp->setAuthors($this->selectBooksAuthors($rst['idbooks']));
+
+            array_push($result, $temp); 
+        }
+        
+        return $result;
+    }
+    
+    
+    
+    
+    private function selectBooksAuthors($id){
+        $query = $this->conection->query("SELECT * FROM authorsbooks WHERE idbooks=$id");
+        $result=array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=$this->selectAuthor($id);
+            array_push($result, $temp); 
+        }
+        
+        return $result; 
+    }
+    
+    
+    private function selectAuthor($id){
+        $query = $this->conection->query("SELECT * FROM authors WHERE idauthors=$id");
+        $rst = $this->conection->result($query);
+        
+        $temp=new Author();
+        $temp->setIdauthor($rst['idauthors']);
+        $temp->setName($rst['name']);
+        $temp->setImageurl($rst['imageurl']);
+        
+        return $temp;
+    }
+    
 }

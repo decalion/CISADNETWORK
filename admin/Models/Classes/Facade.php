@@ -141,6 +141,17 @@ class Facade {
         
     }
     
+        /**
+     * Select All From Books
+     * @return type
+     */
     
+    public function selectBooksData(){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectBooksData();
+        $db->close();
+        return $result;   
+    }
     
 }
