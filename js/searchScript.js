@@ -4,42 +4,24 @@
  * and open the template in the editor.
  */
 
-function showHint(str)
-{
-    
+function showHint(str) {
     if (str.length != 0) {
+        if (str.value.length == 0){
+            $('#objectList').empty();
+        }
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "./models/select.php?q=" + str.value, true);
         xmlhttp.send();
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 if (xmlhttp.responseText.length != 0) {
-                document.getElementById("lista").innerHTML=xmlhttp.responseText;
-                    
+                    document.getElementById("objectList").innerHTML = xmlhttp.responseText;
                 }
-                /*
-                document.getElementById("userInputSearch").innerHTML = xmlhttp.responseText;*/
             }
         }
-        
     }
 }
 
     
-    $(document).ready(function()
-    {
-        $("#lista").click(function()
-        {
-         alert($(this).text());
-         $("#lista").each(function(indice, elemento)
-         {
-            alert(indice, $(elemento).text()); 
-         });
-      
-         
-         
-         
-        });
-    });
     
 
