@@ -51,13 +51,13 @@ img {
 }
 
 .capitalize {
-    
+
 }
 
 // FORMS //
 
 form {
-    
+
 }
 
 .formInput * {
@@ -67,7 +67,7 @@ form {
 // UPPER //
 
 #upperWrapper {
-    
+
 }
 
 #navList li a {
@@ -190,17 +190,17 @@ form {
 }
 
 .footerMid p {
-    
+
 }
 
 #navListFooterPoll li a {
-    
+
 }
 
 // DETAILS //
 
 .infoDiv {
-    
+
 }
 
 .infoDiv > h1{
@@ -257,19 +257,27 @@ form {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-.list{
-    background-color: #428EFF;
-    text-decoration:none;
-    width:200px;
-    border:1px solid black;
-    display:none;
-    margin-left: 83px;
+}
+
+#objectList ul {
+
+    position: absolute;
+    z-index: 99999;
+    display: block;
+    list-style-type: none;
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size:.85em;
-    padding: .2em;
-    border-bottom: 1px solid silver;
-    margin-left: 1em;
+    width:90px;
     
+}
+
+#objectList > li {
+    float: left;
+    clear: both;
+
+}
+
+#objectList > li > a {
+    color: black;
 }
