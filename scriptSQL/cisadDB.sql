@@ -573,14 +573,15 @@ CREATE TABLE answers (
 CREATE TABLE usersvotes (
     idpolls INT,
     idusers INT,
-    PRIMARY KEY (idanswers, idpolls),
+    answer VARCHAR(250),
+    PRIMARY KEY (idpolls, idusers),
     FOREIGN KEY (idpolls)
         REFERENCES polls (idpolls)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
         ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINER=INNODB;
+) ENGINE=INNODB;
 
 INSERT INTO polls (question) VALUES ('Best group band ever?'), ('Do you like the website?'), ('Your favourite movie?');
 
