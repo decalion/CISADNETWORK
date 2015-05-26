@@ -56,6 +56,12 @@ if(isset($_POST['ids'])){
         case DELETESERIE:
             include './Controler/DeleleteSeries.php';
             break;
+        case SAVEMODIFYCOOKS:
+            include './Controler/ModifyCooks.php';
+            break;
+        case DELETECOOKS:
+            include './Controler/DelCooks.php';
+            break;
      default : include './views/adminLogin.php'; break;
         
         
@@ -74,6 +80,9 @@ if(isset($_POST['ids'])){
             break;
         case BACKSERIES:
             include './views/seriespanel.php';
+            break;
+        case BACKCOOKRECIDE:
+            include './views/cookspanel.php';
             break;
         case LOGOUT:
             include './Controler/Logout.php';
@@ -154,6 +163,9 @@ if(isset($_POST['ids'])){
             break;
         case MODIFYCOOKS:
             include './views/modifycooks.php';
+            break;
+        case CONFDELETECOOKS:
+            include './views/confdelcooks.php';
             break;
      default : include './views/adminLogin.php'; break;
     
