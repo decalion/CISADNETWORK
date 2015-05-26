@@ -43,8 +43,8 @@
             <form action="./index.php" method="post">
                 <input hidden type="text" name="type" value="search" />
                 <input type="text" id="userInputSearch" name="userInputSearch" value="search..." onkeyup="showHint(this)"/>
-                <div>
-                    <ul id="lista">
+                <div class="test">
+                    <ul id="list">
                         
                     </ul>
                 </div>

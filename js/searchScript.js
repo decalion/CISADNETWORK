@@ -26,20 +26,5 @@ function showHint(str)
 }
 
     
-    $(document).ready(function()
-    {
-        $("#lista").click(function()
-        {
-         alert($(this).text());
-         $("#lista").each(function(indice, elemento)
-         {
-            alert(indice, $(elemento).text()); 
-         });
-      
-         
-         
-         
-        });
-    });
     
 
