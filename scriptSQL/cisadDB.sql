@@ -183,7 +183,6 @@ CREATE TABLE directorsseries (
         ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB;
 
-
 CREATE TABLE authors (
     idauthors INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -578,6 +577,15 @@ CREATE TABLE usersvotes (
     FOREIGN KEY (idpolls)
         REFERENCES polls (idpolls)
         ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (idusers)
+        REFERENCES users (idusers)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=INNODB;
+
+CREATE TABLE commentsonwalls (
+    idcommentsonwall INT AUTO_INCREMENT PRIMARY KEY,
+    idusers INT NOT NULL,
+    comment TEXT NOT NULL,
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
         ON DELETE CASCADE ON UPDATE CASCADE
