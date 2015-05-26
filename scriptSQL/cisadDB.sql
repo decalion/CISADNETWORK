@@ -573,14 +573,14 @@ CREATE TABLE answers (
 CREATE TABLE usersvotes (
     idpolls INT,
     idusers INT,
-    PRIMARY KEY (idanswers, idpolls),
+    PRIMARY KEY (idpolls, idusers),
     FOREIGN KEY (idpolls)
         REFERENCES polls (idpolls)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (idusers)
         REFERENCES users (idusers)
         ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINER=INNODB;
+) ENGINE=INNODB;
 
 INSERT INTO polls (question) VALUES ('Best group band ever?'), ('Do you like the website?'), ('Your favourite movie?');
 
@@ -660,6 +660,11 @@ INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capi
 INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 2', 2, 2, 1);
 INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 3', 3, 1, 1);
 
-
-
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', now());
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2015-05-25');
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2012-12-05');
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2010-10-05');
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2008-10-05');
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '1996-07-05');
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '1992-05-25');
 
