@@ -127,6 +127,19 @@ class Facade {
     }
     
     
+    /**
+     * Select All From Recipes
+     * @return type
+     */
+    
+    public function selectCooksData(){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectCooksData();
+        $db->close();
+        return $result;
+        
+    }
     
     
     

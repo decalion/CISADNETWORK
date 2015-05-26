@@ -62,6 +62,18 @@
         function getTotalvotes() {
             return $this->totalvotes;
         }
+        
+        function getUsersName($link) {
+                $query = 'select name from users where idusers = '.$this->idusers.';';
+                $result = $link->query($query);
+                if ($result->num_rows == 0) {
+                    return "This user doesn't exists!";
+                } else {
+                    foreach ($result as $user) {
+                        return $user['name'];
+                    }
+                }
+        }
 
         function setIdnews($idnews) {
             $this->idnews = $idnews;

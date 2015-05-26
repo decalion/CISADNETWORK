@@ -317,4 +317,30 @@ class AdminMysqlImpl extends AbstractDB {
         
     }
     
+    
+    /**
+     * Select all from Recipes
+     * @return array
+     */
+    
+    public function selectCooksData(){
+         $query = $this->conection->query("SELECT * FROM recipes");
+         $result = array();
+        while ($rst = $this->conection->result($query)) {
+            $temp=new Recipes();
+            $temp->setIdrecipes($rst['idrecipes']);
+            $temp->setName($rst['name']);
+            $temp->setImageurl($rst['imageurl']);
+            $temp->setDescription($rst['description']);
+            $temp->setAverage($rst['average']);
+            $temp->setTotalvotes($rst['totalvotes']);
+    
+            array_push($result, $temp);
+            
+        }
+        
+        return $result;
+        
+    }
+    
 }
