@@ -24,7 +24,7 @@
                     <label>News</label>
                 </div>
                 <div class="menubuton">
-                    <label><a href="./index.php?ids=131">cookrecide</a></label>
+                   <label><a href="./index.php?ids=131">cookrecide</a></label>
                 </div>
                 <div class="menubuton">
                     <label>Books</label>
@@ -47,13 +47,13 @@
                             <td>Deleted</td>
                         </tr>
                         <?php
-                       $series=$facade->selectSeriesData();
+                       $recipes=$facade->selectCooksData();
                        
-                       foreach($series as $i => $serie){
+                       foreach($recipes as $i => $recipe){
                            echo"<tr>";
-                           echo"<td>".$serie->getIdserie() ."</td>";
-                           echo"<td>" .$serie->getName() . "</td>";
-                           echo "<td><a href='index.php?ids=".MODIFYSERIES."&action=$i'><button>Modify</button></a></td>";
+                           echo"<td>".$recipe->getIdrecipes() ."</td>";
+                           echo"<td>" .$recipe->getName() . "</td>";
+                           echo "<td><a href='index.php?ids=".MODIFYCOOKS."&action=$i'><button>Modify</button></a></td>";
                            echo "<td><a href='index.php?ids=".CONFDELETESERIES."&action=$i'><button>Deleted</button></a></td>";
                            echo"</tr>";
                        }

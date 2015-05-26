@@ -56,5 +56,14 @@ const ADDNEWCHAPTER=129;
 const CONFNEWCHAPTER=130;
 
 
+//Cookrecide
+const BACKCOOKRECIDE=4;
+const COOKSPANEL=131;
+const MODIFYCOOKS=132;
+
+
+
+
+
 
 ?>

@@ -18,6 +18,11 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: #FEFEF2;
+}
+
 body {
     background-color: #FEFEF2;
 }
@@ -152,7 +157,7 @@ form {
 
 .footerMid {
     float: left;
-    max-width: 50%;
+    width: 51%;
 }
 
 .footerRight {
@@ -216,6 +221,42 @@ form {
     width: 60%;
 }
 
+.newRow {
+    clear: both;
+    padding: 10px;
+    height: 150px;
+}
+
+.newDiv {
+    min-height: 250px;
+}
+
+.newRow * {
+    margin-bottom: 10px;
+}
+
+.newRow img {
+    float: left;
+    width: 150px;
+    display: block;
+    margin-right: 10px;
+}
+
+.newImage {
+    margin-top: 10px;
+    float: left;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.newImage img {
+    width: 150px;
+}
+
+.limitP {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 .list{
     background-color: #428EFF;
     text-decoration:none;

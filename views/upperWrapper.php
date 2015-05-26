@@ -64,7 +64,7 @@
                         </form>
                     </li>
                     <li>
-                        <p class="defaultBorder">Welcome <strong><?php echo $_SESSION['userData']['username']; ?></strong>!</p>
+                        <p class="defaultBorder"><a href="index.php?type=users&id=<?php echo $_SESSION['userData']['idusers'] ?>"><?php echo $_SESSION['userData']['username']; ?></a></p>
                     </li>
                     <li>
                         <form action="./index.php" method="post">
