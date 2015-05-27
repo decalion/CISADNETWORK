@@ -68,7 +68,7 @@ if(isset($_POST['ids'])){
             include './Controler/ModifyBooks.php';
             break;
         case DELBOOKS:
-            
+            include './Controler/DelBooks.php';
             break;
      default : include './views/adminLogin.php'; break;
         
@@ -184,6 +184,16 @@ if(isset($_POST['ids'])){
             break;
         case CONFDELBOOKS:
             include './views/confdelbooks.php';
+            break;
+        case AUTHORBOOKS:
+            include './views/addauthorbooks.php';
+            break;
+        case ADDAUTHORSBOOK:
+            include './Controler/AddAuthorBooks.php';
+            break;
+        
+        case DELAUTHOR:
+            include './Controler/DelAuthorBooks.php';
             break;
      default : include './views/adminLogin.php'; break;
     

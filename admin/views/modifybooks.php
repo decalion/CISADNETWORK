@@ -13,6 +13,7 @@
             <div class="center">
                 <?php
                 $data = $facade->selectBooksData();
+                $id=$_GET['action'];
                 //print_r($data);
                 $books = $data[$_GET['action']];
                 ?>
@@ -47,6 +48,7 @@
                             <tr>
                                 <?php
                                 $authors = $books->getAuthors();
+                                //print_r($authors);
                                 foreach ($authors as $i => $author) {
                                     echo"<tr>";
                                     echo"<td>" . $author->getName() . "</td>";
@@ -58,7 +60,7 @@
                             </tr>
                         </table>
                             </center>
-                            <?php echo "<a href='index.php?ids=" . AUTHORBOOKS. "&action=$id'><button>Add New Actor </button></a>"; ?>
+                            <?php echo "<a href='index.php?ids=" . AUTHORBOOKS. "&action=$id'><button>Add New Author </button></a>"; ?>
                     </div>
                 <div>
                     <?php echo "<a href='index.php?ids=" . BACKBOOKS . "'><button>Back</button></a>"; ?>
