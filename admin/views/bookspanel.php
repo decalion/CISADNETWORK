@@ -15,7 +15,7 @@
                     <?php if(isset($msg)){ echo $msg;} ?>
                     <table border=2>
                         <tr>
-                            <td>Idbooks</td>
+                            <td>ISBN</td>
                             <td>Name</td>
                             <td>Modify</td>
                             <td>Deleted</td>
@@ -25,7 +25,7 @@
                        
                        foreach($books as $i => $book){
                            echo"<tr>";
-                           echo"<td>".$book->getIdbooks() ."</td>";
+                           echo"<td>".$book->getIsbn() ."</td>";
                            echo"<td>" .$book->getName() . "</td>";
                            echo "<td><a href='index.php?ids=".MODIFYBOOKS."&action=$i'><button>Modify</button></a></td>";
                            echo "<td><a href='index.php?ids=".CONFDELBOOKS."&action=$i'><button>Deleted</button></a></td>";

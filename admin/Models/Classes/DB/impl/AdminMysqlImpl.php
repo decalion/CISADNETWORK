@@ -373,7 +373,7 @@ class AdminMysqlImpl extends AbstractDB {
         $query = $this->conection->query("SELECT * FROM authorsbooks WHERE idbooks=$id");
         $result=array();
         while ($rst = $this->conection->result($query)) {
-            $temp=$this->selectAuthor($id);
+            $temp=$this->selectAuthor($rst['idauthors']);
             array_push($result, $temp); 
         }
         
@@ -391,6 +391,22 @@ class AdminMysqlImpl extends AbstractDB {
         $temp->setImageurl($rst['imageurl']);
         
         return $temp;
+    }
+    
+    
+    
+    
+     public function selectAuhorsAdd($sql){
+            $query = $this->conection->query($sql);
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new Author();
+                $temp->setIdauthor($rst['idauthors']);
+                $temp->setName($rst['name']);
+                array_push($result, $temp);
+            }
+        
+            return $result;
     }
     
 }
