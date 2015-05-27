@@ -9,6 +9,9 @@
         private $average;
         private $totalvotes;
         
+        private $cds;
+        private $singers;
+        
         function __construct($idgroups, $name, $year, $imageurl, $average, $totalvotes) {
             $this->idgroups = $idgroups;
             $this->name = $name;
@@ -49,6 +52,14 @@
         function getTotalvotes() {
             return $this->totalvotes;
         }
+        
+        function getCds() {
+            return $this->cds;
+        }
+        
+        function getSingers() {
+            return $this->singers;
+        }
 
         function setIdgroups($idgroups) {
             $this->idgroups = $idgroups;
@@ -72,6 +83,31 @@
 
         function setTotalvotes($totalvotes) {
             $this->totalvotes = $totalvotes;
+        }
+        
+        function loadInfo($link) {
+            $this->setCds($link);
+            $this->setSingers($link);
+        }
+        
+        function setCds($link) {
+            $query = '';
+            $result = $link->query($query);
+            if ($result) {
+                $this->cds[] = '';
+            } else {
+                $this->cds[] = "This group don't have any cd yet!";
+            }
+        }
+        
+        function setSingers($link) {
+            $query = '';
+            $result = $link->query($query);
+            if ($result) {
+                $this->singers[] = '';
+            } else {
+                $this->singers[] = "This group don't have any member yet!";
+            }
         }
         
     }

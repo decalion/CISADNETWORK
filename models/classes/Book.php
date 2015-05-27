@@ -66,8 +66,8 @@
             return $this->totalvotes;
         }
         
-        function getAuthors($field) {
-            return $this->authors[$field];
+        function getAuthors() {
+            return $this->authors;
         }
 
         function setIdbooks($idbooks) {
@@ -102,7 +102,21 @@
             $this->totalvotes = $totalvotes;
         }
 
-
+        function loadInfo($link) {
+            $this->setAuthors($link);
+        }
+        
+        function setAuthors($link) {
+            $query = 'select authorsbooks.idauthors, authors.name from authors inner join authorsbooks on authorsbooks.idauthors = authors.idauthors inner join books on books.idbooks = authorsbooks.idbooks where books.idbooks = '.$this->idbooks.';';
+            $authors = $link->query($query);
+            if ($authors) {
+                foreach ($authors as $author) {
+                    $this->authors[] = '<p><a href="index.php?type=actors&id='.$author['idauthors'].'">'.$author['name'].'</a></p>';
+                }
+            } else {
+                $this->authors[] = "This book doesn't have any author!";
+            }
+        }
         
     }
 

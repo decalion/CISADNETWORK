@@ -31,10 +31,13 @@
                 $toInclude = './views/details/directors.php';
                 break;
             case 'authors':
-                $toInclude = './views/details/actors.php';
+                $toInclude = './views/details/authors.php';
                 break;
             case 'news':
                 $toInclude = './views/details/news.php';
+                break;
+            case 'singers':
+                $toInclude = './views/details/singers.php';
                 break;
             default:
                 break;
