@@ -17,15 +17,20 @@
     $i = 0;
     if (strlen($q) !== 0) {
         foreach ($table_names as $table_name) {
-            $query = 'select id' . $table_name . ', name from ' . $table_name;
+            if (strcmp($table_name, 'users') == 0) {
+                $field = 'username';
+            } else {
+                $field = 'name';
+            }
+            $query = 'select id'.$table_name.', '.$field.' from '.$table_name;
             $result = $link->query($query);
             if ($result) {
                 foreach ($result as $object) {
                     if ($object !== null) {
-                        $pos = strpos(strtolower($object['name']), strtolower($q));
+                        $pos = strpos(strtolower($object[$field]), strtolower($q));
                         if ($pos !== false) {
                             if ($i < 3) {
-                                echo '<li><a href="index.php?type='.$table_name.'&id='.$object['id'.$table_name].'"/>'.$object['name'].'</a></li>';
+                                echo '<li><a href="index.php?type='.$table_name.'&id='.$object['id'.$table_name].'"/>'.$object[$field].'</a></li>';
                             }
                             $i++;
                         }
