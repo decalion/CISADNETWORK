@@ -15,7 +15,7 @@
     
     $infoDb = getInfoDb();
     $link = new Connection($infoDb['host'], $infoDb['user'], $infoDb['pass'], $infoDb['db']);
-    mysqli_select_db($link->getConnection(), 'cisadnetwork');
+    mysqli_select_db($link->getConnection(), $infoDb['db']);
 
     include './views/head.php';
     

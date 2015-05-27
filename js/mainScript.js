@@ -6,6 +6,5 @@ $(document).ready(function () {
         if ($('#userInputSearch').val() == '') {
             $(this).val('search...');
         }
-        
     });
 });
