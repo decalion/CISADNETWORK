@@ -60,15 +60,6 @@ CREATE TABLE groups (
     totalvotes INT DEFAULT 0
 ) ENGINE=INNODB;
 
-CREATE TABLE groupsmembers (
-    idgroupsmembers INT PRIMARY KEY AUTO_INCREMENT,
-    idgroups INT NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    imageurl VARCHAR(250),
-    FOREIGN KEY (idgroups)
-        REFERENCES groups (idgroups)
-) ENGINE=INNODB;
-
 CREATE TABLE cds (
     idcds INT PRIMARY KEY AUTO_INCREMENT,
     idgroups INT NOT NULL,
@@ -88,6 +79,22 @@ CREATE TABLE songs (
         REFERENCES groups (idgroups),
     FOREIGN KEY (idcds)
         REFERENCES cds (idcds)
+) ENGINE=INNODB;
+
+CREATE TABLE singers (
+    idsingers INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    imageurl VARCHAR(250) DEFAULT "error.png"
+) ENGINE=INNODB;
+
+CREATE TABLE groupsmembers (
+    idgroups INT NOT NULL,
+    idsingers INT NOT NULL,
+    FOREIGN KEY (idgroups)
+        REFERENCES groups (idgroups),
+    FOREIGN KEY (idsingers)
+        REFERENCES singers (idsingers),
+    PRIMARY KEY (idgroups, idsingers)
 ) ENGINE=INNODB;
 
 CREATE TABLE actors (
@@ -660,6 +667,10 @@ INSERT INTO groups (name, year) VALUES ('Cantos luterianos', '1258'), ('Unga Ung
 INSERT INTO cds (idgroups, name, year) VALUES (1, 'Un verano en la playa', '2006'), (2, 'Desde el cielo', 2001), (2, 'Bajo tus pies', 2004);
 
 INSERT INTO songs (idgroups, idcds, name) VALUES (1, 1, 'La cancion mas bonita del mundo'), (2, 2, 'Dulce, bella durmiente'), (2, 3, 'Anochecer en el desierto');
+
+INSERT INTO singers (name) VALUES ('El cantante 1'), ('El cantante 2'), ('El cantante 3');
+
+INSERT INTO groupsmembers VALUES (1, 1), (1, 2), (2, 3);
 
 INSERT INTO authors (name) VALUES ('Jose Ignario Rancio'), ('Manuel el del bombo');
 

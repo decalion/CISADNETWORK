@@ -13,7 +13,7 @@
         echo "Registered user has successfully registered. We have sent an confirmation email.";
         if (isset($_POST['email']))  {
             $subject = 'Welcome '.$username.' to Cisadnetwork!';
-            $comment = 'To activate your account, you must active your user visiting http://cisadsystems.esy.es/validate.php?userKey='.encrypt($username).'.';
+            $comment = 'To activate your account, you must active your user visiting http://'.$_SERVER['HTTP_HOST'].'/validate.php?userKey='.encrypt($username).'.';
             mail($email, "$subject", $comment, "From:" . $email);
         }
     } else {

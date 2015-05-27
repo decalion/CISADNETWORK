@@ -51,7 +51,7 @@ img {
 }
 
 .capitalize {
-
+    text-transform: capitalize;
 }
 
 // FORMS //
@@ -174,7 +174,7 @@ form {
     list-style-type: none;
 }
 
-#navListFooterPoll li a {
+#navListFooterPoll li p {
     text-decoration: none;
     padding: 0.7em;
     border-radius: 0.3em;
@@ -183,25 +183,18 @@ form {
     color: black;
     margin: 0.5% 0;
     display: inline-block;
+    cursor: pointer;
 }
 
 #navListFooterPoll li a:hover {
     background-color: #428EFF;
 }
 
-.footerMid p {
-
-}
-
-#navListFooterPoll li a {
-
+#navListFooterPoll li p.voted {
+    background-color: greenyellow;
 }
 
 // DETAILS //
-
-.infoDiv {
-
-}
 
 .infoDiv > h1{
     width: 50%;
@@ -261,7 +254,6 @@ form {
 
 
 #objectList ul {
-
     position: absolute;
     z-index: 99999;
     display: block;
@@ -270,13 +262,11 @@ form {
     margin: 0;
     padding: 0;
     width:90px;
-    
 }
 
 #objectList > li {
     float: left;
     clear: both;
-
 }
 
 #objectList > li > a {

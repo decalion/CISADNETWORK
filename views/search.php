@@ -9,7 +9,7 @@
             if($result) {
                 foreach ($result as $object) {
                     if($object !== null){
-                        $pos = strpos($object['name'], $_POST['userInputSearch']);
+                        $pos = strpos(strtolower($object['name']), strtolower($_POST['userInputSearch']));
                         if ($pos !== false) {
                             $linksArray[$table_name][] = '<li><a href="index.php?type='.$table_name.'&id='.$object['id'.$table_name].'"/>'.$object['name'].'</a></li>';
                         }
@@ -20,7 +20,7 @@
     }
     if (isset($linksArray)) {
         foreach ($linksArray as $key => $links) {
-            echo '<h1>'.$key.'</h1>';
+            echo '<h1 class="capitalize">'.$key.'</h1>';
             foreach ($links as $object) {
                 echo $object;
             }
