@@ -64,6 +64,12 @@ if(isset($_POST['ids'])){
         case DELETECOOKS:
             include './Controler/DelCooks.php';
             break;
+        case SAVEMODIFYBOOKS:
+            include './Controler/ModifyBooks.php';
+            break;
+        case DELBOOKS:
+            
+            break;
      default : include './views/adminLogin.php'; break;
         
         
@@ -87,7 +93,7 @@ if(isset($_POST['ids'])){
             include './views/cookspanel.php';
             break;
         case BACKBOOKS:
-            include './views/modifybooks.php';
+            include './views/bookspanel.php';
             break;
         case LOGOUT:
             include './Controler/Logout.php';
@@ -137,8 +143,6 @@ if(isset($_POST['ids'])){
         case CONFDELETESERIES:
             include './views/confdelserie.php';
             break;
-        case DELETESERIE:            
-            break;
         case ACTORSERIES:
             include './views/addserieactor.php';
             break;
@@ -177,6 +181,9 @@ if(isset($_POST['ids'])){
             break;
         case MODIFYBOOKS:
             include './views/modifybooks.php';
+            break;
+        case CONFDELBOOKS:
+            include './views/confdelbooks.php';
             break;
      default : include './views/adminLogin.php'; break;
     

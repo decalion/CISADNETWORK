@@ -28,7 +28,7 @@
                            echo"<td>".$book->getIdbooks() ."</td>";
                            echo"<td>" .$book->getName() . "</td>";
                            echo "<td><a href='index.php?ids=".MODIFYBOOKS."&action=$i'><button>Modify</button></a></td>";
-                           echo "<td><a href='index.php?ids=".CONFDELETECOOKS."&action=$i'><button>Deleted</button></a></td>";
+                           echo "<td><a href='index.php?ids=".CONFDELBOOKS."&action=$i'><button>Deleted</button></a></td>";
                            echo"</tr>";
                        }
                         ?>

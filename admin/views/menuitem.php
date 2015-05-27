@@ -14,7 +14,7 @@
                     <label>News</label>
                 </div>
                 <div class="menubuton">
-                   <label><a href="./index.php?ids=131">cookRecipes</a></label>
+                   <label><a href="./index.php?ids=131">Recipes</a></label>
                 </div>
                 <div class="menubuton">
                     <label><a href="./index.php?ids=136">Books</a></label>
