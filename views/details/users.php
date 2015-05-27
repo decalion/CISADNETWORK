@@ -16,8 +16,30 @@
                  $object['idroles'], 
                  $object['activemail'], 
                  $object['active'], 
-                 $object['userKey']);
-        $user->show();
-    }
+                 $object['userKey'],
+                 $object['privacity']);
+        $user->loadInfo($link);
+        switch ($user->getPrivacity()) {
+            case 'private':
+                echo "This profile is private.";
+                break;
+            case 'friend':
+                if($user->isFriend($link, $_SESSION['userData']['idusers'])) {
+                    include './views/details/partials/contentUsers.php';
+                } else{
+                    echo "This profile is private.";
+                }
+                
+                break;
+            case 'public':
+                include './views/details/partials/contentUsers.php';
+                break;
+            
+            default:
+                break;
+        }
+?>
 
+<?php
+    }
 ?>

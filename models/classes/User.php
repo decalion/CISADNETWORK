@@ -13,8 +13,11 @@
         private $activemail;
         private $active;
         private $userKey;
+        private $privacity;
         
-        function __construct($idusers, $username, $password, $name, $lastname, $email, $imageurl, $idroles, $activemail, $active, $userKey) {
+        private $friends;
+        
+        function __construct($idusers, $username, $password, $name, $lastname, $email, $imageurl, $idroles, $activemail, $active, $userKey, $privacity) {
             $this->idusers = $idusers;
             $this->username = $username;
             $this->password = $password;
@@ -26,6 +29,7 @@
             $this->activemail = $activemail;
             $this->active = $active;
             $this->userKey = $userKey;
+            $this->privacity = $privacity;
         }
         
         public function show() {
@@ -79,6 +83,14 @@
         public function getUserKey() {
             return $this->userKey;
         }
+        
+        public function getPrivacity() {
+            return $this->privacity;
+        }
+        
+        function getFriends($field) {
+            return $this->friends[$field];
+        }
 
         public function setIdusers($idusers) {
             $this->idusers = $idusers;
@@ -123,7 +135,22 @@
         public function setUserKey($userKey) {
             $this->userKey = $userKey;
         }
-        
+        public function setPrivacity($privacity) {
+            $this->privacity = $privacity;
+        }
+        function loadInfo($link) {
+            
+        }
+
+        function isFriend($link, $idFriend) {
+            $query = 'select * from friends where idusers = '.$this->idusers.' and idusersfriends = '.$idFriend.';';
+            $result = $link->query($query);
+            if ($result->num_rows > 0) {
+                return true;
+            }
+            return false;
+        }
+
     }
 
 ?>
