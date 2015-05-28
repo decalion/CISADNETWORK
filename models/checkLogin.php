@@ -11,6 +11,8 @@
             $_SESSION['userData']['lastname'] = $row['lastname'];
             $_SESSION['userData']['email'] = $row['email'];
             $_SESSION['userData']['imageurl'] = $row['imageurl'];
+            $_SESSION['userData']['idroles'] = $row['idroles'];
+            $_SESSION['userData']['userKey'] = $row['userKey'];
             $_SESSION['userData']['privacity'] = $row['privacity'];
             $correct = true;
         }
