@@ -20,6 +20,11 @@ include_once './Models/Classes/DB/DTO/Recipes.php';
 include_once './Models/Classes/DB/DTO/Books.php';
 include_once './Models/Classes/DB/DTO/Author.php';
 include_once './Models/Classes/DB/DTO/News.php';
+include_once './Models/Classes/DB/DTO/Group.php';
+include_once './Models/Classes/DB/DTO/GroupMember.php';
+include_once './Models/Classes/DB/DTO/Singer.php';
+include_once './Models/Classes/DB/DTO/CDS.php';
+include_once '../Models/Classes/DB/DTO/';
 
 
 if(!isset($_SESSION['test'])){
@@ -32,7 +37,6 @@ $facade=new Facade();
 
 if(isset($_POST['ids'])){
     $id=$_POST['ids'];
-    
     switch($id){
         case AUTHENTICATION:
             include './Controler/authentication.php';
@@ -73,6 +77,9 @@ if(isset($_POST['ids'])){
         case SAVEMODIFYNEWS:
             include './Controler/ModifyNews.php';
             break;
+        case DELNEWS:
+            include './Controler/DelNews.php';
+            break;
      default : include './views/adminLogin.php'; break;
         
         
@@ -81,7 +88,6 @@ if(isset($_POST['ids'])){
 }elseif(isset($_GET['ids'])){
     
         $id=$_GET['ids'];
-    
     switch($id){
         case BACK:
             include './views/userpanel.php';

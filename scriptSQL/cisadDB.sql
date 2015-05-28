@@ -680,7 +680,7 @@ INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capi
 INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 2', 2, 2, 1);
 INSERT INTO chapters (name, numberchapter, seasonnumber, idseries) VALUES ('Capitulo 3', 3, 1, 1);
 
-INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', now());
+INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2015-05-29');
 INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2015-05-25');
 INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2012-12-05');
 INSERT INTO news (idusers, name, description, date) VALUES ('3', 'Testing title!', 'Noticia que tiene algo.', '2010-10-05');
