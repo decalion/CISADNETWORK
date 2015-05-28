@@ -13,7 +13,7 @@ class Group {
     private $imageurl;
     private $average;
     private $totalvotes;
-    private $groupmenbers=array();
+    private $singer=array();
     private $cds=array();
     
     
@@ -46,9 +46,6 @@ class Group {
         return $this->totalvotes;
     }
 
-    function getGroupmenbers() {
-        return $this->groupmenbers;
-    }
 
     function getCds() {
         return $this->cds;
@@ -78,16 +75,20 @@ class Group {
         $this->totalvotes = $totalvotes;
     }
 
-    function setGroupmenbers($groupmenbers) {
-        $this->groupmenbers = $groupmenbers;
-    }
-
     function setCds($cds) {
         $this->cds = $cds;
     }
 
 
-    
+    function getSinger() {
+        return $this->singer;
+    }
+
+    function setSinger($singer) {
+        $this->singer = $singer;
+    }
+
+
     
     
     

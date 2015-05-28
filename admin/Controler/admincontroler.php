@@ -24,7 +24,7 @@ include_once './Models/Classes/DB/DTO/Group.php';
 include_once './Models/Classes/DB/DTO/GroupMember.php';
 include_once './Models/Classes/DB/DTO/Singer.php';
 include_once './Models/Classes/DB/DTO/CDS.php';
-include_once '../Models/Classes/DB/DTO/';
+
 
 
 if(!isset($_SESSION['test'])){
