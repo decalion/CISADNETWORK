@@ -164,4 +164,14 @@ class Facade {
     }
     
     
+    public function selectNewsData(){
+        $connection = new UConnection(HOST, USER, PASS, DATABASE);
+        $db = new AdminMysqlImpl($connection);
+        $result = $db->selectNewsData();
+        $db->close();
+        return $result; 
+        
+    }
+    
+    
 }
