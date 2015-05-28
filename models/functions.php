@@ -19,26 +19,6 @@
     function encrypt($password) {
         return sha1($password);
     }
-
-    function getDataByType($link, $type) {
-        $rows = array();
-        if ($type === "users") {
-            $field = "username";
-        } else {
-            $field = "name";
-        }
-
-        $query = 'select '.$field.' from ' . $type;
-        $result = $link->query($query);
-        $query = 'select ' . $field . ' from ' . $type . " limit 5;";
-        if ($result) {
-            while ($row = mysqli_fetch_array($result)) {
-                $temp = $row[$field];
-                array_push($rows, $temp);
-            }
-        }
-        return $rows;
-    }
     
     function getUsernameById($link, $id) {
         $query = 'select username from users where idusers = "'.$id.'";';
