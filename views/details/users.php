@@ -3,6 +3,7 @@
     include './models/classes/User.php';
 
     $object = loadDetail('users', $link);
+    
     if ($object == null) {
         echo 'User not found!';
     } else {
@@ -18,28 +19,31 @@
                  $object['active'], 
                  $object['userKey'],
                  $object['privacity']);
+        
         $user->loadInfo($link);
-        switch ($user->getPrivacity()) {
-            case 'private':
-                echo "This profile is private.";
-                break;
-            case 'friend':
-                if($user->isFriend($link, $_SESSION['userData']['idusers'])) {
-                    include './views/details/partials/contentUsers.php';
-                } else{
-                    echo "This profile is private.";
-                }
-                
-                break;
-            case 'public':
-                include './views/details/partials/contentUsers.php';
-                break;
-            
-            default:
-                break;
-        }
-?>
 
-<?php
+        if (strcmp($_GET['id'], $_SESSION['userData']['idusers']) == 0) {
+            include './views/details/partials/contentUsers.php';
+        } else {
+            switch ($user->getPrivacity()) {
+                case 'private':
+                    echo "This profile is private.";
+                    break;
+                case 'friends':
+                    if($user->isFriend($link, $_SESSION['userData']['idusers'])) {
+                        include './views/details/partials/contentUsers.php';
+                    } else{
+                        echo "This profile is private.";
+                    }
+                    break;
+                case 'public':
+                    include './views/details/partials/contentUsers.php';
+                    break;
+                default:
+                    echo "This profile is private.";
+                    break;
+            }
+        }
     }
+
 ?>
