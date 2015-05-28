@@ -384,7 +384,6 @@ class AdminMysqlImpl extends AbstractDB {
     private function selectAuthor($id){
         $query = $this->conection->query("SELECT * FROM authors WHERE idauthors=$id");
         $rst = $this->conection->result($query);
-        
         $temp=new Author();
         $temp->setIdauthor($rst['idauthors']);
         $temp->setName($rst['name']);
@@ -408,5 +407,37 @@ class AdminMysqlImpl extends AbstractDB {
         
             return $result;
     }
+    
+    
+    
+    
+    public function selectNewsData(){
+            $query = $this->conection->query("SELECT * FROM news ORDER BY date DESC");
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new News();
+                $temp->setIdnew($rst['idnews']);
+                $temp->setIduser($rst['idusers']);
+                $temp->setName($rst['name']);
+                $temp->setImageurl($rst['imageurl']);
+                $temp->setDescription($rst['description']);
+                $temp->setDate($rst['date']);
+                $temp->setAverage($rst['average']);
+                $temp->setTotalvotes($rst['totalvotes']);
+                $temp->setAuthor($this->selectUserName($rst['idusers']));
+                array_push($result, $temp);
+            }
+            return $result;
+    }
+    
+    
+    private function selectUserName($id){
+       $query = $this->conection->query("SELECT name FROM users WHERE idusers=$id");
+        $rst = $this->conection->result($query);
+
+        return $rst['name'];
+    }
+    
+    
     
 }

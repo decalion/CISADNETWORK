@@ -4,7 +4,6 @@
  * Controler 
  */
 
-
 include_once './Models/Classes/Utils/Constants.php';
 include_once './Models/Classes/Utils/Uconnection.php';
 include_once './Models/Classes/DB/AbstractDB.php';
@@ -20,6 +19,7 @@ include_once './Models/Classes/DB/DTO/Chapters.php';
 include_once './Models/Classes/DB/DTO/Recipes.php';
 include_once './Models/Classes/DB/DTO/Books.php';
 include_once './Models/Classes/DB/DTO/Author.php';
+include_once './Models/Classes/DB/DTO/News.php';
 
 
 if(!isset($_SESSION['test'])){
@@ -69,6 +69,9 @@ if(isset($_POST['ids'])){
             break;
         case DELBOOKS:
             include './Controler/DelBooks.php';
+            break;
+        case SAVEMODIFYNEWS:
+            include './Controler/ModifyNews.php';
             break;
      default : include './views/adminLogin.php'; break;
         
@@ -191,9 +194,17 @@ if(isset($_POST['ids'])){
         case ADDAUTHORSBOOK:
             include './Controler/AddAuthorBooks.php';
             break;
-        
         case DELAUTHOR:
             include './Controler/DelAuthorBooks.php';
+            break;
+        case NEWSPANEL:
+            include './views/newspanel.php';
+            break;
+        case MODIFYNEWS:
+            include './views/modifynews.php';
+            break;
+        case CONFDELNEWS:
+            include './views/confdelnews.php';
             break;
      default : include './views/adminLogin.php'; break;
     

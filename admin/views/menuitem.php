@@ -11,7 +11,7 @@
                     <label>Music</label>
                 </div>
                 <div class="menubuton">
-                    <label>News</label>
+                    <label><a href="./index.php?ids=144">News</a></label>
                 </div>
                 <div class="menubuton">
                    <label><a href="./index.php?ids=131">Recipes</a></label>
