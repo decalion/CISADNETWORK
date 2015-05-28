@@ -88,8 +88,8 @@
             return $this->privacity;
         }
         
-        function getFriends($field) {
-            return $this->friends[$field];
+        function getFriends() {
+            return $this->friends;
         }
 
         public function setIdusers($idusers) {
@@ -135,11 +135,29 @@
         public function setUserKey($userKey) {
             $this->userKey = $userKey;
         }
+        
         public function setPrivacity($privacity) {
             $this->privacity = $privacity;
         }
+        
         function loadInfo($link) {
-            
+            $this->setFriends($link);
+        }
+        
+        function setFriends($link) {
+            $query = 'select idusersfriends from friends inner join users on friends.idusers = users.idusers where friends.idusers = '.$this->idusers.';';
+            $friends = $link->query($query);
+            if ($friends->num_rows > 0) {
+                foreach ($friends as $friend) {
+                    $query2 = 'select username from users where idusers = '.$friend['idusersfriends'].';';
+                    $username = $link->query($query2);
+                    foreach ($username as $value) {
+                        $this->friends[] = array('idusers' => $friend['idusersfriends'], 'username' => $value['username']);
+                    }
+                }
+            } else {
+                $this->friends = "You don't have any friend!";
+            }
         }
 
         function isFriend($link, $idFriend) {
