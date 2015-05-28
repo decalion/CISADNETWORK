@@ -1,6 +1,7 @@
 <?php
 
     $toInclude = './views/default.php';
+    echo '<script src="js/searchScript.js"></script>';
     if (isset($_GET) && count($_GET) > 0) {
         switch ($_GET['type']) {
             case 'movies':
@@ -44,7 +45,6 @@
         }
     } else {
         if (isset($_POST) && count($_POST) > 0) {
-            echo '<script src="js/searchScript.js"></script>';
             switch ($_POST['type']) {
                 case 'movies':
                     switch ($_POST['state']) {

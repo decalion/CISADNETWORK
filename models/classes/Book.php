@@ -111,7 +111,7 @@
             $authors = $link->query($query);
             if ($authors) {
                 foreach ($authors as $author) {
-                    $this->authors[] = '<p><a href="index.php?type=actors&id='.$author['idauthors'].'">'.$author['name'].'</a></p>';
+                    $this->authors[] = '<p><a href="index.php?type=authors&id='.$author['idauthors'].'">'.$author['name'].'</a></p>';
                 }
             } else {
                 $this->authors[] = "This book doesn't have any author!";

@@ -4,14 +4,19 @@
 
     if (strlen($_POST['userInputSearch']) !== 0) {
         foreach ($table_names as $table_name) {
-            $query='select id'.$table_name.', name from '.$table_name;
+            if (strcmp($table_name, 'users') == 0) {
+                $field = 'username';
+            } else {
+                $field = 'name';
+            }
+            $query = 'select id'.$table_name.', '.$field.' from '.$table_name;
             $result=$link->query($query);
             if($result) {
                 foreach ($result as $object) {
                     if($object !== null){
-                        $pos = strpos(strtolower($object['name']), strtolower($_POST['userInputSearch']));
+                        $pos = strpos(strtolower($object[$field]), strtolower($_POST['userInputSearch']));
                         if ($pos !== false) {
-                            $linksArray[$table_name][] = '<li><a href="index.php?type='.$table_name.'&id='.$object['id'.$table_name].'"/>'.$object['name'].'</a></li>';
+                            $linksArray[$table_name][] = '<li><a href="index.php?type='.$table_name.'&id='.$object['id'.$table_name].'"/>'.$object[$field].'</a></li>';
                         }
                     }
                 }    

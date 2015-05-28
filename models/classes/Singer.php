@@ -47,12 +47,14 @@
         }
         
         function setGroups($link) {
-            $query = '';
-            $result = $link->query($query);
-            if ($result) {
-                $this->groups[] = '';
+            $query = 'select groups.idgroups, groups.name from singers inner join groupsmembers on singers.idsingers = groupsmembers.idsingers inner join groups on groupsmembers.idgroups = groups.idgroups where singers.idsingers = '.$this->idsingers.';';
+            $groups = $link->query($query);
+            if ($groups->num_rows > 0) {
+                foreach ($groups as $group) {
+                    $this->groups[] = '<p><a href="index.php?type=groups&id='.$group['idgroups'].'">'.$group['name'].'</a></p>';
+                }
             } else {
-                $this->groups[] = "This group don't have any cd yet!";
+                $this->groups[] = "This group don't have any member yet!";
             }
         }
         
