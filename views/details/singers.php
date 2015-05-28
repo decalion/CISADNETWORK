@@ -1,8 +1,10 @@
 <?php
 
     include './models/classes/Singer.php';
+    
+    $factory = new Factory('singers', $link);
+    $object = $factory->loadDetail($_GET['id']);
 
-    $object = loadDetail('singers', $link);
     if ($object == null) {
         echo 'Singer not found!';
     } else {
@@ -31,4 +33,5 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>

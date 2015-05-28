@@ -79,6 +79,10 @@
             }
         }
         
+        public function buildCommentsSection() {
+            echo 'ok';
+        }
+        
     }
 
 ?>
