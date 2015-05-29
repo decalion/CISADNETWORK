@@ -1,6 +1,9 @@
 <?php
 
     include './models/classes/News.php';
+    
+    $factory = new Factory('news', $link);
+    $object = $factory->loadDetail();
 
     $query = 'select * from news where idnews = '.$_GET['id'].';';
     $result = $link->query($query);
@@ -34,5 +37,8 @@
         <p>
             <?php echo $new->getDescription(); ?>
         </p>
+    </div>
+    <div style="clear: both;">
+        <?php $factory->buildCommentsSection(); ?>
     </div>
 </div>

@@ -3,7 +3,7 @@
     include './models/classes/Singer.php';
     
     $factory = new Factory('singers', $link);
-    $object = $factory->loadDetail($_GET['id']);
+    $object = $factory->loadDetail();
 
     if ($object == null) {
         echo 'Singer not found!';

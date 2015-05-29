@@ -4,7 +4,9 @@
     include './models/classes/CD.php';
     include './models/classes/Song.php';
 
-    $object = loadDetail('groups', $link);
+    $factory = new Factory('groups', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Group not found!';
     } else {
@@ -47,4 +49,5 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>

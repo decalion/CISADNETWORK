@@ -273,7 +273,13 @@ form {
     color: black;
 }
 
-.bFriend{
-    
-    
+// COMMENTS //
+
+#commentsDiv {
+    clear: both;
+}
+
+#newCommentTextArea {
+    width: 98%;
+    height: 100px;
 }

@@ -2,7 +2,9 @@
 
     include './models/classes/CD.php';
 
-    $object = loadDetail('cds', $link);
+    $factory = new Factory('cds', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'CD not found!';
     } else {
@@ -33,4 +35,5 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>

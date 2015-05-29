@@ -2,7 +2,9 @@
 
     include './models/classes/Recipe.php';
 
-    $object = loadDetail('recipes', $link);
+    $factory = new Factory('recipes', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Recipe not found!';
     } else {
@@ -28,6 +30,7 @@
             <?php echo $recipe->getDescription(); ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>
 <?php
     }

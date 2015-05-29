@@ -20,6 +20,12 @@ include_once './Models/Classes/DB/DTO/Recipes.php';
 include_once './Models/Classes/DB/DTO/Books.php';
 include_once './Models/Classes/DB/DTO/Author.php';
 include_once './Models/Classes/DB/DTO/News.php';
+include_once './Models/Classes/DB/DTO/Group.php';
+include_once './Models/Classes/DB/DTO/GroupMember.php';
+include_once './Models/Classes/DB/DTO/Singer.php';
+include_once './Models/Classes/DB/DTO/CDS.php';
+include_once './Models/Classes/DB/DTO/Songs.php';
+
 
 
 if(!isset($_SESSION['test'])){
@@ -32,7 +38,6 @@ $facade=new Facade();
 
 if(isset($_POST['ids'])){
     $id=$_POST['ids'];
-    
     switch($id){
         case AUTHENTICATION:
             include './Controler/authentication.php';
@@ -73,6 +78,9 @@ if(isset($_POST['ids'])){
         case SAVEMODIFYNEWS:
             include './Controler/ModifyNews.php';
             break;
+        case DELNEWS:
+            include './Controler/DelNews.php';
+            break;
      default : include './views/adminLogin.php'; break;
         
         
@@ -81,7 +89,6 @@ if(isset($_POST['ids'])){
 }elseif(isset($_GET['ids'])){
     
         $id=$_GET['ids'];
-    
     switch($id){
         case BACK:
             include './views/userpanel.php';
@@ -205,6 +212,36 @@ if(isset($_POST['ids'])){
             break;
         case CONFDELNEWS:
             include './views/confdelnews.php';
+            break;
+        case MUSICPANEL:
+            include './views/musicpanel.php';
+            break;
+        case MODIFYMUSIC:
+            include './views/modifymusic.php';
+            break;
+        case CONFDELMUSIC:
+            include './views/confdelmusica.php';
+            break;
+        case DELSINGER:
+            
+            break;
+        case MUSICSINGER:
+            
+            break;
+        case DELCDS:
+            
+            break;
+        case MUSICD:
+            
+            break;
+        case MODIFYCD:
+            include './views/modifycd.php';
+            break;
+        case CDSSONGS:
+            
+            break;
+        case DELSONGS:
+            
             break;
      default : include './views/adminLogin.php'; break;
     

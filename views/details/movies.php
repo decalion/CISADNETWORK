@@ -2,7 +2,9 @@
 
     include './models/classes/Movie.php';
 
-    $object = loadDetail('movies', $link);
+    $factory = new Factory('movies', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Movie not found!';
     } else {
@@ -42,6 +44,7 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>
 <?php
     }

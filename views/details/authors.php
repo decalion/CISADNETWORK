@@ -2,7 +2,9 @@
 
     include './models/classes/Author.php';
 
-    $object = loadDetail('authors', $link);
+    $factory = new Factory('authors', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Author not found!';
     } else {
@@ -31,4 +33,5 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>
