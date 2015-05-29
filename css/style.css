@@ -272,3 +272,14 @@ form {
 #objectList > li > a {
     color: black;
 }
+
+// COMMENTS //
+
+#commentsDiv {
+    clear: both;
+}
+
+#newCommentTextArea {
+    width: 98%;
+    height: 100px;
+}

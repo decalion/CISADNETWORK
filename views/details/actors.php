@@ -2,7 +2,9 @@
 
     include './models/classes/Actor.php';
 
-    $object = loadDetail('actors', $link);
+    $factory = new Factory('actors', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Actor not found!';
     } else {
@@ -50,4 +52,5 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>
