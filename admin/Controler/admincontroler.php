@@ -220,6 +220,27 @@ if(isset($_POST['ids'])){
             include './views/modifymusic.php';
             break;
         case CONFDELMUSIC:
+            include './views/confdelmusica.php';
+            break;
+        case DELSINGER:
+            
+            break;
+        case MUSICSINGER:
+            
+            break;
+        case DELCDS:
+            
+            break;
+        case MUSICD:
+            
+            break;
+        case MODIFYCD:
+            include './views/modifycd.php';
+            break;
+        case CDSSONGS:
+            
+            break;
+        case DELSONGS:
             
             break;
      default : include './views/adminLogin.php'; break;
