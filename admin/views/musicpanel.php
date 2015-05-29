@@ -21,14 +21,13 @@
                             <td>Deleted</td>
                         </tr>
                         <?php
-                       $series=$facade->selectSeriesData();
-                       
-                       foreach($series as $i => $serie){
+                       $musics=$facade->selectMusicData();
+                       foreach($musics as $i => $music){
                            echo"<tr>";
-                           echo"<td>".$serie->getIdserie() ."</td>";
-                           echo"<td>" .$serie->getName() . "</td>";
-                           echo "<td><a href='index.php?ids=".MODIFYSERIES."&action=$i'><button>Modify</button></a></td>";
-                           echo "<td><a href='index.php?ids=".CONFDELETESERIES."&action=$i'><button>Deleted</button></a></td>";
+                           echo"<td>".$music->getIdgroup() ."</td>";
+                           echo"<td>" .$music->getName() . "</td>";
+                           echo "<td><a href='index.php?ids=".MODIFYMUSIC."&action=$i'><button>Modify</button></a></td>";
+                           echo "<td><a href='index.php?ids=".CONFDELMUSIC."&action=$i'><button>Deleted</button></a></td>";
                            echo"</tr>";
                        }
                         ?>

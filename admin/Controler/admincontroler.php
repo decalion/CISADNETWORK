@@ -24,6 +24,7 @@ include_once './Models/Classes/DB/DTO/Group.php';
 include_once './Models/Classes/DB/DTO/GroupMember.php';
 include_once './Models/Classes/DB/DTO/Singer.php';
 include_once './Models/Classes/DB/DTO/CDS.php';
+include_once './Models/Classes/DB/DTO/Songs.php';
 
 
 
@@ -211,6 +212,15 @@ if(isset($_POST['ids'])){
             break;
         case CONFDELNEWS:
             include './views/confdelnews.php';
+            break;
+        case MUSICPANEL:
+            include './views/musicpanel.php';
+            break;
+        case MODIFYMUSIC:
+            include './views/modifymusic.php';
+            break;
+        case CONFDELMUSIC:
+            
             break;
      default : include './views/adminLogin.php'; break;
     
