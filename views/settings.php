@@ -10,13 +10,13 @@
                      $_SESSION['userData']['email'], 
                      $_SESSION['userData']['imageurl'], 
                      $_SESSION['userData']['idroles'], 
-                     $_SESSION['userData']['activemail'], 
-                     $_SESSION['userData']['active'], 
+                     1, 
+                     1, 
                      $_SESSION['userData']['userKey'],
                      $_SESSION['userData']['privacity']);
         
     $user->loadInfo($link);
-    
+    print_r($_SESSION['userData']);
 ?>
 <script src="js/delFriend.js"></script>
 <h1>Settings</h1>
@@ -31,7 +31,7 @@
             <?php
                 $friends = $user->getFriends();
                 foreach ($friends as $friend) {
-                    echo '<li id=li'.$friend['idusers'].'><a href="index.php?type=users&id='.$friend['idusers'].'">'.$friend['username'].'</a><input class="delFriend" id='.$friend['idusers'].' type="button" value="X" /></li>';
+                    echo '<li id=li'.$friend['idusers'].'><a href="index.php?type=users&id='.$friend['idusers'].'">'.$friend['username'].'</a><input class="bFriend" id='.$friend['idusers'].' type="button" value="X" /></li>';
                 }
             ?>
         </ul>
