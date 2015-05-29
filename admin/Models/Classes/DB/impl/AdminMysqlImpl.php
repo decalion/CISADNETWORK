@@ -439,5 +439,44 @@ class AdminMysqlImpl extends AbstractDB {
     }
     
     
+    public function selectMusicData(){
+           $query = $this->conection->query("SELECT * FROM groups");
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new Group();
+                $temp->setIdgroup($rst['idgroups']);
+                $temp->setName($rst['name']);
+                $temp->setYear($rst['year']);
+                $temp->setImageurl($rst['imageurl']);
+                $temp->setAverage($rst['average']);
+                $temp->setTotalvotes($rst['totalvotes']);
+                $temp->setSinger($this->selectGroupsMembers($rst['idgroups']));
+                
+                array_push($result, $temp);
+            }
+            return $result;
+        
+    }
+    
+    
+    private function selectGroupsMembers($id){
+            $query = $this->conection->query("SELECT * FROM groupsmembers WHERE idgroups=$id");
+            $result = array();
+            while ($rst = $this->conection->result($query)) {
+                $temp=new Group();
+
+           
+                array_push($result, $temp);
+            }
+            
+            return $result;
+        
+    }
+    
+    
+    
+    
+    
+    
     
 }

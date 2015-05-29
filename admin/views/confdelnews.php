@@ -12,7 +12,7 @@
             </div>
             <div class="center">
                 <?php
-                $data = $facade->selectCooksData();
+                $data = $facade->selectNewsData();
                 $id=$_GET['action'];
                 //print_r($data);
                 $news = $data[$_GET['action']];
