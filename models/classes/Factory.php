@@ -70,8 +70,8 @@
             return mysqli_fetch_array($result);
         }
         
-        public function loadDetail($id) {
-            $result = $this->link->query('select * from '.$this->type.' where id'.$this->type.' = '.$id.';');
+        public function loadDetail() {
+            $result = $this->link->query('select * from '.$this->type.' where id'.$this->type.' = '.$_GET['id'].';');
             if ($result->num_rows > 0) {
                 return mysqli_fetch_array($result);
             } else {
@@ -80,7 +80,19 @@
         }
         
         public function buildCommentsSection() {
-            echo 'ok';
+            include 'views/details/comment.php';
+        }
+        
+        public function getComments() {
+            $query = 'select * from comments'.$this->type.';';
+            $result = $this->link->query($query);
+            if ($result->num_rows > 0) {
+                foreach ($result as $comment) {
+                    include 'views/details/partials/comment.php';
+                }
+            } else {
+                echo '0 comments.';
+            }
         }
         
     }

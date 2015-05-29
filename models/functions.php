@@ -80,7 +80,6 @@
         } else {
             $idAnswer = getAnswerFromPoll($link);
             foreach ($result as $answer) {
-                // echo '<li><p>'.$answer['idanswers'].' '.$answer.'</p></li>';
                 if (strcmp($answer['idanswers'], $idAnswer) == 0) {
                     echo '<li><p class="buttonPoll voted">'.$answer['answer'].'</p></li>';
                 } else {

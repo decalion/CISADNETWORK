@@ -2,7 +2,9 @@
 
     include './models/classes/Director.php';
 
-    $object = loadDetail('directors', $link);
+    $factory = new Factory('directors', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Director not found!';
     } else {
@@ -50,4 +52,5 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>

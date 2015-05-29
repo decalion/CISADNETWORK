@@ -2,7 +2,9 @@
 
     include './models/classes/Serie.php';
 
-    $object = loadDetail('series', $link);
+    $factory = new Factory('series', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Serie not found!';
     } else {
@@ -44,6 +46,7 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>
 <?php
     }

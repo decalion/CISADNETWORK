@@ -2,7 +2,9 @@
 
     include './models/classes/Book.php';
 
-    $object = loadDetail('books', $link);
+    $factory = new Factory('books', $link);
+    $object = $factory->loadDetail();
+    
     if ($object == null) {
         echo 'Book not found!';
     } else {
@@ -44,4 +46,5 @@
             ?>
         </p>
     </div>
+    <?php $factory->buildCommentsSection(); ?>
 </div>
