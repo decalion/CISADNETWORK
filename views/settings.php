@@ -10,13 +10,13 @@
                      $_SESSION['userData']['email'], 
                      $_SESSION['userData']['imageurl'], 
                      $_SESSION['userData']['idroles'], 
-                     $_SESSION['userData']['activemail'], 
-                     $_SESSION['userData']['active'], 
+                     1, 
+                     1, 
                      $_SESSION['userData']['userKey'],
                      $_SESSION['userData']['privacity']);
 
     $user->loadInfo($link);
-    
+    print_r($_SESSION['userData']);
 ?>
     <script src="js/delFriend.js"></script>
     <div class='infoDiv'>
