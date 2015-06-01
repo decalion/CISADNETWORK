@@ -1,8 +1,3 @@
-<?php
-
-    
-
-?>
 <script src="js/comments.js"></script>
 <div id="commentsDiv">
     <input hidden value="<?php echo $this->type; ?>" id="type" />

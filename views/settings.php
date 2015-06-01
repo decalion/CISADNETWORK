@@ -16,7 +16,6 @@
                      $_SESSION['userData']['privacity']);
 
     $user->loadInfo($link);
-    print_r($_SESSION['userData']);
 ?>
     <script src="js/delFriend.js"></script>
     <div class='infoDiv'>
@@ -34,14 +33,18 @@
             <h4>Lastname: <?php echo $user->getLastname(); ?></h4>
             <h4>Email: <?php echo $user->getEmail(); ?></h4>
             <h4>Friends</h4>
-            <ul>
-                <?php
-                    $friends = $user->getFriends();
+            <?php
+                $friends = $user->getFriends();
+                if ($friends == null) {
+                    echo '<ul>';
                     foreach ($friends as $friend) {
-                        echo '<li id=li'.$friend['idusers'].'><a href="index.php?type=users&id='.$friend['idusers'].'">'.$friend['username'].'</a><input class="delFriend" id='.$friend['idusers'].' type="button" value="X" /></li>';
+                        echo '<li id=li'.$friend['idusers'].'><a href="index.php?type=users&id='.$friend['idusers'].'">'.$friend['username'].'</a><input class="bFriend" id='.$friend['idusers'].' type="button" value="X" /></li>';
                     }
-                ?>
-            </ul>
+                    echo '</ul>';
+                } else {
+                    echo "You don't have any friend!";
+                }
+            ?>
         </div>
         <div class='detailImage'>
             <img src="images/<?php echo $user->getImageurl(); ?>" />

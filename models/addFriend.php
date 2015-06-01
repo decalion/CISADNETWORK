@@ -1,29 +1,29 @@
 <?php
 
-session_start();
+    session_start();
 
-$ajax = true;
+    $ajax = true;
 
-
-include './classes/Connection.php';
-include './dbConnection.php';
-include './functions.php';
-$infoDb = getInfoDb();
-$link = new Connection($infoDb['host'], $infoDb['user'], $infoDb['pass'], $infoDb['db']);
-mysqli_select_db($link->getConnection(), $infoDb['db']);
-if (!$_SESSION['userData']['idusers'] == $GET['q']) {
+    include './classes/Connection.php';
+    include './dbConnection.php';
+    include './functions.php';
     
-    $query = 'INSERT INTO friends (idusers, idusersfriends) VALUES ("' . $_SESSION['userData']['idusers'] . '","' . $_GET['q'] . '");';
-    $result = $link->query($query);
-    if ($result) {
-        echo " correct ";
+    $infoDb = getInfoDb();
+    $link = new Connection($infoDb['host'], $infoDb['user'], $infoDb['pass'], $infoDb['db']);
+    mysqli_select_db($link->getConnection(), $infoDb['db']);
+    
+    if (!$_SESSION['userData']['idusers'] == $GET['q']) {
+        $query = 'INSERT INTO friends (idusers, idusersfriends) VALUES ("' . $_SESSION['userData']['idusers'] . '","' . $_GET['q'] . '");';
+        $result = $link->query($query);
+        if ($result) {
+            echo "You are now following this user!";
+        } else {
+            echo "Failed following this user!";
+        }
     } else {
-        echo " incorrect";
+        echo "You can't add yourself!";
     }
-}
- else {
-   echo " incorrect";
- }
- 
- $link->closeConnection();
- ?>
+
+    $link->closeConnection();
+    
+?>

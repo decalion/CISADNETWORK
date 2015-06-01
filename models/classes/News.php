@@ -64,13 +64,13 @@
         }
         
         function getUsersName($link) {
-                $query = 'select name from users where idusers = '.$this->idusers.';';
+                $query = 'select username from users where idusers = '.$this->idusers.';';
                 $result = $link->query($query);
                 if ($result->num_rows == 0) {
                     return "This user doesn't exists!";
                 } else {
                     foreach ($result as $user) {
-                        return $user['name'];
+                        return $user['username'];
                     }
                 }
         }

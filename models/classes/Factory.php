@@ -84,7 +84,7 @@
         }
         
         public function getComments() {
-            $query = 'select * from comments'.$this->type.';';
+            $query = 'select * from comments'.$this->type.' where id'.$this->type.' = '.$_GET['id'].';';
             $result = $this->link->query($query);
             if ($result->num_rows > 0) {
                 foreach ($result as $comment) {
