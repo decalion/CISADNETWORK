@@ -161,7 +161,7 @@
         }
 
         function isFriend($link, $idFriend) {
-            $query = 'select * from friends where idusers = '.$this->idusers.' and idusersfriends = '.$idFriend.';';
+            $query = 'select * from friends where idusers = '.$idFriend.' and idusersfriends = '.$this->idusers.';';
             $result = $link->query($query);
             if ($result->num_rows > 0) {
                 return true;

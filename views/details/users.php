@@ -10,42 +10,43 @@ if ($object == null) {
 
     $user->loadInfo($link);
 
-    if (strcmp($_GET['id'], $_SESSION['userData']['idusers']) == 0) {
-        include './views/details/partials/contentUsers.php';
-    } else {
+    if (strcmp($_GET['id'], $_SESSION['userData']['idusers']) != 0) {
         switch ($user->getPrivacity()) {
             case 'private':
-                echo "<p>The profile of " . $user->getUsername() . " is private.</p>";
+                echo "<p>The profile of ".$user->getUsername()." is private.</p>";
                 break;
             case 'friends':
                 if ($user->isFriend($link, $_SESSION['userData']['idusers'])) {
                     include './views/details/partials/contentUsers.php';
                 } else {
-                    echo "<p>The profile of " . $user->getUsername() . " is private.</p>";
+                    echo "<p>The profile of ".$user->getUsername()." is private.</p>";
                 }
                 break;
             case 'public':
                 include './views/details/partials/contentUsers.php';
                 break;
             default:
-                echo "<p>The profile of " . $user->getUsername() . " is private.</p>";
+                echo "<p>The profile of ".$user->getUsername()." is private.</p>";
                 break;
         }
     }
-}
-
-    if (strcmp($_SESSION['userData']['idusers'], $_GET['id']) != 0) {
-        if (!$user->isFriend($link, $_SESSION['userData']['idusers'])) {
+    if (isset($_SESSION['userData'])) {
+        if(strcmp($_GET['id'], $_SESSION['userData']['idusers']) == 0) {
+            include './views/details/partials/contentUsers.php';
+        } else if (strcmp($_SESSION['userData']['idusers'], $_GET['id']) != 0) {
+            if (!$user->isFriend($link, $_SESSION['userData']['idusers'])) {
 ?>
-            <script src='js/addFriend.js'></script>
-            <input type='button' value='Follow' class='bFriend' id=<?php echo '"'.$_GET['id'].'"'; ?> />
+                <script src='js/addFriend.js'></script>
+                <input type='button' value='Follow' class='bFriend' id=<?php echo '"'.$_GET['id'].'"'; ?> />
 <?php
-        } elseif ($user->isFriend($link, $_SESSION['userData']['idusers'])) {
+            } else if ($user->isFriend($link, $_SESSION['userData']['idusers'])) {
 ?>
-            <script src='js/delFriend.js'></script>
-            <input class="bFriend" id=<?php echo '"'.$user->getIdusers().'"'; ?> type='button' value="X" />
+                <script src='js/delFriend.js'></script>
+                <input class="bFriend" type='button' value="X" id=<?php echo '"'.$user->getIdusers().'"'; ?> />
 <?php  
+            }
         }
     }
+}
 ?>
 
