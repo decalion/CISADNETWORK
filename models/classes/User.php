@@ -146,8 +146,6 @@
                         $this->friends[] = array('idusers' => $friend['idusersfriends'], 'username' => $value['username']);
                     }
                 }
-            } else {
-                $this->friends = "You don't have any friend!";
             }
         }
 

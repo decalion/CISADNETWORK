@@ -7,7 +7,7 @@ $(document).ready(function () {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 if (xmlhttp.responseText.length != 0) {
-                    alert(xmlhttp.responseText);
+                    $('#li' + id).html(xmlhttp.responseText);
                 }
             }
         }

@@ -18,7 +18,7 @@
         if ($result) {
             echo "You are now following this user!";
         } else {
-            echo "Failed following this user!";
+            echo "Failed following this user or already following this user!";
         }
     } else {
         echo "You can't add yourself!";
