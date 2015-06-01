@@ -147,10 +147,8 @@
                     break;
                 case 'settings':
                     switch ($_POST['state']) {
-                        case 0:
-                            $toInclude = './views/settings.php';
-                            break;
                         default:
+                            $toInclude = './views/settings.php';
                             break;
                     }
                     break;
