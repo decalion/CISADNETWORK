@@ -105,6 +105,9 @@ if(isset($_POST['ids'])){
         case BACKBOOKS:
             include './views/bookspanel.php';
             break;
+        case BACKMUSIC:
+            include './views/musicpanel.php';
+            break;
         case LOGOUT:
             include './Controler/Logout.php';
          break;

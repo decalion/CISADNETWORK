@@ -43,7 +43,7 @@ if ($object == null) {
         } elseif ($user->isFriend($link, $_SESSION['userData']['idusers'])) {
 ?>
             <script src='js/delFriend.js'></script>
-            <input class="bFriend" id=<?php echo '"'.$user->getIdusers().'"'; ?> type='button' value="X" />
+            <input class="bFriend" type='button' value="X" id=<?php echo '"'.$user->getIdusers().'"'; ?>  />
 <?php  
         }
     }

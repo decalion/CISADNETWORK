@@ -29,6 +29,7 @@
                                 <?php
                                 $songs=$cds[$_GET['mod']]->getSongs();
                                 $idcd=$cds[$_GET['mod']]->getIdcds();
+                                $id=$music->getIdgroup();
                                 
                                 foreach ($songs as $i => $song) {
                                     echo"<tr>";
@@ -41,7 +42,7 @@
                             </tr>
                         </table>
                             </center>
-                            <?php echo "<a href='index.php?ids=" .CDSSONGS. "&action=$id'><button>Add Songs </button></a>"; ?>
+                            <?php echo "<a href='index.php?ids=" .CDSSONGS. "&action=$id&state=$idcd'><button>Add Songs </button></a>"; ?>
                     </div>
                 
                 <div>
