@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For delte Songs
+ */
 $idcd = $_GET['action'];
 $idsong= $_GET['del'];
 

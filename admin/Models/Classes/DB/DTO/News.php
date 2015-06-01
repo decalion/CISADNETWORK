@@ -1,8 +1,8 @@
 <?php
 /**
- * Description of News
+ * DTO (Data Transfer Object) Class of News Table
  *
- * @author Ismael Caballero
+ * @author Ismael Caballero 
  */
 class News {
     

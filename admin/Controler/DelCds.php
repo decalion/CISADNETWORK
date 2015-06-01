@@ -1,4 +1,7 @@
 <?php
+/**
+ * Controler For Delete CDS
+ */
 $idcd=$_GET['action'];
 $idgroup=$_GET['del'];
 

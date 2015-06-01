@@ -1,8 +1,8 @@
 <?php
 /**
- * Description of CDS
+ * DTO (Data Transfer Object) Class of CDS Table
  *
- * @author Ismael Caballero 
+ * @author ismael caballero
  */
 class CDS {
     

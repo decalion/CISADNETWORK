@@ -22,8 +22,7 @@ class Facade {
         $db->close();
         return $result;
     }
-    
-    
+
     /**
      * funcion to get all user data
      * @return type
@@ -35,151 +34,155 @@ class Facade {
         $db->close();
         return $result;
     }
-    
+
     /**
      * Generic Update data
      * @param type $sql
      * @return type
      */
-    public function updateData($sql){
+    public function updateData($sql) {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->modify($sql);
         $db->close();
         return $result;
-        
     }
-    
+
     /**
      * Add data generic
      * @param type $sql
      * @return type
      */
-     public function addData($sql){
+    public function addData($sql) {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->add($sql);
         $db->close();
         return $result;
-        
     }
-    
+
     /**
      * Genric Deleted Data
      * @param type $sql
      * @return type
      */
-    public function deletedData($sql){
+    public function deletedData($sql) {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->deleted($sql);
         $db->close();
         return $result;
-        
     }
-    
-    
+
     /**
      * Function to get all Movies Data
      * @return type
      */
-    public function selectMoviesData(){
+    public function selectMoviesData() {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectMoviesData();
         $db->close();
         return $result;
-        
     }
-    
-    
-    
-    public function selectSeriesData(){
+
+    /**
+     * Select Serie Data
+     * @return type
+     */
+    public function selectSeriesData() {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectSeriesData();
         $db->close();
         return $result;
-        
     }
-    
+
     /**
      * Generic Select Data Actors 
      * @param type $sql
      * @return type
      */
-        public function selectActorsAdd($sql){
+    public function selectActorsAdd($sql) {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectActorsAdd($sql);
         $db->close();
         return $result;
-        
     }
-    
-        public function selectDirectorsAdd($sql){
+
+    /**
+     * Select Directoris For Add
+     * @param type $sql
+     * @return type
+     */
+    public function selectDirectorsAdd($sql) {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectDirectorsAdd($sql);
         $db->close();
         return $result;
-        
     }
-    
-    
+
     /**
      * Select All From Recipes
      * @return type
      */
-    
-    public function selectCooksData(){
+    public function selectCooksData() {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectCooksData();
         $db->close();
         return $result;
-        
     }
-    
-        /**
+
+    /**
      * Select All From Books
      * @return type
      */
-    
-    public function selectBooksData(){
+    public function selectBooksData() {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectBooksData();
         $db->close();
-        return $result;   
+        return $result;
     }
-    
-    
-    public function selectAuthorAdd($sql){
+
+    /**
+     * Select Authors For Add
+     * @param type $sql
+     * @return type
+     */
+    public function selectAuthorAdd($sql) {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectAuhorsAdd($sql);
         $db->close();
-        return $result;  
+        return $result;
     }
-    
-    
-    public function selectNewsData(){
+
+    /**
+     * Select All News Data
+     * @return type
+     */
+    public function selectNewsData() {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectNewsData();
         $db->close();
-        return $result; 
-        
+        return $result;
     }
-    
-    public function selectMusicData(){
+
+    /**
+     * Select Music Data
+     * @return type
+     */
+    public function selectMusicData() {
         $connection = new UConnection(HOST, USER, PASS, DATABASE);
         $db = new AdminMysqlImpl($connection);
         $result = $db->selectMusicData();
         $db->close();
-        return $result; 
+        return $result;
     }
-    
-    
+
 }

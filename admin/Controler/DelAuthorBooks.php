@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For Delete Author From Books
+ */
 $movid = $_GET['action'];
 $actid = $_GET['del'];
 

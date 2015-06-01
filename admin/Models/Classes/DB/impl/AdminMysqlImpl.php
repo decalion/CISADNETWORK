@@ -35,6 +35,12 @@ class AdminMysqlImpl extends AbstractDB {
         return false;
     }
 
+    
+    /**
+     * Genric Modify
+     * @param type $sql
+     * @return boolean
+     */
     public function modify($sql) {
         $query = $this->conection->query($sql);
         if ($this->conection->getErrorNum() == 0) {
@@ -141,7 +147,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Diretors from Movies
      * @param type $id
      * @return array
      */
@@ -157,7 +163,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Directors
      * @param type $id
      * @return \Directors
      */
@@ -207,7 +213,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Actors For Add
      * @param type $sql
      * @return array
      */
@@ -225,7 +231,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Directors for Add
      * @param type $sql
      * @return array
      */
@@ -243,7 +249,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Serie Data
      * @return array
      */
     public function selectSeriesData() {
@@ -271,7 +277,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Chapters from Series
      * @param type $id
      * @return array
      */
@@ -291,7 +297,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Actors From Series
      * @param type $id
      * @return array
      */
@@ -307,7 +313,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Directors From Series
      * @param type $id
      * @return array
      */
@@ -345,7 +351,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select All Books Data
      * @return array
      */
     public function selectBooksData() {
@@ -370,7 +376,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Authors From Books
      * @param type $id
      * @return array
      */
@@ -386,7 +392,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select All From Author
      * @param type $id
      * @return \Author
      */
@@ -402,7 +408,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Author for Add
      * @param type $sql
      * @return array
      */
@@ -420,7 +426,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select All From News
      * @return array
      */
     public function selectNewsData() {
@@ -443,7 +449,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select User Name
      * @param type $id
      * @return type
      */
@@ -455,7 +461,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select All From Music
      * @return array
      */
     public function selectMusicData() {
@@ -477,6 +483,11 @@ class AdminMysqlImpl extends AbstractDB {
         return $result;
     }
     
+    /**
+     * Select CDS
+     * @param type $id
+     * @return array
+     */
     private function selectcds($id){
         $query = $this->conection->query("SELECT * FROM cds WHERE idgroups=$id");
         $result = array();
@@ -493,6 +504,12 @@ class AdminMysqlImpl extends AbstractDB {
         return $result;
     }
     
+    /**
+     * Select Songs From CDS
+     * @param type $idgroup
+     * @param type $idcd
+     * @return array
+     */
     private function selectCdSongs($idgroup,$idcd){
         $query = $this->conection->query("SELECT idsongs,name FROM songs WHERE idgroups=$idgroup AND idcds=$idcd");
         $result = array();
@@ -508,7 +525,7 @@ class AdminMysqlImpl extends AbstractDB {
     }
 
     /**
-     * 
+     * Select Members From Group
      * @param type $id
      * @return array
      */
@@ -526,7 +543,7 @@ class AdminMysqlImpl extends AbstractDB {
     
     
    /**
-    * 
+    * Select all From Singers
     * @param type $id
     * @return \Singer
     */

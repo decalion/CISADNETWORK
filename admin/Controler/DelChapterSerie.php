@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For Delete Chapters
+ */
 $serieid = $_GET['action'];
 $chapter = $_GET['deln'];
 $season = $_GET['dels'];

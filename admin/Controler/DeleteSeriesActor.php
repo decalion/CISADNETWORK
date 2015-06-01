@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For Delete Series From Actors
+ */
 $serieid = $_GET['action'];
 $actid = $_GET['del'];
 

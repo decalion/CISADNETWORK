@@ -1,8 +1,12 @@
 <?php
+/**
+ * Controler For Add Movies
+ */
+
 $movie=$_GET['action'];
 $actor=$_GET['ad'];
 
-//echo"Esto he un prueba $movie ::::: $actor";
+
 
 $sql="INSERT INTO actorsmovies (idmovies,idactors) VALUES ($movie,$actor)";
 

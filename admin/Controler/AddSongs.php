@@ -1,4 +1,7 @@
 <?php
+/**
+ * Controler For Add Songs
+ */
 $idgroup=$_POST['idmusic'];
 $idcd=$_POST['idcds'];
 

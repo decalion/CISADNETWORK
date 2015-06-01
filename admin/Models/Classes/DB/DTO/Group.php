@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Description of Group
+ * DTO (Data Transfer Object) Class of Group Table
  *
- * @author Ismael Caballero
+ * @author Ismael Caballero 
  */
 class Group {
    

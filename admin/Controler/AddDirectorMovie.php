@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For Add Movie Directors
+ */
 $movie=$_GET['action'];
 $director=$_GET['ad'];
 

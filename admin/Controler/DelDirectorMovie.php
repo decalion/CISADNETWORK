@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For Delete Movie
+ */
 $movid = $_GET['action'];
 $actid = $_GET['del'];
 

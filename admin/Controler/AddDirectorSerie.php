@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler for Add Serie
+ */
 $serie=$_GET['action'];
 $director=$_GET['ad'];
 

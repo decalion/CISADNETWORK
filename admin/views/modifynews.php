@@ -31,7 +31,7 @@
                     </div>
                 </form>
                 <div>
-                    <?php echo "<a href='index.php?ids=" . BACKNEWS . "'><button>Back</button></a>"; ?>
+                    <?php echo "<a href='index.php?ids=".BACKNEWS."'><button>Back</button></a>"; ?>
                 </div>
             </div>
             <div class="footer">

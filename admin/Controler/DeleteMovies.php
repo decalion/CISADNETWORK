@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Controler for DeleteUsers
+ * Controler for Delete Movies
  */
 
 

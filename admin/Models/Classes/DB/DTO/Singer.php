@@ -1,8 +1,8 @@
 <?php
 /**
- * Description of Singer
+ * DTO (Data Transfer Object) Class of Singers Table
  *
- * @author Ismael Caballero
+ * @author Ismael Caballero 
  */
 class Singer {
     

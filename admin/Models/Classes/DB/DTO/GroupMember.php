@@ -1,8 +1,8 @@
 <?php
 /**
- * 
+ * DTO (Data Transfer Object) Class of GroupMember Table
  *
- * @author Ismael Caballero
+ * @author Ismael Caballero 
  */
 class GroupMember {
     

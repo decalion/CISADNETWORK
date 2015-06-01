@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For Add Chapters
+ */
 $idserie=$_POST['idserie'];
 $name=$_POST['name'];
 $seson=$_POST['season'];

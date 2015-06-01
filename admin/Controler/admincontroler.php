@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Controler 
+ *Pincipal Controler
  */
 
 include_once './Models/Classes/Utils/Constants.php';
@@ -33,9 +33,15 @@ if(!isset($_SESSION['test'])){
     $_SESSION['test']="test";
 }
 
+/**
+ * Facade With all Functions
+ */
 $facade=new Facade();
 
 
+/**
+ * Get IDS
+ */
 if(isset($_POST['ids'])){
     $id=$_POST['ids'];
     switch($id){
@@ -88,7 +94,10 @@ if(isset($_POST['ids'])){
         
         
     }
-       
+
+    /**
+     * Post IDS
+     */
 }elseif(isset($_GET['ids'])){
     
         $id=$_GET['ids'];
@@ -104,6 +113,9 @@ if(isset($_POST['ids'])){
             break;
         case BACKCOOKRECIDE:
             include './views/cookspanel.php';
+            break;
+        case BACKNEWS:
+            include './views/newspanel.php';
             break;
         case BACKBOOKS:
             include './views/bookspanel.php';

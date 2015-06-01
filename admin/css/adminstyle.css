@@ -29,7 +29,9 @@ body{
 }
     
 
-
+/**
+Header Style
+**/
 .header{
     //background-color: yellow;
     width:100%;
@@ -37,13 +39,18 @@ body{
     // line-height:100%;
 }
 
+/**
+Content style
+**/
 .content{
     margin-top:2%;
     width:100%;
     //background-color: red;
 }
 
-
+/**
+Footer Style
+**/
 .footer{
     margin-top:2%;
     width:100%;

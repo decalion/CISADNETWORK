@@ -1,4 +1,7 @@
 <?php
+/**
+ * Add Actor Serie
+ */
 
 $serie=$_GET['action'];
 $actor=$_GET['ad'];

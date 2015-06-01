@@ -1,8 +1,8 @@
 <?php
 /**
- * 
+ * DTO (Data Transfer Object) Class of Songs Table
  *
- * @author Ismael Caballero
+ * @author Ismael Caballero 
  */
 class Songs {
     private $idsongs;

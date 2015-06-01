@@ -1,4 +1,7 @@
 <?php
+/**
+ * Contorler For Delete Directoris Series
+ */
 
 $serieid = $_GET['action'];
 $actid = $_GET['del'];

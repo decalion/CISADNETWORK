@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controler For Delete Actors From Movies
+ */
 $movid = $_GET['action'];
 $actid = $_GET['del'];
 
