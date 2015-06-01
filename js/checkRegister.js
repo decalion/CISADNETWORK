@@ -1,3 +1,6 @@
+/**
+ * Check if the register form is correct
+ */
 $(document).ready(function () {
     $('#name').blur(function() {
         if ($(this).val() == '' || $(this).val().length < 4) {

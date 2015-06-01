@@ -1,5 +1,16 @@
 <?php
 
+    /**
+     * Class for manage the authors
+     * 
+     * @property INT $idactors
+     * @property String $name
+     * @property String $imageurl
+     * 
+     * @property Array $books
+     * 
+     */
+
     class Author {
         
         private $idauthors;

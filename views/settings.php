@@ -34,14 +34,14 @@
             <h4>Friends</h4>
             <?php
                 $friends = $user->getFriends();
-                if ($friends == null) {
+                if (count($friends) < 1) {
+                    echo "You don't have any friend!";
+                } else {
                     echo '<ul>';
                     foreach ($friends as $friend) {
                         echo '<li id=li'.$friend['idusers'].'><a href="index.php?type=users&id='.$friend['idusers'].'">'.$friend['username'].'</a><input class="bFriend" id='.$friend['idusers'].' type="button" value="X" /></li>';
                     }
                     echo '</ul>';
-                } else {
-                    echo "You don't have any friend!";
                 }
             ?>
         </div>

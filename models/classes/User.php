@@ -1,5 +1,25 @@
 <?php
 
+    /**
+     * Class for manage the users
+     * 
+     * @property INT $idactors
+     * @property String $username
+     * @property String $password
+     * @property String $name
+     * @property String $lastname
+     * @property String $email
+     * @property String $imageurl
+     * @property INT $idroles
+     * @property Boolean $activemail
+     * @property Boolea $active
+     * @property String $userKey
+     * @property String $privacity
+     * 
+     * @property Array $friends
+     * 
+     */
+
     class User {
         
         private $idusers;
@@ -146,8 +166,6 @@
                         $this->friends[] = array('idusers' => $friend['idusersfriends'], 'username' => $value['username']);
                     }
                 }
-            } else {
-                $this->friends = "You don't have any friend!";
             }
         }
 

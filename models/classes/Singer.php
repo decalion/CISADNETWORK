@@ -1,5 +1,16 @@
 <?php
 
+    /**
+     * Class for manage the singers
+     * 
+     * @property INT $idsingers
+     * @property String $name
+     * @property String $imageurl
+     * 
+     * @property Array $groups
+     * 
+     */
+
     class Singer {
         
         private $idsingers;

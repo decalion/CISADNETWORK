@@ -1,5 +1,19 @@
 <?php
 
+    /**
+     * Class for manage the news
+     * 
+     * @property INT $idnews
+     * @property INT $idusers
+     * @property String $name
+     * @property String $imageurl
+     * @property String $description
+     * @property Date $date
+     * @property INT $average
+     * @property INT $totalvotes
+     * 
+     */
+
     class News {
         
         private $idnews;

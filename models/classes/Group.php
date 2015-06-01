@@ -1,5 +1,20 @@
 <?php
 
+    /**
+     * Class for manage the groups
+     * 
+     * @property INT $idgroups
+     * @property String $name
+     * @property String $year
+     * @property String $imageurl
+     * @property INT $average
+     * @property INT $totalvotes
+     * 
+     * @property Array $cds
+     * @property Array $singers
+     * 
+     */
+
     class Group {
         
         private $idgroups;

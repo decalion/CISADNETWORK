@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * File for manage the messages
+     */
+
     $to = getIdByUsername($link, $_POST['to']);
     if ($to == null) {
         echo 'User not found!';

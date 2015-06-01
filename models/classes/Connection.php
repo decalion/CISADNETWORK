@@ -1,5 +1,12 @@
 <?php
 
+    /**
+     * Class for manage the database connection
+     * 
+     * @property MySQLi $connection
+     * 
+     */
+
     class Connection {
 
         private $connection;

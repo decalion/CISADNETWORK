@@ -1,5 +1,17 @@
 <?php
 
+    /**
+     * Class for manage the recipes
+     * 
+     * @property INT $idrecipes
+     * @property String $name
+     * @property String $imageurl
+     * @property String $description
+     * @property INT $average
+     * @property INT $totalvotes
+     * 
+     */
+
     class Recipe {
         
         private $idrecipes;

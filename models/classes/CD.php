@@ -1,5 +1,18 @@
 <?php
 
+    /**
+     * Class for manage the cds
+     * 
+     * @property INT $idcds
+     * @property INT $idgroups
+     * @property String $name
+     * @property String $imageurl
+     * 
+     * @property Array $groups
+     * @property Array $songs
+     * 
+     */
+
     class CD {
         
         private $idcds;

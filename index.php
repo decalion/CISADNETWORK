@@ -1,5 +1,17 @@
 <?php
 
+    /**
+     * Firts page to be calle when you enter this website
+     * 
+     * @author Ismael Caballero Hernández <icaballerohernandez@gmail.com>
+     * @author Cristian Bautista Peral <cristian.bautista@gencat.cat>
+     * @author Adrian Garcia Manchado <adriangarciamanchado@gmail.com>
+     * 
+     * @license http://https://github.com/decalion/CISADNETWORK/blob/master/license MIT
+     * @link cisadsystems.esy.es website of out company
+     * @version Stable-0.1.0
+     */
+
     session_start();
     
     if (isset($_POST) && count($_POST) > 0) {
@@ -20,10 +32,6 @@
     include './views/head.php';
     
     include './models/functions.php';
-    
-    // include './models/debug.php';
-    
-    // createDefault($link, 20);
     
     include './controler/controler.php';
     

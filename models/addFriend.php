@@ -1,5 +1,12 @@
 <?php
 
+    /**
+     * Add a new friend from an AJAX query
+     * @param GET $_GET Variable where you retrieves the data that you get
+     * @return String If sucefully adding to db, returns a string
+     * @return String If failed adding the friend it returns a string
+     */
+
     session_start();
 
     $ajax = true;
@@ -18,7 +25,7 @@
         if ($result) {
             echo "You are now following this user!";
         } else {
-            echo "Failed following this user!";
+            echo "Failed following this user or already following this user!";
         }
     } else {
         echo "You can't add yourself!";

@@ -1,5 +1,11 @@
 <?php
 
+    /**
+     * Filter the parameters and select the correct view to show
+     * @param GET $_GET Info is send by using GET method
+     * @param POST $_POST Info is send by using POST method
+     */
+
     $toInclude = './views/default.php';
     echo '<script src="js/searchScript.js"></script>';
     if (isset($_GET) && count($_GET) > 0) {

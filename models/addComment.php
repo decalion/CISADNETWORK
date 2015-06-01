@@ -1,5 +1,12 @@
 <?php
 
+    /**
+     * Create a new comment from an AJAX query
+     * @param POST $_POST Variable where you retrieves the data that you get
+     * @return String If sucefully adding to db, returns partial view of the comment to be inserted on the website
+     * @return String If failed adding the comment it returns a string
+     */
+
     session_start();
     
     $ajax = true;
