@@ -81,6 +81,9 @@ if(isset($_POST['ids'])){
         case DELNEWS:
             include './Controler/DelNews.php';
             break;
+        case ADDSONG:
+            include './Controler/AddSongs.php';
+            break;
      default : include './views/adminLogin.php'; break;
         
         
@@ -232,7 +235,7 @@ if(isset($_POST['ids'])){
             
             break;
         case DELCDS:
-            
+            include './Controler/DelCds.php';
             break;
         case MUSICD:
             
@@ -241,10 +244,10 @@ if(isset($_POST['ids'])){
             include './views/modifycd.php';
             break;
         case CDSSONGS:
-            
+            include './views/addcdsongs.php';
             break;
         case DELSONGS:
-            
+            include './Controler/DelSongs.php';
             break;
      default : include './views/adminLogin.php'; break;
     

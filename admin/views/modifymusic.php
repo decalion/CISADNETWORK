@@ -70,7 +70,7 @@
                                     echo"<tr>";
                                     echo"<td>" . $cd->getName() . "</td>";
                                     echo "<td><a href='index.php?ids=".MODIFYCD."&action=".$cd->getIdcds()."&mod=".$i."'><button>Modify</button></a></td>";
-                                    echo "<td><a href='index.php?ids=".DELCDS."&action=".$cd->getIdcds()."&del=".$singer->getIdsinger()."'><button>Deleted</button></a></td>";
+                                    echo "<td><a href='index.php?ids=".DELCDS."&action=".$cd->getIdcds()."&del=".$music->getIdgroup()."'><button>Deleted</button></a></td>";
                                     echo"</tr>";
                                     //echo"<option value='$i' selected>".$actor->getName()."</option>";
                                 }

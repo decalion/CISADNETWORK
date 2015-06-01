@@ -17,12 +17,12 @@
                         <input type="text"  name="idcds"  value="<?php echo $_GET['state']; ?>" hidden />
                     </div>
                     <div>
-                        <label>Song Name :</label>  <input type="text"  name="name"  />
+                        <label>Song Name :</label>  <input type="text"  name="name" size="35" />
                     </div>
-                    
-                    
-                    
-                    
+                    <div>
+                        <input type="text"  name="ids"  value="161" hidden />
+                        <input type="submit" value="Add Song" />
+                    </div>
                 </form>
             </div>
             <div>

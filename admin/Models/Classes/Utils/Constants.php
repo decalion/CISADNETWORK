@@ -98,6 +98,7 @@ const MUSICD=157;
 const MODIFYCD=158;
 const CDSSONGS=159;
 const DELSONGS=160;
+const ADDSONG=161
 
 
 

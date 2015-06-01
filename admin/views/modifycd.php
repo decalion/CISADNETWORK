@@ -34,7 +34,7 @@
                                 foreach ($songs as $i => $song) {
                                     echo"<tr>";
                                     echo"<td>" . $song->getName() . "</td>";
-                                    echo "<td><a href='index.php?ids=".DELCDS."&action=".$idcd."&del=".$song->getIdsongs()."'><button>Deleted</button></a></td>";
+                                    echo "<td><a href='index.php?ids=".DELSONGS."&action=".$idcd."&del=".$song->getIdsongs()."'><button>Deleted</button></a></td>";
                                     echo"</tr>";
                                     //echo"<option value='$i' selected>".$actor->getName()."</option>";
                                 }
