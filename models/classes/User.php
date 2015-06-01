@@ -17,10 +17,9 @@
         
         private $friends;
         
-        function __construct($idusers, $username, $password, $name, $lastname, $email, $imageurl, $idroles, $activemail, $active, $userKey, $privacity) {
+        function __construct($idusers, $username, $name, $lastname, $email, $imageurl, $idroles, $activemail, $active, $userKey, $privacity) {
             $this->idusers = $idusers;
             $this->username = $username;
-            $this->password = $password;
             $this->name = $name;
             $this->lastname = $lastname;
             $this->email = $email;
@@ -46,10 +45,6 @@
 
         public function getUsername() {
             return $this->username;
-        }
-
-        public function getPassword() {
-            return $this->password;
         }
 
         public function getName() {
@@ -98,10 +93,6 @@
 
         public function setUsername($username) {
             $this->username = $username;
-        }
-
-        public function setPassword($password) {
-            $this->password = $password;
         }
 
         public function setName($name) {

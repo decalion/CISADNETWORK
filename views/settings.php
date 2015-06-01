@@ -4,7 +4,6 @@
 
     $user = new User($_SESSION['userData']['idusers'], 
                      $_SESSION['userData']['username'], 
-                     $_SESSION['userData']['password'], 
                      $_SESSION['userData']['name'], 
                      $_SESSION['userData']['lastname'], 
                      $_SESSION['userData']['email'], 
