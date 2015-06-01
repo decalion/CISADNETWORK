@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * File for manage the votes on polls
+     */
+
     session_start();
     
     $ajax = true;

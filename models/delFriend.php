@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * File to delete a friend
+     */
+
     session_start();
     
     include './classes/Connection.php';

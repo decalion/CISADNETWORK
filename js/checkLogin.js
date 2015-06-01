@@ -1,3 +1,6 @@
+/**
+ * Check if the login form is correct
+ */
 $(document).ready(function () {
     $('#username').blur(function() {
         if ($(this).val() == '' || $(this).val().length < 4) {

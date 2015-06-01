@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * File that holds the search input and filter the results
+     */
+
     $ajax = true;
 
     include './classes/Connection.php';

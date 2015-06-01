@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * File that holds various functions
+     */
+
     if (isset($ajax)) {
         include './classes/Factory.php';
     } else {

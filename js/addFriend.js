@@ -1,3 +1,8 @@
+/**
+ * Script to add a new friend and makes a new AJAX query
+ * 
+ * @param {GET} Id of the user to be added
+ */
 $(document).ready(function () {
     $('.bFriend').click(function () {
         var xmlhttp = new XMLHttpRequest();

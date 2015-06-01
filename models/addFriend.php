@@ -1,5 +1,12 @@
 <?php
 
+    /**
+     * Add a new friend from an AJAX query
+     * @param GET $_GET Variable where you retrieves the data that you get
+     * @return String If sucefully adding to db, returns a string
+     * @return String If failed adding the friend it returns a string
+     */
+
     session_start();
 
     $ajax = true;

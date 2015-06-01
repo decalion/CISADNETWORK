@@ -1,5 +1,15 @@
 <?php
 
+    /**
+     * Class for manage the songs
+     * 
+     * @property INT $idsongs
+     * @property INT $idgroups
+     * @property INT $idcds
+     * @property String $name
+     * 
+     */
+
     class Song {
         
         private $idsongs;

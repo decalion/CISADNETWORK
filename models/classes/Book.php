@@ -1,5 +1,21 @@
 <?php
 
+    /**
+     * Class for manage the books
+     * 
+     * @property INT $idbooks
+     * @property String $name
+     * @property String $sinopsi
+     * @property INT $year
+     * @property String $imageurl
+     * @property String $isbn
+     * @property INT $average
+     * @property INT $totalvotes
+     * 
+     * @property Array $authors
+     * 
+     */
+
     class Book {
         
         private $idbooks;

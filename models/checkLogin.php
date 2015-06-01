@@ -1,4 +1,8 @@
 <?php
+
+    /**
+     * File to check if the login is correct
+     */
     
     $result = $link->query('select * from users');
     $correct = false;
@@ -19,7 +23,6 @@
     }
     if (!$correct) {
         $toInclude = './views/noLogin/loginForm.php';
-        $log['incorrectLogin'] = 'Incorrect login!';
     }
 
 ?>

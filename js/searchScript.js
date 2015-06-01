@@ -1,3 +1,6 @@
+/**
+ * Fills the list with an AJAX query when you type on the search input
+ */
 function showHint(str) {
     if (str.length != 0) {
         if (str.value.length == 0){

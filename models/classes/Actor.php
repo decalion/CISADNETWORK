@@ -1,5 +1,17 @@
 <?php
 
+    /**
+     * Class for manage the actors
+     * 
+     * @property INT $idactors
+     * @property String $name
+     * @property String $imageurl
+     * 
+     * @property Array $movies
+     * @property Array $series
+     * 
+     */
+
     class Actor {
         
         private $idactors;

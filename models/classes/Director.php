@@ -1,5 +1,17 @@
 <?php
 
+    /**
+     * Class for manage the directors
+     * 
+     * @property INT $iddirectors
+     * @property String $name
+     * @property String $imageurl
+     * 
+     * @property Array $movies
+     * @property Array $series
+     * 
+     */
+
     class Director {
         
         private $iddirectors;

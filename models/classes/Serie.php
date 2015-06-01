@@ -1,5 +1,23 @@
 <?php
 
+    /**
+     * Class for manage the series
+     * 
+     * @property INT $idseries
+     * @property String $name
+     * @property String $sinopsi
+     * @property String $year
+     * @property String $imageurl
+     * @property INT $seasons
+     * @property INT $totalchapters
+     * @property INT $average
+     * @property INT $totalvotes
+     * 
+     * @property Array $director
+     * @property Array $actors
+     * 
+     */
+
     class Serie {
         
         private $idseries;

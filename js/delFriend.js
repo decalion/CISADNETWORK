@@ -1,3 +1,8 @@
+/**
+ * Script to delete a friend and makes a new AJAX query
+ * 
+ * @param {GET} Id of the user to be deleted
+ */
 $(document).ready(function () {
     $('.bFriend').click(function () {
         var xmlhttp = new XMLHttpRequest();

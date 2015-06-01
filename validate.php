@@ -1,5 +1,12 @@
 <?php
 
+    /**
+     * File called when you do a new activation of a user
+     * 
+     * @param GET $userKey Get the userKey to be activated
+     * @return String Return if the user is activated
+     * @return null Redirects if the userKey is activated or does not exist
+     */
 
     include './models/classes/Connection.php';
     include './models/dbConnection.php';

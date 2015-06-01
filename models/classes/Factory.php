@@ -1,5 +1,13 @@
 <?php
 
+    /**
+     * Factory class for create common views
+     * 
+     * @property String $type
+     * @property Connection $link
+     * 
+     */
+
     class Factory {
         
         private $type;

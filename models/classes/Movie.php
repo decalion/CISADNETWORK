@@ -1,5 +1,21 @@
 <?php
 
+    /**
+     * Class for manage the movies
+     * 
+     * @property INT $idmovies
+     * @property String $name
+     * @property String $sinopsi
+     * @property String $year
+     * @property String $imageurl
+     * @property INT $average
+     * @property INT $totalvotes
+     * 
+     * @property Array $director
+     * @property Array $actors
+     * 
+     */
+
     class Movie {
         
         private $idmovies;

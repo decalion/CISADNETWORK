@@ -1,5 +1,11 @@
 <?php
 
+    /**
+     * Insert a new user that register on the website and send a mail to her email
+     * @return String If sucefully added return a string
+     * @return String If failed adding the user return a string
+     */
+
     $name = $_POST['name'];
     $lastname = $_POST['lastname'];
     $username = $_POST['username'];
@@ -17,7 +23,7 @@
             mail($email, "$subject", $comment, "From:" . $email);
         }
     } else {
-        $log['msg'] = $link->getError();
+        echo $link->getError();
     }
     
 ?>

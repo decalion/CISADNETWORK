@@ -1,3 +1,6 @@
+/**
+ * Makes a new query when you do click on an answer of a poll and sends it to the server
+ */
 $(document).ready(function () {
     $('.buttonPoll').click(function () {
         var xmlhttp = new XMLHttpRequest();
