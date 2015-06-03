@@ -14,7 +14,7 @@
 
     $password = encrypt($password);
 
-    $query = "INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey) VALUES('".$username."', '".$password."', '".$name."', '".$lastname."', '".$email . "', 'error.png', 2, '".encrypt($username)."');";
+    $query = "INSERT INTO users (username, password, name, lastname, email, imageurl, idroles, userKey) VALUES('".$username."', '".$password."', '".$name."', '".$lastname."', '".$email."', 'error.png', 2, '".encrypt($username)."');";
     if ($link->query($query)) {
         echo "Registered user has successfully registered. We have sent an confirmation email.";
         if (isset($_POST['email']))  {
