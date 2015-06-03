@@ -20,7 +20,7 @@
         if (isset($_POST['email']))  {
             $subject = 'Welcome '.$username.' to Cisadnetwork!';
             $comment = 'To activate your account, you must active your user visiting http://'.$_SERVER['HTTP_HOST'].'/validate.php?userKey='.encrypt($username).'.';
-            mail($email, "$subject", $comment, "From:" . $email);
+            mail($email, "$subject", $comment, "From:".$email);
         }
     } else {
         echo $link->getError();
